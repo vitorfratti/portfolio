@@ -15,100 +15,106 @@
         <!-- Header Padrão -->
 
         <header class="original-header">
-            <div @click="section='home'; changeSection()" class="logo">
-                <h1>FRATTI<span>()</span>;</h1>
-            </div>
-            <div class="links">
-                <a v-if="section == 'home'" class="selected" @click="section='home'; changeSection()">Início</a>
-                <a v-else @click="section='home'; changeSection()">Início</a>
-                <a v-if="section == 'sobremim'" class="selected" @click="section='sobremim'; changeSection()">Sobre mim</a>
-                <a v-else="section == 'sobremim'" @click="section='sobremim'; changeSection()">Sobre mim</a>
-                <a v-if="section == 'projetos'" class="selected" @click="section='projetos'; changeSection()">Projetos</a>
-                <a v-else @click="section='projetos'; changeSection()">Projetos</a>
-                <a v-if="section == 'conhecimentos'" class="selected" @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
-                <a v-else @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
-                <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection()">Contato</a>
-                <a v-else @click="section='contato'; changeSection()">Contato</a>
-            </div>
-            <div class="info">
-                <button @click="activeModal = true">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" fill="#959BAD" viewBox="0 0 24 24">
-                        <path d="M 12 0 C 5.371094 0 0 5.371094 0 12 C 0 18.628906 5.371094 24 12 24 C 18.628906 24 24 18.628906 24 12 C 24 5.371094 18.628906 0 12 0 Z M 12 2 C 17.523438 2 22 6.476563 22 12 C 22 17.523438 17.523438 22 12 22 C 6.476563 22 2 17.523438 2 12 C 2 6.476563 6.476563 2 12 2 Z M 12 5.8125 C 11.816406 5.8125 11.664063 5.808594 11.5 5.84375 C 11.335938 5.878906 11.183594 5.96875 11.0625 6.0625 C 10.941406 6.15625 10.851563 6.285156 10.78125 6.4375 C 10.710938 6.589844 10.6875 6.769531 10.6875 7 C 10.6875 7.226563 10.710938 7.40625 10.78125 7.5625 C 10.851563 7.71875 10.941406 7.84375 11.0625 7.9375 C 11.183594 8.03125 11.335938 8.085938 11.5 8.125 C 11.664063 8.164063 11.816406 8.1875 12 8.1875 C 12.179688 8.1875 12.371094 8.164063 12.53125 8.125 C 12.691406 8.085938 12.816406 8.03125 12.9375 7.9375 C 13.058594 7.84375 13.148438 7.71875 13.21875 7.5625 C 13.289063 7.410156 13.34375 7.226563 13.34375 7 C 13.34375 6.769531 13.289063 6.589844 13.21875 6.4375 C 13.148438 6.285156 13.058594 6.15625 12.9375 6.0625 C 12.816406 5.96875 12.691406 5.878906 12.53125 5.84375 C 12.371094 5.808594 12.179688 5.8125 12 5.8125 Z M 10.78125 9.15625 L 10.78125 18.125 L 13.21875 18.125 L 13.21875 9.15625 Z"></path>
-                    </svg>
-                </button>
-            </div>
-            <div class="menu">
-                <button @click="toggleMenu">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
-                        <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g>
-                    </svg>
-                </button>
+            <div class="container">
+                <div @click="section='home'; changeSection()" class="logo">
+                    <h1>FRATTI<span>()</span>;</h1>
+                </div>
+                <div class="links">
+                    <a v-if="section == 'home'" class="selected" @click="section='home'; changeSection()">Início</a>
+                    <a v-else @click="section='home'; changeSection()">Início</a>
+                    <a v-if="section == 'sobremim'" class="selected" @click="section='sobremim'; changeSection()">Sobre mim</a>
+                    <a v-else @click="section='sobremim'; changeSection()">Sobre mim</a>
+                    <a v-if="section == 'projetos'" class="selected" @click="section='projetos'; changeSection()">Projetos</a>
+                    <a v-else @click="section='projetos'; changeSection()">Projetos</a>
+                    <a v-if="section == 'conhecimentos'" class="selected" @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
+                    <a v-else @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
+                    <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection()">Contato</a>
+                    <a v-else @click="section='contato'; changeSection()">Contato</a>
+                </div>
+                <div class="info">
+                    <button @click="activeModal = true">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" fill="#959BAD" viewBox="0 0 24 24">
+                            <path d="M 12 0 C 5.371094 0 0 5.371094 0 12 C 0 18.628906 5.371094 24 12 24 C 18.628906 24 24 18.628906 24 12 C 24 5.371094 18.628906 0 12 0 Z M 12 2 C 17.523438 2 22 6.476563 22 12 C 22 17.523438 17.523438 22 12 22 C 6.476563 22 2 17.523438 2 12 C 2 6.476563 6.476563 2 12 2 Z M 12 5.8125 C 11.816406 5.8125 11.664063 5.808594 11.5 5.84375 C 11.335938 5.878906 11.183594 5.96875 11.0625 6.0625 C 10.941406 6.15625 10.851563 6.285156 10.78125 6.4375 C 10.710938 6.589844 10.6875 6.769531 10.6875 7 C 10.6875 7.226563 10.710938 7.40625 10.78125 7.5625 C 10.851563 7.71875 10.941406 7.84375 11.0625 7.9375 C 11.183594 8.03125 11.335938 8.085938 11.5 8.125 C 11.664063 8.164063 11.816406 8.1875 12 8.1875 C 12.179688 8.1875 12.371094 8.164063 12.53125 8.125 C 12.691406 8.085938 12.816406 8.03125 12.9375 7.9375 C 13.058594 7.84375 13.148438 7.71875 13.21875 7.5625 C 13.289063 7.410156 13.34375 7.226563 13.34375 7 C 13.34375 6.769531 13.289063 6.589844 13.21875 6.4375 C 13.148438 6.285156 13.058594 6.15625 12.9375 6.0625 C 12.816406 5.96875 12.691406 5.878906 12.53125 5.84375 C 12.371094 5.808594 12.179688 5.8125 12 5.8125 Z M 10.78125 9.15625 L 10.78125 18.125 L 13.21875 18.125 L 13.21875 9.15625 Z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="menu">
+                    <button @click="toggleMenu">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
+                            <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </header>
 
         <!-- Header ativada pelo scroll -->
 
         <header v-if="activeHeader == true" class="active-header animate__animated animate__fadeInDown">
-            <div @click="section='home'; changeSection()" class="logo">
-                <h1>FRATTI<span>()</span>;</h1>
-            </div>
-            <div class="links">
-                <a v-if="section == 'home'" class="selected" @click="section='home'; changeSection()">Início</a>
-                <a v-else @click="section='home'; changeSection()">Início</a>
-                <a v-if="section == 'sobremim'" class="selected" @click="section='sobremim'; changeSection()">Sobre mim</a>
-                <a v-else="section == 'sobremim'" @click="section='sobremim'; changeSection()">Sobre mim</a>
-                <a v-if="section == 'projetos'" class="selected" @click="section='projetos'; changeSection()">Projetos</a>
-                <a v-else @click="section='projetos'; changeSection()">Projetos</a>
-                <a v-if="section == 'conhecimentos'" class="selected" @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
-                <a v-else @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
-                <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection()">Contato</a>
-                <a v-else @click="section='contato'; changeSection()">Contato</a>
-            </div>
-            <div class="info">
-                <button @click="activeModal = true">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" fill="#959BAD" viewBox="0 0 24 24">
-                        <path d="M 12 0 C 5.371094 0 0 5.371094 0 12 C 0 18.628906 5.371094 24 12 24 C 18.628906 24 24 18.628906 24 12 C 24 5.371094 18.628906 0 12 0 Z M 12 2 C 17.523438 2 22 6.476563 22 12 C 22 17.523438 17.523438 22 12 22 C 6.476563 22 2 17.523438 2 12 C 2 6.476563 6.476563 2 12 2 Z M 12 5.8125 C 11.816406 5.8125 11.664063 5.808594 11.5 5.84375 C 11.335938 5.878906 11.183594 5.96875 11.0625 6.0625 C 10.941406 6.15625 10.851563 6.285156 10.78125 6.4375 C 10.710938 6.589844 10.6875 6.769531 10.6875 7 C 10.6875 7.226563 10.710938 7.40625 10.78125 7.5625 C 10.851563 7.71875 10.941406 7.84375 11.0625 7.9375 C 11.183594 8.03125 11.335938 8.085938 11.5 8.125 C 11.664063 8.164063 11.816406 8.1875 12 8.1875 C 12.179688 8.1875 12.371094 8.164063 12.53125 8.125 C 12.691406 8.085938 12.816406 8.03125 12.9375 7.9375 C 13.058594 7.84375 13.148438 7.71875 13.21875 7.5625 C 13.289063 7.410156 13.34375 7.226563 13.34375 7 C 13.34375 6.769531 13.289063 6.589844 13.21875 6.4375 C 13.148438 6.285156 13.058594 6.15625 12.9375 6.0625 C 12.816406 5.96875 12.691406 5.878906 12.53125 5.84375 C 12.371094 5.808594 12.179688 5.8125 12 5.8125 Z M 10.78125 9.15625 L 10.78125 18.125 L 13.21875 18.125 L 13.21875 9.15625 Z"></path>
-                    </svg>
-                </button>
-            </div>
-            <div class="menu">
-                <button @click="toggleMenu">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
-                        <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g>
-                    </svg>
-                </button>
+            <div class="container">
+                <div @click="section='home'; changeSection()" class="logo">
+                    <h1>FRATTI<span>()</span>;</h1>
+                </div>
+                <div class="links">
+                    <a v-if="section == 'home'" class="selected" @click="section='home'; changeSection()">Início</a>
+                    <a v-else @click="section='home'; changeSection()">Início</a>
+                    <a v-if="section == 'sobremim'" class="selected" @click="section='sobremim'; changeSection()">Sobre mim</a>
+                    <a v-else @click="section='sobremim'; changeSection()">Sobre mim</a>
+                    <a v-if="section == 'projetos'" class="selected" @click="section='projetos'; changeSection()">Projetos</a>
+                    <a v-else @click="section='projetos'; changeSection()">Projetos</a>
+                    <a v-if="section == 'conhecimentos'" class="selected" @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
+                    <a v-else @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
+                    <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection()">Contato</a>
+                    <a v-else @click="section='contato'; changeSection()">Contato</a>
+                </div>
+                <div class="info">
+                    <button @click="activeModal = true">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" fill="#959BAD" viewBox="0 0 24 24">
+                            <path d="M 12 0 C 5.371094 0 0 5.371094 0 12 C 0 18.628906 5.371094 24 12 24 C 18.628906 24 24 18.628906 24 12 C 24 5.371094 18.628906 0 12 0 Z M 12 2 C 17.523438 2 22 6.476563 22 12 C 22 17.523438 17.523438 22 12 22 C 6.476563 22 2 17.523438 2 12 C 2 6.476563 6.476563 2 12 2 Z M 12 5.8125 C 11.816406 5.8125 11.664063 5.808594 11.5 5.84375 C 11.335938 5.878906 11.183594 5.96875 11.0625 6.0625 C 10.941406 6.15625 10.851563 6.285156 10.78125 6.4375 C 10.710938 6.589844 10.6875 6.769531 10.6875 7 C 10.6875 7.226563 10.710938 7.40625 10.78125 7.5625 C 10.851563 7.71875 10.941406 7.84375 11.0625 7.9375 C 11.183594 8.03125 11.335938 8.085938 11.5 8.125 C 11.664063 8.164063 11.816406 8.1875 12 8.1875 C 12.179688 8.1875 12.371094 8.164063 12.53125 8.125 C 12.691406 8.085938 12.816406 8.03125 12.9375 7.9375 C 13.058594 7.84375 13.148438 7.71875 13.21875 7.5625 C 13.289063 7.410156 13.34375 7.226563 13.34375 7 C 13.34375 6.769531 13.289063 6.589844 13.21875 6.4375 C 13.148438 6.285156 13.058594 6.15625 12.9375 6.0625 C 12.816406 5.96875 12.691406 5.878906 12.53125 5.84375 C 12.371094 5.808594 12.179688 5.8125 12 5.8125 Z M 10.78125 9.15625 L 10.78125 18.125 L 13.21875 18.125 L 13.21875 9.15625 Z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="menu">
+                    <button @click="toggleMenu">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
+                            <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </header>
 
         <header v-if="activeHeader == false" class="active-header animate__animated animate__fadeOutUp">
-            <div @click="section='home'; changeSection()" class="logo">
-                <h1>FRATTI<span>()</span>;</h1>
-            </div>
-            <div class="links">
-                <a v-if="section == 'home'" class="selected" @click="section='home'; changeSection()">Início</a>
-                <a v-else @click="section='home'; changeSection()">Início</a>
-                <a v-if="section == 'sobremim'" class="selected" @click="section='sobremim'; changeSection()">Sobre mim</a>
-                <a v-else="section == 'sobremim'" @click="section='sobremim'; changeSection()">Sobre mim</a>
-                <a v-if="section == 'projetos'" class="selected" @click="section='projetos'; changeSection()">Projetos</a>
-                <a v-else @click="section='projetos'; changeSection()">Projetos</a>
-                <a v-if="section == 'conhecimentos'" class="selected" @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
-                <a v-else @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
-                <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection()">Contato</a>
-                <a v-else @click="section='contato'; changeSection()">Contato</a>
-            </div>
-            <div class="info">
-                <button @click="activeModal = true">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" fill="#959BAD" viewBox="0 0 24 24">
-                        <path d="M 12 0 C 5.371094 0 0 5.371094 0 12 C 0 18.628906 5.371094 24 12 24 C 18.628906 24 24 18.628906 24 12 C 24 5.371094 18.628906 0 12 0 Z M 12 2 C 17.523438 2 22 6.476563 22 12 C 22 17.523438 17.523438 22 12 22 C 6.476563 22 2 17.523438 2 12 C 2 6.476563 6.476563 2 12 2 Z M 12 5.8125 C 11.816406 5.8125 11.664063 5.808594 11.5 5.84375 C 11.335938 5.878906 11.183594 5.96875 11.0625 6.0625 C 10.941406 6.15625 10.851563 6.285156 10.78125 6.4375 C 10.710938 6.589844 10.6875 6.769531 10.6875 7 C 10.6875 7.226563 10.710938 7.40625 10.78125 7.5625 C 10.851563 7.71875 10.941406 7.84375 11.0625 7.9375 C 11.183594 8.03125 11.335938 8.085938 11.5 8.125 C 11.664063 8.164063 11.816406 8.1875 12 8.1875 C 12.179688 8.1875 12.371094 8.164063 12.53125 8.125 C 12.691406 8.085938 12.816406 8.03125 12.9375 7.9375 C 13.058594 7.84375 13.148438 7.71875 13.21875 7.5625 C 13.289063 7.410156 13.34375 7.226563 13.34375 7 C 13.34375 6.769531 13.289063 6.589844 13.21875 6.4375 C 13.148438 6.285156 13.058594 6.15625 12.9375 6.0625 C 12.816406 5.96875 12.691406 5.878906 12.53125 5.84375 C 12.371094 5.808594 12.179688 5.8125 12 5.8125 Z M 10.78125 9.15625 L 10.78125 18.125 L 13.21875 18.125 L 13.21875 9.15625 Z"></path>
-                    </svg>
-                </button>
-            </div>
-            <div class="menu">
-                <button @click="toggleMenu">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
-                        <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g>
-                    </svg>
-                </button>
+            <div class="container">
+                <div @click="section='home'; changeSection()" class="logo">
+                    <h1>FRATTI<span>()</span>;</h1>
+                </div>
+                <div class="links">
+                    <a v-if="section == 'home'" class="selected" @click="section='home'; changeSection()">Início</a>
+                    <a v-else @click="section='home'; changeSection()">Início</a>
+                    <a v-if="section == 'sobremim'" class="selected" @click="section='sobremim'; changeSection()">Sobre mim</a>
+                    <a v-else @click="section='sobremim'; changeSection()">Sobre mim</a>
+                    <a v-if="section == 'projetos'" class="selected" @click="section='projetos'; changeSection()">Projetos</a>
+                    <a v-else @click="section='projetos'; changeSection()">Projetos</a>
+                    <a v-if="section == 'conhecimentos'" class="selected" @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
+                    <a v-else @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
+                    <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection()">Contato</a>
+                    <a v-else @click="section='contato'; changeSection()">Contato</a>
+                </div>
+                <div class="info">
+                    <button @click="activeModal = true">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" fill="#959BAD" viewBox="0 0 24 24">
+                            <path d="M 12 0 C 5.371094 0 0 5.371094 0 12 C 0 18.628906 5.371094 24 12 24 C 18.628906 24 24 18.628906 24 12 C 24 5.371094 18.628906 0 12 0 Z M 12 2 C 17.523438 2 22 6.476563 22 12 C 22 17.523438 17.523438 22 12 22 C 6.476563 22 2 17.523438 2 12 C 2 6.476563 6.476563 2 12 2 Z M 12 5.8125 C 11.816406 5.8125 11.664063 5.808594 11.5 5.84375 C 11.335938 5.878906 11.183594 5.96875 11.0625 6.0625 C 10.941406 6.15625 10.851563 6.285156 10.78125 6.4375 C 10.710938 6.589844 10.6875 6.769531 10.6875 7 C 10.6875 7.226563 10.710938 7.40625 10.78125 7.5625 C 10.851563 7.71875 10.941406 7.84375 11.0625 7.9375 C 11.183594 8.03125 11.335938 8.085938 11.5 8.125 C 11.664063 8.164063 11.816406 8.1875 12 8.1875 C 12.179688 8.1875 12.371094 8.164063 12.53125 8.125 C 12.691406 8.085938 12.816406 8.03125 12.9375 7.9375 C 13.058594 7.84375 13.148438 7.71875 13.21875 7.5625 C 13.289063 7.410156 13.34375 7.226563 13.34375 7 C 13.34375 6.769531 13.289063 6.589844 13.21875 6.4375 C 13.148438 6.285156 13.058594 6.15625 12.9375 6.0625 C 12.816406 5.96875 12.691406 5.878906 12.53125 5.84375 C 12.371094 5.808594 12.179688 5.8125 12 5.8125 Z M 10.78125 9.15625 L 10.78125 18.125 L 13.21875 18.125 L 13.21875 9.15625 Z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="menu">
+                    <button @click="toggleMenu">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
+                            <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </header>
 
@@ -164,9 +170,16 @@
                     <div class="top">
                         <h4>-> Sobre mim</h4>
                         <h2>Sobre mim</h2>
-                        <p>Tenho 19 anos e sou desenvolvedor front-end. Atualmente estou cursando o 1º semestre de <span>Engenharia de Software</span> e atuando como <span>estagiário</span> em <span>desenvolvimento web</span>.</p>
+                        <p>Tenho 19 anos e sou desenvolvedor front-end. Atualmente estou cursando o 2º semestre de <span>Engenharia de Software</span> e atuando como <span>estagiário</span> em <span>desenvolvimento web</span>.</p>
                     </div>
-                    <div class="bottom"></div>
+                    <div class="bottom">
+                        <div class="box">
+                            <div class="left">
+                                
+                            </div>
+                            <div class="right"></div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -296,6 +309,8 @@
 
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="js/script.js"></script>
 </body>

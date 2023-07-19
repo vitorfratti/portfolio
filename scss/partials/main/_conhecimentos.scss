@@ -1,18 +1,14 @@
 section.conhecimentos {
     width: 100%;
-    padding: 5rem 15%;
     display: flex;
     align-items: center;
-
-    @media (max-width: 1350px) {
-        padding: 5rem 4rem;
-    }
+    padding: 5rem 0;
 
     .container {
+        width: 100%;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-        width: 100%;
         gap: 2rem;
         
         .top {
@@ -20,10 +16,6 @@ section.conhecimentos {
             flex-direction: column;
             width: 100%;
             gap: 0.75rem;
-
-            @media (max-width: 1350px) {
-                width: 100%;
-            }
 
             h4 {
                 font-size: 16px;
@@ -51,28 +43,29 @@ section.conhecimentos {
         .bottom {
             display: flex;
             justify-content: flex-start;
-            gap: 7%;
+            gap: 3rem;
 
-            @media (max-width: 1063px) {
+            @media (max-width: 960px) {
                 flex-direction: column;
-                gap: 2rem;
             }
 
             .left {
                 display: flex;
-                width: 60%;
+                justify-content: space-between;
                 flex-wrap: wrap;
                 gap: 1rem;
+                max-width: 32rem;
 
-                @media (max-width: 1063px) {
-                    width: 100%;
+                @media (max-width: 960px) {
+                    max-width: 100%;
                 }
 
                 span {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    padding: 1.5rem;
+                    width: 7rem;
+                    height: 7rem;
                     border-radius: 10px;
                     border: 1px solid rgba(149, 155, 173, 0.25);
                     background: linear-gradient(225deg, #1B2138 0%, #1b213840 100%);
@@ -81,10 +74,32 @@ section.conhecimentos {
 
                     img {
                         width: 3.5rem;
+                        transition: all 0.2s;
                     }
 
                     &:hover {
                         border: 1px solid #959BAD;
+                    }
+
+                    @media (max-width: 960px) {
+                        width: calc(16.6% - 1rem);
+                    }
+
+                    @media (max-width: 769px) {
+                        width: calc(25% - 1rem);
+                    }
+
+                    @media (max-width: 550px) {
+                        width: calc(25% - 1rem);
+                        height: 4.5rem;
+
+                        img {
+                            width: 2.3rem;
+                        }
+                    }
+
+                    @media (max-width: 400px) {
+                        width: calc(33% - 1rem);
                     }
                 }
             }
@@ -92,7 +107,7 @@ section.conhecimentos {
             .right {
                 width: 50%;
 
-                @media (max-width: 1063px) {
+                @media (max-width: 960px) {
                     width: 100%;
                 }
 

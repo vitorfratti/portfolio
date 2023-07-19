@@ -33,3 +33,36 @@
 body {
     background: #0F1527;
 }
+
+.container {
+    max-width: 1210px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem;
+    position: relative;
+}
+
+@media (max-width: 769px) {
+    header h1, .menu-lateral h1 {
+        font-size: 18px !important;
+    }
+
+    h3 {
+        font-size: 22px !important;
+    }
+
+    input, button, h4, p, .projetos a {
+        font-size: 14px !important;
+    }
+    
+    h2 {
+        font-size: 28px !important;
+    }
+}
+
+
+@media (max-width: 569px) {
+    .home h1 {
+        font-size: 42px !important;
+    }
+}

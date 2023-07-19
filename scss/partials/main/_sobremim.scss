@@ -1,15 +1,16 @@
 section.sobremim {
     width: 100%;
     height: 100vh;
-    padding: 5rem 15%;
+    padding: 5rem 0;
     display: flex;
     align-items: center;
 
-    @media (max-width: 1350px) {
-        padding: 5rem 4rem;
-    }
-
     .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+
         .top {
             display: flex;
             flex-direction: column;
@@ -40,6 +41,17 @@ section.sobremim {
                 span {
                     color: #448EEB;
                 }
+            }
+        }
+
+        .bottom {
+            width: 100%;
+
+            .box {
+                background: linear-gradient(225deg, #1B2138 0%, #1b213840 100%);
+                border: 1px solid #959bad40;
+                border-radius: 10px;
+                padding: 5rem;
             }
         }
     }

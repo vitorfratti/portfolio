@@ -114,8 +114,8 @@ const app = Vue.createApp({
                 {
                     name: 'HTML',
                     level: 'Avançado',
-                    descricao: '',
-                    src: ''
+                    descricao: 'HTML é uma linguagem de marcação usada para estruturar e exibir conteúdo na web. Composta por elementos e tags, o HTML define a estrutura e semântica de uma página, permitindo adicionar texto, imagens e links. Combinado com CSS e JavaScript, o HTML possibilita criar páginas web dinâmicas e interativas.',
+                    src: 'image/svg/html.svg'
                 }
             ]
         }
@@ -155,11 +155,20 @@ const app = Vue.createApp({
                 left: this.$refs.projeto[this.sliderPosition].offsetLeft,
                 behavior: 'smooth'
             });
+        },
+        initSlick() {
+            $('.slider').slick({
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                infinite: true,
+                speed: 500
+            });
         }
     },
     mounted() {
-        this.projetos = [...this.projetos, ...this.projetos]; // duplica a matriz de projetos
-
+        this.initSlick();
+        
         window.addEventListener('scroll', () => {
             const element = document.getElementById('sobremim').offsetTop;
           
