@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Portfólio - Vitor Fratti</title>
+</head>
+<body>
+
+    <section class="single-projeto" id="single-projeto">
+        <div class="container" v-for="(single, index) in singleProjeto" :key="index">
+            <div class="top">
+                <a href="#"><h4><- Projetos</h4></a>
+                <h2>{{ single.nome }}</h2>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+            </div>
+            <div class="mid">
+                <div class="left">
+                    <div class="single-projeto_box">
+                        <img src="image/exemplo-image.jpeg" alt="example">
+                    </div>
+                    <div class="action-buttons">
+                        <button class="repositorio">Ver repositório</button>
+                        <button class="site">Ir para o site</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="title">
+                        <h2>Conhecimentos utilizados</h2>
+                    </div>
+                    <div class="conhecimentos">
+                        <span v-for="(conhecimento, index) in conhecimentos" :key="index" @mouseover="conhecimentoActive = []; conhecimentoActive.push(conhecimento)">
+                            <img :src="conhecimento.src" alt="">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <a href="#"><h4><- Voltar para Projetos</h4></a>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

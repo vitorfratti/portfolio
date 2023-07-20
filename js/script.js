@@ -36,6 +36,7 @@ const app = Vue.createApp({
                     buttons: false
                 }
             ],
+            projetoSingle: [],
             conhecimentos: [
                 {
                     name: 'HTML',
@@ -133,36 +134,59 @@ const app = Vue.createApp({
             document.querySelector('.menu-lateral').classList.toggle('closed')
         },
         scrollBack() {
-            const slider = this.$refs.slider;
             if(this.sliderPosition < 1) {
                 this.sliderPosition = this.projetos.length - 1;
             } else {
                 this.sliderPosition--;
             }
-            slider.scrollTo({
-                left: this.$refs.projeto[this.sliderPosition].offsetLeft,
-                behavior: 'smooth'
-            });
         },
         scrollNext() {
-            const slider = this.$refs.slider;
             if(this.sliderPosition >= 5) {
                 this.sliderPosition = 0;
             } else {
                 this.sliderPosition++;
             }
-            slider.scrollTo({
-                left: this.$refs.projeto[this.sliderPosition].offsetLeft,
-                behavior: 'smooth'
-            });
+        },
+        showProject(index) {
+            this.projetoSingle = []
+            this.projetoSingle.push(this.projetos[index])
+            window.location.href = "single-projeto.html";
         },
         initSlick() {
             $('.slider').slick({
-                dots: true,
-                autoplay: true,
-                autoplaySpeed: 2000,
+                autoplay: false,
+                autoplaySpeed: 3000,
+                dots: false,
+                arrows: false,
                 infinite: true,
-                speed: 500
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                prevArrow: '<button class="slick-prev" aria-label="Previous"><-></button>',
+                nextArrow: '<button class="slick-next" aria-label="Next">-></button>',
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
             });
         }
     },
@@ -182,3 +206,18 @@ const app = Vue.createApp({
 })
 
 app.mount('#app')
+
+$('.slick-prev').click(function () {
+    $('.slider').slick('slickPrev');
+});
+
+$('.slick-next').click(function () {
+    $('.slider').slick('slickNext');
+});
+
+// AOS
+
+AOS.init({
+    duration: 1500
+});
+  

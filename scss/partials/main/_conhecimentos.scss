@@ -2,7 +2,7 @@ section.conhecimentos {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 5rem 0;
+    padding: 7rem 0;
 
     .container {
         width: 100%;
@@ -18,19 +18,16 @@ section.conhecimentos {
             gap: 0.75rem;
 
             h4 {
-                font-size: 16px;
                 font-weight: 400;
                 color: #448EEB;
             }
 
             h2 {
-                font-size: 32px;
                 font-weight: 400;
                 color: #fefefe;
             }
 
             p {
-                font-size: 16px;
                 font-weight: 400;
                 color: #959BAD;
 
@@ -91,7 +88,7 @@ section.conhecimentos {
 
                     @media (max-width: 550px) {
                         width: calc(25% - 1rem);
-                        height: 4.5rem;
+                        height: 5rem;
 
                         img {
                             width: 2.3rem;
@@ -118,7 +115,6 @@ section.conhecimentos {
                 }
 
                 h4 {
-                    font-size: 16px;
                     font-weight: 400;
                     margin: 1rem 0;
 
@@ -132,7 +128,6 @@ section.conhecimentos {
                 }
 
                 p {
-                    font-size: 16px;
                     font-weight: 400;
                     color: #959BAD;
                 }

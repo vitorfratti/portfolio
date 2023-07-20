@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./scss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Portfólio - Vitor Fratti</title>
 </head>
 <body>
@@ -153,10 +154,10 @@
 
             <section class="home" id="home">
                 <div class="container">
-                    <h1 class="animate__animated animate__fadeInDown">Bem-vindo, meu nome é <span>Vitor Fratti</span> .</h1>
-                    <p class="animate__animated animate__fadeInUp">Desenvolvedor front-end, focado em aplicações web.</p>
+                    <h1 data-aos="fade-down">Bem-vindo, meu nome é <span>Vitor Fratti</span> .</h1>
+                    <p>Desenvolvedor front-end, focado em aplicações web.</p>
                     <div>
-                        <button class="animate__animated animate__fadeInUp">Acessar meus links</button>
+                        <button data-aos="fade-up">Acessar meus links</button>
                     </div>
                 </div>
                 <img class="top" src="image/blur.png" alt="blur">
@@ -194,14 +195,14 @@
                             <p>Uma coleção de projetos onde são aplicados meus conhecimentos técnicos e habilidades em desenvolvimento.</p>
                         </div>
                         <div class="right">
-                            <button @click="scrollBack()" class="slick-prev"><-</button>
-                            <h4>{{ sliderPosition + 1 }} / {{ projetos.length }}</h4>
-                            <button @click="scrollNext()" class="slick-next">-></button>
+                            <button @click="scrollBack();" class="slick-prev" aria-label="Previous"><-</button>
+                            <h4 class="slider-position">{{ sliderPosition + 1 }} / {{ projetos.length }}</h4>
+                            <button @click="scrollNext();" class="slick-next" aria-label="Next">-></button>
                         </div>
                     </div>
 
-                    <div class="mid" ref="slider">
-                        <div v-for="(projeto, index) in projetos" :key="index" ref="projeto" @mouseleave="projeto.buttons = false" @mouseover="projeto.buttons = true" class="projeto">
+                    <div class="slider">
+                        <div v-for="(projeto, index) in projetos" :key="index" ref="projeto" @mouseleave="projeto.buttons = false" @mouseover="projeto.buttons = true" class="projeto" data-aos="fade-up" @click="showProject(index)">
                             <div v-if="projeto.buttons == true" class="clique animate__animated animate__fadeInDown">
                                 <h6>Clique para ver mais</h6>
                                 <img src="image/svg/click-svgrepo-com.svg" alt="click">
@@ -210,11 +211,11 @@
                                 <img src="image/exemplo-image.jpeg" alt="example">
                             </div>
                             <div v-if="projeto.buttons == true" class="texts animate__animated animate__fadeInUp">
-                                <h2>{{ projeto.nome }}</h2>
+                                <h3>{{ projeto.nome }}</h3>
                                 <p>{{ projeto.descricao }}</p>
                             </div>
                             <div v-if="projeto.buttons == false" class="texts animate__animated animate__fadeInDown">
-                                <h2>{{ projeto.nome }}</h2>
+                                <h3>{{ projeto.nome }}</h3>
                                 <p>{{ projeto.descricao }}</p>
                             </div>
                             <div v-if="projeto.buttons == true" class="buttons animate__animated animate__fadeInUp">
@@ -229,7 +230,7 @@
                     </div>
 
                     <div class="bottom">
-                        <a href="#">Ver todos os repositórios -></a>
+                        <a href="https://github.com/vitorfratti?tab=repositories" target="_blank">Ver todos os repositórios -></a>
                     </div>
                 </div>
             </section>
@@ -241,15 +242,15 @@
                     <div class="top">
                         <h4>-> Conhecimentos</h4>
                         <h2>Conhecimentos</h2>
-                        <p>Uma coleção de projetos onde são aplicados meus conhecimentos técnicos e habilidades em desenvolvimento.</p>
+                        <p>Um conjunto de habilidades e conhecimentos técnicos, abrangendo linguagens de programação e ferramentas essenciais para o desenvolvimento.</p>
                     </div>
                     <div class="bottom">
-                        <div class="left">
+                        <div class="left" data-aos="fade-up">
                             <span v-for="(conhecimento, index) in conhecimentos" :key="index" @mouseover="conhecimentoActive = []; conhecimentoActive.push(conhecimento)">
                                 <img :src="conhecimento.src" alt="">
                             </span>
                         </div>
-                        <div class="right">
+                        <div class="right" data-aos="fade-up">
                             <span v-for="(conhecimento, index) in conhecimentoActive" :key="index">
                                 <h3>{{ conhecimento.name }}</h3>
                                 <h4 v-if="conhecimento.level === 'Avançado'" class="avancado">{{ conhecimento.level }}</h4>
@@ -279,18 +280,18 @@
                             <button>Enviar mensagem</button>
                         </div>
                         <div class="right">
-                            <span>
+                            <a href="https://www.linkedin.com/in/vitor-fratti/" target="_blank">
                                 <img src="image/svg/linkedin 1.svg" alt="linkedin">
                                 <h4>LinkedIn</h4>
-                            </span>
-                            <span>
+                            </a>
+                            <a href="https://github.com/vitorfratti" target="_blank">
                                 <img src="image/svg/github 1.svg" alt="github">
                                 <h4>Github</h4>
-                            </span>
-                            <span>
+                            </a>
+                            <a href="mailto:vifratti@gmail.com" target="_blank">
                                 <img src="image/svg/icons8-gmail-24 1.svg" alt="gmail">
                                 <h4>Gmail</h4>
-                            </span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -301,14 +302,17 @@
         <!-- Footer -->
 
         <footer>
-            <h4>Copyright © 2023 <span>vitorfratti</span>. Todos os direitos reservados.</h4>
-            <div @click="this.section = 'home'; changeSection()" class="logo">
-                <h1>FRATTI<span>()</span>;</h1>
+            <div class="container">
+                <h4>Copyright © 2023 <span>vitorfratti</span>. Todos os direitos reservados.</h4>
+                <div @click="this.section = 'home'; changeSection()" class="logo">
+                    <h1>FRATTI<span>()</span>;</h1>
+                </div>
             </div>
         </footer>
 
     </div>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://unpkg.com/vue@next"></script>

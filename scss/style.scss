@@ -10,6 +10,10 @@
 @import 'partials/main/contato';
 @import 'partials/footer/footer';
 
+@import 'pages/single-projeto';
+
+@import 'components/slick';
+
 ::-webkit-scrollbar {
     width: 4px;
 }
@@ -42,21 +46,25 @@ body {
     position: relative;
 }
 
+a {
+    text-decoration: none !important;
+}
+
+h3 {
+    font-size: 22px !important;
+}
+
+input, button, textarea, h4, p, .projetos a {
+    font-size: 14px !important;
+}
+
+h2 {
+    font-size: 28px !important;
+}
+
 @media (max-width: 769px) {
     header h1, .menu-lateral h1 {
         font-size: 18px !important;
-    }
-
-    h3 {
-        font-size: 22px !important;
-    }
-
-    input, button, h4, p, .projetos a {
-        font-size: 14px !important;
-    }
-    
-    h2 {
-        font-size: 28px !important;
     }
 }
 
