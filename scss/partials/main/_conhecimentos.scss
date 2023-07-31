@@ -2,7 +2,20 @@ section.conhecimentos {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 7rem 0;
+    padding: 8rem 0;
+
+    @media (max-width: 990px) {
+        padding: 5.25rem 0;
+    }
+
+    img.blur {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100%;
+        opacity: 0.7;
+        z-index: -1;
+    }
 
     .container {
         width: 100%;
@@ -20,6 +33,10 @@ section.conhecimentos {
             h4 {
                 font-weight: 400;
                 color: #448EEB;
+
+                span {
+                    font-family: 'Inter', sans-serif;
+                }
             }
 
             h2 {

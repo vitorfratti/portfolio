@@ -1,9 +1,21 @@
 section.sobremim {
     width: 100%;
-    height: 100vh;
-    padding: 5rem 0;
+    padding: 8rem 0;
     display: flex;
     align-items: center;
+
+    @media (max-width: 990px) {
+        padding: 5rem 0;
+    }
+
+    img.blur {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100%;
+        opacity: 0.7;
+        z-index: -1;
+    }
 
     .container {
         display: flex;
@@ -14,7 +26,7 @@ section.sobremim {
         .top {
             display: flex;
             flex-direction: column;
-            width: 50%;
+            width: 60%;
             gap: 0.75rem;
 
             @media (max-width: 1350px) {
@@ -24,6 +36,10 @@ section.sobremim {
             h4 {
                 font-weight: 400;
                 color: #448EEB;
+
+                span {
+                    font-family: 'Inter', sans-serif;
+                }
             }
 
             h2 {
@@ -42,13 +58,108 @@ section.sobremim {
         }
 
         .bottom {
+            display: flex;
+            justify-content: space-between;
             width: 100%;
+            gap: 2rem;
+
+            @media (max-width: 890px) {
+                flex-direction: column;
+            }
 
             .box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 1.5rem;
+                width: 50%;
+                height: 20rem;
                 background: linear-gradient(225deg, #1B2138 0%, #1b213840 100%);
                 border: 1px solid #959bad40;
                 border-radius: 10px;
-                padding: 5rem;
+                padding: 0 2rem;
+                transition: all 0.2s ease;
+
+                @media (max-width: 890px) {
+                    width: 100%;
+                }
+
+                @media (max-width: 450px) {
+                    height: auto;
+                    padding: 2rem 1rem;
+                }
+
+                &.one {
+                    box-shadow: 0 0 0 #50F4E8;
+
+                    &:hover {
+                        border: 1px solid #50F4E8;
+                        box-shadow: 0 0 30px #50F4E8;
+                    }
+                }
+
+                &.two {
+                    box-shadow: 0 0 0 #ff4d94;
+
+                    &:hover {
+                        border: 1px solid #ff4d94;
+                        box-shadow: 0 0 30px #ff4d94;
+                    }
+                }
+
+                .logo {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+
+                    img {
+                        width: 4rem;
+
+                        @media (max-width: 450px) {
+                            width: 2.5rem;
+                        }
+                    }
+                }
+
+                .texts {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    width: 100%;
+                    text-align: center;
+
+                    h1 {
+                        color: #fefefe;
+                        font-size: 30px;
+                        font-weight: 500;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        font-weight: 400;
+
+                        &.trabalho {
+                            color: #50F4E8;
+                        }
+
+                        &.faculdade {
+                            color: #ff4d94;
+                        }
+                    }
+
+                    h5 {
+                        color: #fefefe;
+                        font-size: 14px;
+                        font-weight: 300;
+                    }
+
+                    @media (max-width: 470px) {
+                        h1 {
+                            font-size: 24px;
+                        }
+                    }
+                }
             }
         }
     }

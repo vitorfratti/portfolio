@@ -28,6 +28,10 @@
     display: block;
     display: flex;
     gap: 1rem;
+
+    @media (max-width: 480px) {
+        gap: 0 !important;
+    }
 }
 
 .slick-slide {
@@ -39,6 +43,7 @@
 .slick-dots {
     display: flex;
     justify-content: center;
+    gap: 0.5rem;
     align-items: center;
     margin-top: 20px;
     list-style: none;
@@ -51,15 +56,18 @@
 .slick-dots li button {
     width: 12px;
     height: 12px;
-    border: none;
+    border: 1px solid #959BAD40;
     border-radius: 50%;
     background-color: #bbb;
     cursor: pointer;
     outline: none;
+    font-size: 0 !important;
+    background: linear-gradient(225deg, #1B2138 0%, #1b213840 100%);
 }
 
 .slick-dots li.slick-active button {
-    background-color: #333;
+    background: #1B2138;
+    border: 1px solid #fefefe;
 }
 
 /* Estilize os botões Next e Prev */
@@ -74,16 +82,23 @@
     border: none;
     background: linear-gradient(225deg, #1B2138 0%, #1b213840 100%);
     border: 1px solid #959bad40;
-    color: #fefefe;
+    --animate-duration: 400ms;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.1s ease;
 
     @media (max-width: 768px) {
         display: none;
     }
 
+    img {
+        width: 1.5rem;
+    }
+
     &:hover {
         border: 1px solid #959BAD;
-        background: linear-gradient(225deg, #1B2138 0%, #1b213840 100%);
     }
+}
+
+.rotate {
+    transform: rotate(180deg);
 }

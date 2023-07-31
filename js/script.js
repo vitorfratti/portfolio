@@ -3,37 +3,40 @@ const app = Vue.createApp({
         return {
             section: 'home',
             activeHeader: null,
+            activeModal: null,
             sliderPosition: 0,
             projetos: [
                 {
-                    nome: 'Exemplo 1',
-                    descricao: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-                    buttons: false
+                    nome: 'Ecoa Energias Renováveis',
+                    descricao: 'Site institucional, feito em: Php, WordPress, jQuery e Sass.',
+                    src: 'image/Ecoa.png',
+                    buttons: false,
+                    status: true,
+                    empresa: true
                 },
                 {
-                    nome: 'Exemplo 2',
-                    descricao: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-                    buttons: false
+                    nome: 'VillaReal Marina',
+                    descricao: 'Site institucional, feito em: Php, WordPress, jQuery e Sass.',
+                    src: 'image/Home - VillaReal Marina.png',
+                    buttons: false,
+                    status: true,
+                    empresa: true
                 },
                 {
-                    nome: 'Exemplo 3',
-                    descricao: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-                    buttons: false
+                    nome: 'Em desenvolvimento',
+                    descricao: 'Aguarde, projetos em desenvolvimento.',
+                    src: 'image/svg/tools.svg',
+                    buttons: false,
+                    status: false,
+                    empresa: false
                 },
                 {
-                    nome: 'Exemplo 4',
-                    descricao: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-                    buttons: false
-                },
-                {
-                    nome: 'Exemplo 5',
-                    descricao: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-                    buttons: false
-                },
-                {
-                    nome: 'Exemplo 6',
-                    descricao: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-                    buttons: false
+                    nome: 'Em desenvolvimento',
+                    descricao: 'Aguarde, projetos em desenvolvimento.',
+                    src: 'image/svg/tools.svg',
+                    buttons: false,
+                    status: false,
+                    empresa: false
                 }
             ],
             projetoSingle: [],
@@ -133,24 +136,22 @@ const app = Vue.createApp({
         toggleMenu() {
             document.querySelector('.menu-lateral').classList.toggle('closed')
         },
-        scrollBack() {
-            if(this.sliderPosition < 1) {
-                this.sliderPosition = this.projetos.length - 1;
-            } else {
-                this.sliderPosition--;
-            }
-        },
-        scrollNext() {
-            if(this.sliderPosition >= 5) {
-                this.sliderPosition = 0;
-            } else {
-                this.sliderPosition++;
-            }
-        },
         showProject(index) {
             this.projetoSingle = []
             this.projetoSingle.push(this.projetos[index])
             window.location.href = "single-projeto.html";
+        },
+        animateJumpLeft() {
+            document.querySelector('.slick-prev').classList.add('animate__tada')
+            setTimeout(() => {
+                document.querySelector('.slick-prev').classList.remove('animate__tada')
+            }, 400)
+        },
+        animateJumpRight() {
+            document.querySelector('.slick-next').classList.add('animate__tada')
+            setTimeout(() => {
+                document.querySelector('.slick-next').classList.remove('animate__tada')
+            }, 400)
         },
         initSlick() {
             $('.slider').slick({
@@ -159,7 +160,7 @@ const app = Vue.createApp({
                 dots: false,
                 arrows: false,
                 infinite: true,
-                speed: 500,
+                speed: 400,
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 prevArrow: '<button class="slick-prev" aria-label="Previous"><-></button>',
@@ -168,15 +169,16 @@ const app = Vue.createApp({
                     {
                         breakpoint: 1024,
                         settings: {
-                            slidesToShow: 3,
+                            slidesToShow: 2,
                             slidesToScroll: 1,
                         }
                     },
                     {
-                        breakpoint: 768,
+                        breakpoint: 769,
                         settings: {
-                            slidesToShow: 2,
+                            slidesToShow: 1,
                             slidesToScroll: 1,
+                            dots: true
                         }
                     },
                     {
@@ -184,6 +186,7 @@ const app = Vue.createApp({
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1,
+                            dots: true
                         }
                     }
                 ]
@@ -192,11 +195,19 @@ const app = Vue.createApp({
     },
     mounted() {
         this.initSlick();
-        
-        window.addEventListener('scroll', () => {
-            const element = document.getElementById('sobremim').offsetTop;
+
+        const header = document.getElementById('original-header').offsetTop;
           
-            if (window.scrollY >= element) {
+            if (window.scrollY > header) {
+                this.activeHeader = true
+            } else if (window.scrollY <= header) {
+                this.activeHeader = false
+            }
+
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('original-header').offsetTop;
+          
+            if (window.scrollY > header) {
                 this.activeHeader = true
             } else {
                 this.activeHeader = false
@@ -220,4 +231,5 @@ $('.slick-next').click(function () {
 AOS.init({
     duration: 1500
 });
+  
   

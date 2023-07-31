@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/svg/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./scss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -15,7 +16,7 @@
 
         <!-- Header Padrão -->
 
-        <header class="original-header">
+        <header class="original-header" id="original-header">
             <div class="container">
                 <div @click="section='home'; changeSection()" class="logo">
                     <h1>FRATTI<span>()</span>;</h1>
@@ -32,10 +33,12 @@
                     <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection()">Contato</a>
                     <a v-else @click="section='contato'; changeSection()">Contato</a>
                 </div>
-                <div class="info">
-                    <button @click="activeModal = true">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" fill="#959BAD" viewBox="0 0 24 24">
-                            <path d="M 12 0 C 5.371094 0 0 5.371094 0 12 C 0 18.628906 5.371094 24 12 24 C 18.628906 24 24 18.628906 24 12 C 24 5.371094 18.628906 0 12 0 Z M 12 2 C 17.523438 2 22 6.476563 22 12 C 22 17.523438 17.523438 22 12 22 C 6.476563 22 2 17.523438 2 12 C 2 6.476563 6.476563 2 12 2 Z M 12 5.8125 C 11.816406 5.8125 11.664063 5.808594 11.5 5.84375 C 11.335938 5.878906 11.183594 5.96875 11.0625 6.0625 C 10.941406 6.15625 10.851563 6.285156 10.78125 6.4375 C 10.710938 6.589844 10.6875 6.769531 10.6875 7 C 10.6875 7.226563 10.710938 7.40625 10.78125 7.5625 C 10.851563 7.71875 10.941406 7.84375 11.0625 7.9375 C 11.183594 8.03125 11.335938 8.085938 11.5 8.125 C 11.664063 8.164063 11.816406 8.1875 12 8.1875 C 12.179688 8.1875 12.371094 8.164063 12.53125 8.125 C 12.691406 8.085938 12.816406 8.03125 12.9375 7.9375 C 13.058594 7.84375 13.148438 7.71875 13.21875 7.5625 C 13.289063 7.410156 13.34375 7.226563 13.34375 7 C 13.34375 6.769531 13.289063 6.589844 13.21875 6.4375 C 13.148438 6.285156 13.058594 6.15625 12.9375 6.0625 C 12.816406 5.96875 12.691406 5.878906 12.53125 5.84375 C 12.371094 5.808594 12.179688 5.8125 12 5.8125 Z M 10.78125 9.15625 L 10.78125 18.125 L 13.21875 18.125 L 13.21875 9.15625 Z"></path>
+                <div class="link">
+                    <button title="Meus links" @click="this.activeModal = true">
+                        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#959bad">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                            <g id="SVGRepo_iconCarrier"> <path d="M14 12C14 14.7614 11.7614 17 9 17H7C4.23858 17 2 14.7614 2 12C2 9.23858 4.23858 7 7 7H7.5M10 12C10 9.23858 12.2386 7 15 7H17C19.7614 7 22 9.23858 22 12C22 14.7614 19.7614 17 17 17H16.5" stroke="#959bad" stroke-width="2" stroke-linecap="round"/> </g>
                         </svg>
                     </button>
                 </div>
@@ -68,10 +71,12 @@
                     <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection()">Contato</a>
                     <a v-else @click="section='contato'; changeSection()">Contato</a>
                 </div>
-                <div class="info">
-                    <button @click="activeModal = true">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" fill="#959BAD" viewBox="0 0 24 24">
-                            <path d="M 12 0 C 5.371094 0 0 5.371094 0 12 C 0 18.628906 5.371094 24 12 24 C 18.628906 24 24 18.628906 24 12 C 24 5.371094 18.628906 0 12 0 Z M 12 2 C 17.523438 2 22 6.476563 22 12 C 22 17.523438 17.523438 22 12 22 C 6.476563 22 2 17.523438 2 12 C 2 6.476563 6.476563 2 12 2 Z M 12 5.8125 C 11.816406 5.8125 11.664063 5.808594 11.5 5.84375 C 11.335938 5.878906 11.183594 5.96875 11.0625 6.0625 C 10.941406 6.15625 10.851563 6.285156 10.78125 6.4375 C 10.710938 6.589844 10.6875 6.769531 10.6875 7 C 10.6875 7.226563 10.710938 7.40625 10.78125 7.5625 C 10.851563 7.71875 10.941406 7.84375 11.0625 7.9375 C 11.183594 8.03125 11.335938 8.085938 11.5 8.125 C 11.664063 8.164063 11.816406 8.1875 12 8.1875 C 12.179688 8.1875 12.371094 8.164063 12.53125 8.125 C 12.691406 8.085938 12.816406 8.03125 12.9375 7.9375 C 13.058594 7.84375 13.148438 7.71875 13.21875 7.5625 C 13.289063 7.410156 13.34375 7.226563 13.34375 7 C 13.34375 6.769531 13.289063 6.589844 13.21875 6.4375 C 13.148438 6.285156 13.058594 6.15625 12.9375 6.0625 C 12.816406 5.96875 12.691406 5.878906 12.53125 5.84375 C 12.371094 5.808594 12.179688 5.8125 12 5.8125 Z M 10.78125 9.15625 L 10.78125 18.125 L 13.21875 18.125 L 13.21875 9.15625 Z"></path>
+                <div class="link">
+                    <button title="Meus links" @click="this.activeModal = true">
+                        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#959bad">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                            <g id="SVGRepo_iconCarrier"> <path d="M14 12C14 14.7614 11.7614 17 9 17H7C4.23858 17 2 14.7614 2 12C2 9.23858 4.23858 7 7 7H7.5M10 12C10 9.23858 12.2386 7 15 7H17C19.7614 7 22 9.23858 22 12C22 14.7614 19.7614 17 17 17H16.5" stroke="#959bad" stroke-width="2" stroke-linecap="round"/> </g>
                         </svg>
                     </button>
                 </div>
@@ -85,7 +90,7 @@
             </div>
         </header>
 
-        <header v-if="activeHeader == false" class="active-header animate__animated animate__fadeOutUp">
+        <header v-else-if="activeHeader == false" class="active-header animate__animated animate__fadeOut layer">
             <div class="container">
                 <div @click="section='home'; changeSection()" class="logo">
                     <h1>FRATTI<span>()</span>;</h1>
@@ -102,15 +107,17 @@
                     <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection()">Contato</a>
                     <a v-else @click="section='contato'; changeSection()">Contato</a>
                 </div>
-                <div class="info">
-                    <button @click="activeModal = true">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" fill="#959BAD" viewBox="0 0 24 24">
-                            <path d="M 12 0 C 5.371094 0 0 5.371094 0 12 C 0 18.628906 5.371094 24 12 24 C 18.628906 24 24 18.628906 24 12 C 24 5.371094 18.628906 0 12 0 Z M 12 2 C 17.523438 2 22 6.476563 22 12 C 22 17.523438 17.523438 22 12 22 C 6.476563 22 2 17.523438 2 12 C 2 6.476563 6.476563 2 12 2 Z M 12 5.8125 C 11.816406 5.8125 11.664063 5.808594 11.5 5.84375 C 11.335938 5.878906 11.183594 5.96875 11.0625 6.0625 C 10.941406 6.15625 10.851563 6.285156 10.78125 6.4375 C 10.710938 6.589844 10.6875 6.769531 10.6875 7 C 10.6875 7.226563 10.710938 7.40625 10.78125 7.5625 C 10.851563 7.71875 10.941406 7.84375 11.0625 7.9375 C 11.183594 8.03125 11.335938 8.085938 11.5 8.125 C 11.664063 8.164063 11.816406 8.1875 12 8.1875 C 12.179688 8.1875 12.371094 8.164063 12.53125 8.125 C 12.691406 8.085938 12.816406 8.03125 12.9375 7.9375 C 13.058594 7.84375 13.148438 7.71875 13.21875 7.5625 C 13.289063 7.410156 13.34375 7.226563 13.34375 7 C 13.34375 6.769531 13.289063 6.589844 13.21875 6.4375 C 13.148438 6.285156 13.058594 6.15625 12.9375 6.0625 C 12.816406 5.96875 12.691406 5.878906 12.53125 5.84375 C 12.371094 5.808594 12.179688 5.8125 12 5.8125 Z M 10.78125 9.15625 L 10.78125 18.125 L 13.21875 18.125 L 13.21875 9.15625 Z"></path>
+                <div class="link">
+                    <button @click="this.activeModal = true">
+                        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#959bad">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                            <g id="SVGRepo_iconCarrier"> <path d="M14 12C14 14.7614 11.7614 17 9 17H7C4.23858 17 2 14.7614 2 12C2 9.23858 4.23858 7 7 7H7.5M10 12C10 9.23858 12.2386 7 15 7H17C19.7614 7 22 9.23858 22 12C22 14.7614 19.7614 17 17 17H16.5" stroke="#959bad" stroke-width="2" stroke-linecap="round"/> </g>
                         </svg>
                     </button>
                 </div>
                 <div class="menu">
-                    <button @click="toggleMenu">
+                    <button title="Meus links" @click="toggleMenu">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
                             <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g>
                         </svg>
@@ -148,16 +155,105 @@
             </div>
         </div>
 
+        <!-- Modal - Infos -->
+
+        <div v-if="this.activeModal == true" @click="this.activeModal = false" class="animate__animated animate__fadeIn" id="background-full">
+            <div @click.stop class="modal-infos animate__animated animate__zoomIn">
+                <div class="header">
+                    <div class="top">
+                        <div></div>
+                        <span>
+                            <img src="image/svg/link.svg" alt="info">
+                        </span>
+                        <button @click="this.activeModal = false" class="close-modal_btn">
+                            <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier"> <g id="Menu / Close_MD"> <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#959bad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g> </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="bottom">
+                        <h1>Acesse meus links</h1>
+                        <p>Aqui estão meus links e algumas informações de contato</p>
+                    </div>
+                </div>
+                <div class="main">
+                    <a href="https://www.linkedin.com/in/vitor-fratti/" target="_blank">
+                        <img src="image/svg/linkedin 1.svg" alt="linkedin">
+                        <h4>LinkedIn</h4>
+                    </a>
+                    <a href="https://github.com/vitorfratti" target="_blank">
+                        <img src="image/svg/github 1.svg" alt="github">
+                        <h4>Github</h4>
+                    </a>
+                    <a href="mailto:vifratti@gmail.com" target="_blank">
+                        <img src="image/svg/gmail.svg" alt="gmail">
+                        <h4>Gmail</h4>
+                    </a>
+                    <a href="https://wa.me/5511998874399" title="(11) 99887-4399" target="_blank">
+                        <img src="image/svg/whatsapp.svg" alt="whatsapp">
+                        <h4>WhatsApp</h4>
+                    </a>
+                    <a class="download" href="image/Currículo - Vitor Fratti.pdf" download>
+                        <h4>Baixar Currículo</h4>
+                        <img src="image/svg/download.svg" alt="download">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div v-if="this.activeModal == false" @click="this.activeModal = false" class="animate__animated animate__fadeOut layer" id="background-full">
+            <div @click.stop class="modal-infos animate__animated animate__zoomOut">
+                <div class="header">
+                    <div class="top">
+                        <div></div>
+                        <span>
+                            <img src="image/svg/link.svg" alt="info">
+                        </span>
+                        <button @click="this.activeModal = false" class="close-modal_btn">
+                            <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier"> <g id="Menu / Close_MD"> <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#959bad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g> </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="bottom">
+                        <h1>Acesse meus links</h1>
+                        <p>Aqui estão algumas informações de contato</p>
+                    </div>
+                </div>
+                <div class="main">
+                    <a href="https://www.linkedin.com/in/vitor-fratti/" target="_blank">
+                        <img src="image/svg/linkedin 1.svg" alt="linkedin">
+                        <h4>LinkedIn</h4>
+                    </a>
+                    <a href="https://github.com/vitorfratti" target="_blank">
+                        <img src="image/svg/github 1.svg" alt="github">
+                        <h4>Github</h4>
+                    </a>
+                    <a href="mailto:vifratti@gmail.com" target="_blank">
+                        <img src="image/svg/gmail.svg" alt="gmail">
+                        <h4>Gmail</h4>
+                    </a>
+                    <a class="download" href="image/Currículo - Vitor Fratti.pdf" download>
+                        <h4>Baixar Currículo</h4>
+                        <img src="image/svg/download.svg" alt="download">
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <main>
 
             <!-- Home -->
 
             <section class="home" id="home">
                 <div class="container">
-                    <h1 data-aos="fade-down">Bem-vindo, meu nome é <span>Vitor Fratti</span> .</h1>
+                    <h1>Bem-vindo, meu nome é <span class="name-typing">Vitor Fratti</span>.</h1>
                     <p>Desenvolvedor front-end, focado em aplicações web.</p>
                     <div>
-                        <button data-aos="fade-up">Acessar meus links</button>
+                        <button @click="this.activeModal = true">Acessar meus links</button>
                     </div>
                 </div>
                 <img class="top" src="image/blur.png" alt="blur">
@@ -167,19 +263,34 @@
             <!-- Sobre mim -->
 
             <section class="sobremim" id="sobremim">
+                <img class="blur" src="image/blur.png" alt="blur">
                 <div class="container">
                     <div class="top">
-                        <h4>-> Sobre mim</h4>
+                        <h4><span>-></span> Sobre mim</h4>
                         <h2>Sobre mim</h2>
                         <p>Tenho 19 anos e sou desenvolvedor front-end. Atualmente estou cursando o 2º semestre de <span>Engenharia de Software</span> e atuando como <span>estagiário</span> em <span>desenvolvimento web</span>.</p>
                     </div>
                     <div class="bottom">
-                        <div class="box">
-                            <div class="left">
-                                
+                        <a class="box one" href="https://hangar.digital/" target="_blank">
+                            <div class="logo">
+                                <img src="image/svg/logo-hangar.svg" alt="hangar">
                             </div>
-                            <div class="right"></div>
-                        </div>
+                            <div class="texts">
+                                <h1>Hangar Digital</h1>
+                                <p class="trabalho">Agência de marketing digital em Joinville, Santa Catarina</p>
+                                <h5>Estagiário de desenvolvimento web · abr de 2023 - o momento (4 meses)</h5>
+                            </div>
+                        </a>
+                        <a class="box two" href="https://www.catolicasc.org.br/?gad=1&gclid=Cj0KCQjwwvilBhCFARIsADvYi7J6-s0zm9mQZNMC_dZR6Lfwzo_69PdY1z_vyOu4y_OjChZtKEaOpocaAvKGEALw_wcB" target="_blank">
+                            <div class="logo">
+                                <img src="image/catolicasc.png" alt="catolicasc">
+                            </div>
+                            <div class="texts">
+                                <h1>Católica de Santa Catarina</h1>
+                                <p class="faculdade">Centro Universitário em Joinville, Santa Catarina</p>
+                                <h5>Bacharelado - Engenharia de Software · fev de 2023 (2º semestre)</h5>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -187,28 +298,37 @@
             <!-- Projetos -->
 
             <section class="projetos" id="projetos">
+                <img class="blur" src="image/blur.png" alt="blur">
                 <div class="container">
                     <div class="top">
                         <div class="left">
-                            <h4>-> Projetos</h4>
+                            <h4><span>-></span> Projetos</h4>
                             <h2>Projetos</h2>
                             <p>Uma coleção de projetos onde são aplicados meus conhecimentos técnicos e habilidades em desenvolvimento.</p>
                         </div>
                         <div class="right">
-                            <button @click="scrollBack();" class="slick-prev" aria-label="Previous"><-</button>
-                            <h4 class="slider-position">{{ sliderPosition + 1 }} / {{ projetos.length }}</h4>
-                            <button @click="scrollNext();" class="slick-next" aria-label="Next">-></button>
+                            <button @click="animateJumpLeft()" class="slick-prev animate__animated" aria-label="Previous"><img src="image/svg/arrow.svg" alt="arrow"></button>
+                            <button @click="animateJumpRight()" class="slick-next animate__animated" aria-label="Next"><img class="rotate" src="image/svg/arrow.svg" alt="arrow"></button>
                         </div>
                     </div>
 
                     <div class="slider">
-                        <div v-for="(projeto, index) in projetos" :key="index" ref="projeto" @mouseleave="projeto.buttons = false" @mouseover="projeto.buttons = true" class="projeto" data-aos="fade-up" @click="showProject(index)">
+                        <div v-for="(projeto, index) in projetos" :key="index" ref="projeto" @mouseleave="projeto.buttons = false" @mouseover="projeto.buttons = true" class="projeto" @click="showProject(index)">
                             <div v-if="projeto.buttons == true" class="clique animate__animated animate__fadeInDown">
                                 <h6>Clique para ver mais</h6>
                                 <img src="image/svg/click-svgrepo-com.svg" alt="click">
                             </div>
                             <div v-if="projeto.buttons == false" class="image animate__animated animate__fadeInDown">
-                                <img src="image/exemplo-image.jpeg" alt="example">
+                                <img v-if="projeto.status == true" :src="projeto.src" alt="example">
+                                <div v-if="projeto.status == false">
+                                    <img class="tools" :src="projeto.src" alt="example">
+                                </div>
+                            </div>
+                            <div v-if="projeto.buttons == false && projeto.empresa == true" class="empresa animate__animated animate__fadeInDown">
+                                <img src="image/svg/logo-hangar.svg" alt="hangar">
+                            </div>
+                            <div v-else class="empresa animate__animated animate__fadeOutUp">
+                                <img src="image/svg/logo-hangar.svg" alt="hangar">
                             </div>
                             <div v-if="projeto.buttons == true" class="texts animate__animated animate__fadeInUp">
                                 <h3>{{ projeto.nome }}</h3>
@@ -230,7 +350,7 @@
                     </div>
 
                     <div class="bottom">
-                        <a href="https://github.com/vitorfratti?tab=repositories" target="_blank">Ver todos os repositórios -></a>
+                        <a href="https://github.com/vitorfratti?tab=repositories" target="_blank">Ver todos os repositórios <span>-></span></a>
                     </div>
                 </div>
             </section>
@@ -238,19 +358,20 @@
             <!-- Conhecimentos -->
 
             <section class="conhecimentos" id="conhecimentos">
+                <img class="blur" src="image/blur.png" alt="blur">
                 <div class="container">
                     <div class="top">
-                        <h4>-> Conhecimentos</h4>
+                        <h4><span>-></span> Conhecimentos</h4>
                         <h2>Conhecimentos</h2>
                         <p>Um conjunto de habilidades e conhecimentos técnicos, abrangendo linguagens de programação e ferramentas essenciais para o desenvolvimento.</p>
                     </div>
                     <div class="bottom">
-                        <div class="left" data-aos="fade-up">
-                            <span v-for="(conhecimento, index) in conhecimentos" :key="index" @mouseover="conhecimentoActive = []; conhecimentoActive.push(conhecimento)">
+                        <div class="left">
+                            <span v-for="(conhecimento, index) in conhecimentos" :key="index" @mouseover="conhecimentoActive = []; conhecimentoActive.push(conhecimento)" @click="conhecimentoActive = []; conhecimentoActive.push(conhecimento)">
                                 <img :src="conhecimento.src" alt="">
                             </span>
                         </div>
-                        <div class="right" data-aos="fade-up">
+                        <div class="right">
                             <span v-for="(conhecimento, index) in conhecimentoActive" :key="index">
                                 <h3>{{ conhecimento.name }}</h3>
                                 <h4 v-if="conhecimento.level === 'Avançado'" class="avancado">{{ conhecimento.level }}</h4>
@@ -266,9 +387,10 @@
             <!-- Contato -->
 
             <section class="contato" id="contato">
+                <img class="blur" src="image/blur.png" alt="blur">
                 <div class="container">
                     <div class="top">
-                        <h4>-> Contato</h4>
+                        <h4><span>-></span> Contato</h4>
                         <h2>Contato</h2>
                         <p>Fique à vontade para deixar sua mensagem ou pergunta.</p>
                     </div>
@@ -277,7 +399,7 @@
                             <input type="text" placeholder="Nome">
                             <input type="text" placeholder="Email">
                             <textarea placeholder="Mensagem"></textarea>
-                            <button>Enviar mensagem</button>
+                            <button data-aos-duration="500">Enviar mensagem</button>
                         </div>
                         <div class="right">
                             <a href="https://www.linkedin.com/in/vitor-fratti/" target="_blank">
@@ -289,8 +411,12 @@
                                 <h4>Github</h4>
                             </a>
                             <a href="mailto:vifratti@gmail.com" target="_blank">
-                                <img src="image/svg/icons8-gmail-24 1.svg" alt="gmail">
+                                <img src="image/svg/gmail.svg" alt="gmail">
                                 <h4>Gmail</h4>
+                            </a>
+                            <a href="https://wa.me/5511998874399" title="(11) 99887-4399" target="_blank">
+                                <img src="image/svg/whatsapp.svg" alt="whatsapp">
+                                <h4>WhatsApp</h4>
                             </a>
                         </div>
                     </div>
@@ -313,9 +439,11 @@
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@3.5.2/dist/vue-router.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
-    <script src="js/script.js"></script>
+    <script type="module" src="js/script.js"></script>
 </body>
 </html>

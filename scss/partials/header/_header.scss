@@ -78,7 +78,7 @@ header.original-header {
         }
     }
 
-    .info {
+    .link {
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -100,16 +100,23 @@ header.original-header {
             transition: all 0.2s;
 
             svg {
+                width: 1.65rem;
+                height: 1.65rem;
                 transition: all 0.3s;
+
+                path {
+                    transition: all 0.3s;
+                }
             }
 
             &:hover {
-                color: #fefefe;
                 background: #959bad15;
                 border: 1px solid #959badd0;
 
                 svg {
-                    fill: #fefefe;
+                    path {
+                        stroke: #fefefe;
+                    }
                 }
             }
         }

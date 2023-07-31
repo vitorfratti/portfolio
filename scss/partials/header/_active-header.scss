@@ -5,9 +5,10 @@ header.active-header {
     align-items: center;
     position: fixed;
     top: 0;
-    background: #0F1527;
     border-bottom: 1px solid #959bad30;
-    animation-duration: 0.8s;
+    backdrop-filter: blur(12px);
+    opacity: 0.6;
+    animation-duration: 0.5s;
     z-index: 9999;
 
     @media (max-width: 990px) {
@@ -85,7 +86,7 @@ header.active-header {
         }
     }
 
-    .info {
+    .link {
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -107,16 +108,23 @@ header.active-header {
             transition: all 0.2s;
 
             svg {
+                width: 1.65rem;
+                height: 1.65rem;
                 transition: all 0.3s;
+
+                path {
+                    transition: all 0.3s;
+                }
             }
 
             &:hover {
-                color: #fefefe;
                 background: #959bad15;
                 border: 1px solid #959badd0;
 
                 svg {
-                    fill: #fefefe;
+                    path {
+                        stroke: #fefefe;
+                    }
                 }
             }
         }
