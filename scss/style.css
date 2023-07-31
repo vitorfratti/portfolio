@@ -462,7 +462,9 @@ header.active-header .menu button:hover svg g {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: #0F1527;
+  background: #0f1527e5;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
   -webkit-box-shadow: 0 0 1px #959badd0;
           box-shadow: 0 0 1px #959badd0;
   z-index: 99999;
@@ -777,7 +779,7 @@ section.sobremim {
 
 @media (max-width: 990px) {
   section.sobremim {
-    padding: 5rem 0;
+    padding: 5.25rem 0;
   }
 }
 
@@ -861,6 +863,7 @@ section.sobremim .container .bottom {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    gap: 1rem;
   }
 }
 
@@ -1001,7 +1004,7 @@ section.projetos {
 
 @media (max-width: 990px) {
   section.projetos {
-    padding: 5rem 0;
+    padding: 5.25rem 0;
   }
 }
 

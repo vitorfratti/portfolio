@@ -339,12 +339,12 @@
                                 <p>{{ projeto.descricao }}</p>
                             </div>
                             <div v-if="projeto.buttons == true" class="buttons animate__animated animate__fadeInUp">
-                                <button class="site">Ir para o site</button>
-                                <button class="repositorio">Ver repositório</button>
+                                <button @click.stop class="site">Ir para o site</button>
+                                <button @click.stop class="repositorio">Ver repositório</button>
                             </div>
                             <div v-if="projeto.buttons == false" class="buttons animate__animated animate__fadeOutDown none">
-                                <button class="site">Ir para o site</button>
-                                <button class="repositorio">Ver repositório</button>
+                                <button @click.stop class="site">Ir para o site</button>
+                                <button @click.stop class="repositorio">Ver repositório</button>
                             </div>
                         </div>
                     </div>

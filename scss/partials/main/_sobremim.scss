@@ -5,7 +5,7 @@ section.sobremim {
     align-items: center;
 
     @media (max-width: 990px) {
-        padding: 5rem 0;
+        padding: 5.25rem 0;
     }
 
     img.blur {
@@ -65,6 +65,7 @@ section.sobremim {
 
             @media (max-width: 890px) {
                 flex-direction: column;
+                gap: 1rem;
             }
 
             .box {

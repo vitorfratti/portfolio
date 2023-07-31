@@ -5,7 +5,8 @@
     top: 0;
     right: -100% !important;
     display: flex;
-    background: #0F1527;
+    background: #0f1527e5;
+    backdrop-filter: blur(8px);
     box-shadow: 0 0 1px #959badd0;
     z-index: 99999;
     transition: all 0.5s;
