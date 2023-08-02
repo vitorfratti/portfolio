@@ -324,11 +324,8 @@
                                     <img class="tools" :src="projeto.src" alt="example">
                                 </div>
                             </div>
-                            <div v-if="projeto.buttons == false && projeto.empresa == true" class="empresa animate__animated animate__fadeInDown">
-                                <img src="image/svg/logo-hangar.svg" alt="hangar">
-                            </div>
-                            <div v-else class="empresa animate__animated animate__fadeOutUp">
-                                <img src="image/svg/logo-hangar.svg" alt="hangar">
+                            <div v-if="projeto.buttons == false && projeto.categoria != null" class="categoria animate__animated animate__fadeInDown">
+                                <span>{{ projeto.categoria }}</span>
                             </div>
                             <div v-if="projeto.buttons == true" class="texts animate__animated animate__fadeInUp">
                                 <h3>{{ projeto.nome }}</h3>
@@ -339,12 +336,20 @@
                                 <p>{{ projeto.descricao }}</p>
                             </div>
                             <div v-if="projeto.buttons == true" class="buttons animate__animated animate__fadeInUp">
-                                <button @click.stop class="site">Ir para o site</button>
-                                <button @click.stop class="repositorio">Ver repositório</button>
+                                <a @click.stop :href="projeto.site" target="_blank" class="site">Ir para o site</a>
+                                <a v-if="projeto.categoria == 'Corporativo'" @click.stop :href="projeto.repositorio" target="_blank" class="repositorio disabled" disabled>
+                                    Ver repositório
+                                    <img src="image/svg/blocked.svg" alt="blocked">
+                                </a>
+                                <a v-else @click.stop class="repositorio" :href="projeto.repositorio" target="_blank">Ver repositório</a>
                             </div>
                             <div v-if="projeto.buttons == false" class="buttons animate__animated animate__fadeOutDown none">
-                                <button @click.stop class="site">Ir para o site</button>
-                                <button @click.stop class="repositorio">Ver repositório</button>
+                                <a @click.stop :href="projeto.site" target="_blank" class="site">Ir para o site</a>
+                                <a v-if="projeto.categoria == 'Corporativo'" @click.stop :href="projeto.repositorio" target="_blank" class="repositorio disabled" disabled>
+                                    Ver repositório
+                                    <img src="image/svg/blocked.svg" alt="blocked">
+                                </a>
+                                <a v-else @click.stop class="repositorio" :href="projeto.repositorio" target="_blank">Ver repositório</a>
                             </div>
                         </div>
                     </div>

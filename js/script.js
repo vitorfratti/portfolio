@@ -3,40 +3,52 @@ const app = Vue.createApp({
         return {
             section: 'home',
             activeHeader: null,
-            activeModal: null,
+            activeModal: false,
             sliderPosition: 0,
             projetos: [
                 {
                     nome: 'Ecoa Energias Renováveis',
-                    descricao: 'Site institucional, feito em: Php, WordPress, jQuery e Sass.',
+                    descricao: 'Site institucional, feito em: jQuery, Sass, PHP, WordPress',
                     src: 'image/Ecoa.png',
                     buttons: false,
                     status: true,
-                    empresa: true
+                    categoria: 'Corporativo',
+                    site: null,
+                    repositorio: null,
+                    conhecimentos: ['jQuery', 'Sass', 'PHP', 'WordPress']
                 },
                 {
                     nome: 'VillaReal Marina',
-                    descricao: 'Site institucional, feito em: Php, WordPress, jQuery e Sass.',
+                    descricao: 'Site institucional, feito em: jQuery, Sass, PHP, WordPress',
                     src: 'image/Home - VillaReal Marina.png',
                     buttons: false,
                     status: true,
-                    empresa: true
+                    categoria: 'Corporativo',
+                    site: 'https://marinavillareal.com.br/',
+                    repositorio: null,
+                    conhecimentos: ['jQuery', 'Sass', 'PHP', 'WordPress']
                 },
                 {
                     nome: 'Em desenvolvimento',
-                    descricao: 'Aguarde, projetos em desenvolvimento.',
+                    descricao: 'Aguarde, novos projetos estão sendo desenvolvidos.',
                     src: 'image/svg/tools.svg',
                     buttons: false,
                     status: false,
-                    empresa: false
+                    categoria: null,
+                    site: null,
+                    repositorio: null,
+                    conhecimentos: []
                 },
                 {
                     nome: 'Em desenvolvimento',
-                    descricao: 'Aguarde, projetos em desenvolvimento.',
+                    descricao: 'Aguarde, novos projetos estão sendo desenvolvidos.',
                     src: 'image/svg/tools.svg',
                     buttons: false,
                     status: false,
-                    empresa: false
+                    categoria: null,
+                    site: null,
+                    repositorio: null,
+                    conhecimentos: []
                 }
             ],
             projetoSingle: [],
@@ -60,7 +72,7 @@ const app = Vue.createApp({
                     src: 'image/svg/js.svg'
                 },
                 {
-                    name: 'Php',
+                    name: 'PHP',
                     level: 'Intermediário',
                     descricao: 'PHP é uma linguagem de programação do lado do servidor, usada principalmente para criar páginas da web dinâmicas. Com o PHP, é possível interagir com bancos de dados, processar formulários, gerar conteúdo personalizado e muito mais. Sua sintaxe é semelhante ao HTML, permitindo a incorporação fácil de código PHP em arquivos HTML.',
                     src: 'image/svg/php.svg'
@@ -98,13 +110,13 @@ const app = Vue.createApp({
                 {
                     name: 'React',
                     level: 'Intermediário',
-                    descricao: 'É uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.',
+                    descricao: 'React é uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.',
                     src: 'image/svg/react.svg'
                 },
                 {
                     name: 'SQL',
                     level: 'Intermediário',
-                    descricao: 'É uma linguagem de domínio específico desenvolvida para gerenciar dados relacionais em um sistema de gerenciamento de banco de dados, ou para processamento de fluxo de dados em um sistema de gerenciamento de fluxo de dados.',
+                    descricao: 'SQL é uma linguagem de domínio específico desenvolvida para gerenciar dados relacionais em um sistema de gerenciamento de banco de dados, ou para processamento de fluxo de dados em um sistema de gerenciamento de fluxo de dados.',
                     src: 'image/svg/sql.svg'
                 },
                 {
