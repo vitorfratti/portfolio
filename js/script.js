@@ -273,6 +273,8 @@ const app = Vue.createApp({
     mounted() {
         this.initSlick();
 
+        console.log('Oi')
+
         const header = document.getElementById('original-header').offsetTop;
           
             if (window.scrollY > header) {
