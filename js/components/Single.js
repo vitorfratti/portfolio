@@ -55,6 +55,8 @@ const Single = {
     },
     mounted() {
         this.single[0].conhecimentoActive.push(this.single[0].conhecimentos[0])
+
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
     },
     props: ['single']
 };

@@ -16,7 +16,11 @@
 
     <div id="app">
 
-        <div v-if="$route.path === '/'">
+        <div v-if="$route.path === '/single'">
+            <Single :single="this.single"/>
+        </div>
+
+        <div v-else>
             <header class="original-header" id="original-header">
                 <div class="container">
                     <div @click="section='home'; changeSection()" class="logo">
@@ -441,10 +445,6 @@
                     </div>
                 </div>
             </footer>
-        </div>
-
-        <div v-else>
-            <Single :single="this.single"/>
         </div>
 
     </div>

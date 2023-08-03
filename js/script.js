@@ -114,45 +114,7 @@ const app = Vue.createApp({
                     conhecimentos: []
                 }
             ],
-            single: [
-                {
-                    nome: 'Ecoa Energias Renováveis',
-                    descricao: 'Site institucional, feito em: jQuery, Sass, PHP, WordPress.',
-                    src: 'image/Ecoa.png',
-                    buttons: false,
-                    status: true,
-                    categoria: 'Corporativo',
-                    site: null,
-                    repositorio: null,
-                    conhecimentos: [
-                        {
-                            name: 'jQuery',
-                            level: 'Intermediário',
-                            descricao: 'jQuery é uma biblioteca JavaScript de alto desempenho que simplifica a manipulação e interação com elementos HTML, tratamento de eventos, animações e requisições assíncronas. Com uma sintaxe concisa e poderosa, o jQuery agiliza o desenvolvimento web e garante compatibilidade com diferentes navegadores.',
-                            src: 'image/svg/jquery.svg'
-                        },
-                        {
-                            name: 'Sass',
-                            level: 'Avançado',
-                            descricao: 'Sass é uma linguagem de folhas de estilo que estende o CSS. Ele oferece recursos adicionais, como variáveis, mixins e aninhamento de seletores, que tornam a escrita de estilos mais eficiente e modular. O Sass é compilado para CSS, permitindo que os estilos sejam utilizados pelos navegadores.',
-                            src: 'image/svg/sass.svg'
-                        },
-                        {
-                            name: 'PHP',
-                            level: 'Intermediário',
-                            descricao: 'PHP é uma linguagem de programação do lado do servidor, usada principalmente para criar páginas da web dinâmicas. Com o PHP, é possível interagir com bancos de dados, processar formulários, gerar conteúdo personalizado e muito mais. Sua sintaxe é semelhante ao HTML, permitindo a incorporação fácil de código PHP em arquivos HTML.',
-                            src: 'image/svg/php.svg'
-                        },
-                        {
-                            name: 'WordPress',
-                            level: 'Intermediário',
-                            descricao: 'WordPress é uma plataforma de gerenciamento de conteúdo (CMS) popular e de código aberto, usada para criar e gerenciar sites e blogs. Com recursos flexíveis e uma grande variedade de plugins e temas, o WordPress permite criar sites personalizados de forma acessível e amigável.',
-                            src: 'image/svg/wordpress.svg'
-                        }
-                    ],
-                    conhecimentoActive: []
-                },
-            ],
+            single: [],
             conhecimentos: [
                 {
                     name: 'HTML',
