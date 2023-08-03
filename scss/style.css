@@ -772,17 +772,6 @@ section.projetos .container .slider .projeto .image div img.tools {
   border: none;
   animation: toolsRotate 4s infinite;
 }
-@keyframes toolsRotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 section.projetos .container .slider .projeto .clique {
   display: flex;
   justify-content: flex-start;
@@ -921,6 +910,17 @@ section.projetos .container .bottom a:hover {
   color: #fefefe;
 }
 
+@keyframes toolsRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 section.conhecimentos {
   width: 100%;
   display: flex;
@@ -1334,8 +1334,18 @@ section.single-projeto {
   width: 100%;
   display: flex;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0;
+}
+@media (max-width: 1093px) {
+  section.single-projeto {
+    padding: 6.5rem 0;
+  }
+}
+@media (max-width: 769px) {
+  section.single-projeto {
+    padding: 2rem 0;
+  }
 }
 section.single-projeto .container {
   width: 100%;
@@ -1353,6 +1363,13 @@ section.single-projeto .container .top {
 section.single-projeto .container .top h4 {
   font-weight: 400;
   color: #448EEB;
+  transition: all 0.2s ease;
+}
+section.single-projeto .container .top h4 span {
+  font-family: "Inter", sans-serif;
+}
+section.single-projeto .container .top h4:hover {
+  color: #fefefe;
 }
 section.single-projeto .container .top h2 {
   font-weight: 400;
@@ -1369,24 +1386,70 @@ section.single-projeto .container .mid {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 5%;
+}
+@media (max-width: 1093px) {
+  section.single-projeto .container .mid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
 }
 section.single-projeto .container .mid .left {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 50%;
+  height: 25rem;
+}
+@media (max-width: 1093px) {
+  section.single-projeto .container .mid .left {
+    width: 70%;
+  }
+}
+@media (max-width: 769px) {
+  section.single-projeto .container .mid .left {
+    width: 100%;
+  }
+}
+@media (max-width: 550px) {
+  section.single-projeto .container .mid .left {
+    height: auto;
+  }
+}
+section.single-projeto .container .mid .left .tools {
+  width: 100%;
+  height: 20rem;
+  padding: 0.25rem;
+  border-radius: 0.625rem;
+  border: none;
+  background: none;
+}
+section.single-projeto .container .mid .left .tools img {
+  width: 6rem;
+  height: 6rem;
+  border: none;
+  animation: toolsRotate 4s infinite;
 }
 section.single-projeto .container .mid .left .single-projeto_box {
   width: 100%;
+  height: 20rem;
   padding: 0.25rem;
   border-radius: 0.625rem;
   border: 1px solid rgba(149, 155, 173, 0.25);
   background: linear-gradient(225deg, #1B2138 0%, rgba(27, 33, 56, 0.25) 100%);
 }
+@media (max-width: 550px) {
+  section.single-projeto .container .mid .left .single-projeto_box {
+    height: 15rem;
+  }
+}
 section.single-projeto .container .mid .left .single-projeto_box img {
   width: 100%;
   height: 100%;
   border-radius: 0.625rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 section.single-projeto .container .mid .left .action-buttons {
   display: flex;
@@ -1394,22 +1457,34 @@ section.single-projeto .container .mid .left .action-buttons {
   align-items: center;
   gap: 1rem;
 }
-section.single-projeto .container .mid .left .action-buttons button.site {
+@media (max-width: 550px) {
+  section.single-projeto .container .mid .left .action-buttons {
+    flex-direction: column;
+  }
+}
+section.single-projeto .container .mid .left .action-buttons a.site {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 3rem;
-  border: none;
+  border: 2px solid rgba(254, 254, 254, 0);
   border-radius: 10px;
-  background: #448EEB;
+  background: radial-gradient(circle, #0264df 0%, #448eeb 100%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
   color: #fefefe;
   font-weight: 400;
   cursor: pointer;
   transition: all 0.2s;
 }
-section.single-projeto .container .mid .left .action-buttons button.site:hover {
-  background: #0264DF;
+section.single-projeto .container .mid .left .action-buttons a.site:hover {
+  border: 2px solid #fefefe;
+  box-shadow: 0 0 20px #0264df;
 }
-section.single-projeto .container .mid .left .action-buttons button.repositorio {
+section.single-projeto .container .mid .left .action-buttons a.repositorio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 3rem;
   border: none;
@@ -1421,15 +1496,125 @@ section.single-projeto .container .mid .left .action-buttons button.repositorio 
   cursor: pointer;
   transition: all 0.2s;
 }
-section.single-projeto .container .mid .left .action-buttons button.repositorio:hover {
+section.single-projeto .container .mid .left .action-buttons a.repositorio:hover {
   border: 1px solid #959BAD;
 }
-section.single-projeto .container .bottom a {
-  text-decoration: none;
+section.single-projeto .container .mid .left .action-buttons a.repositorio.disabled {
+  gap: 0.5rem;
+  cursor: default;
+}
+section.single-projeto .container .mid .left .action-buttons a.repositorio.disabled img {
+  width: 1rem;
+}
+section.single-projeto .container .mid .right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 25rem;
+}
+@media (max-width: 1093px) {
+  section.single-projeto .container .mid .right {
+    width: 70%;
+    height: 24rem;
+  }
+}
+@media (max-width: 769px) {
+  section.single-projeto .container .mid .right {
+    width: 100%;
+  }
+}
+@media (max-width: 550px) {
+  section.single-projeto .container .mid .right {
+    height: auto;
+  }
+}
+section.single-projeto .container .mid .right h2 {
+  font-size: 24px !important;
+  font-weight: 300;
+  color: #fefefe;
+}
+section.single-projeto .container .mid .right .conhecimentos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+@media (max-width: 1093px) {
+  section.single-projeto .container .mid .right .conhecimentos {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 769px) {
+  section.single-projeto .container .mid .right .conhecimentos {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 550px) {
+  section.single-projeto .container .mid .right .conhecimentos {
+    gap: 0.5rem;
+  }
+}
+section.single-projeto .container .mid .right .conhecimentos span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 10px;
+  border: 1px solid rgba(149, 155, 173, 0.25);
+  background: linear-gradient(225deg, #1B2138 0%, rgba(27, 33, 56, 0.2509803922) 100%);
+  font-size: 16px;
+  transition: all 0.2s;
+}
+section.single-projeto .container .mid .right .conhecimentos span img {
+  width: 3.5rem;
+  transition: all 0.2s;
+}
+section.single-projeto .container .mid .right .conhecimentos span:hover {
+  border: 1px solid #959BAD;
+}
+@media (max-width: 550px) {
+  section.single-projeto .container .mid .right .conhecimentos span {
+    width: calc(25% - 0.5rem);
+    height: 5rem;
+  }
+  section.single-projeto .container .mid .right .conhecimentos span img {
+    width: 2.3rem;
+  }
+}
+section.single-projeto .container .mid .right .conhecimentos_text {
+  margin-top: 1rem;
+}
+section.single-projeto .container .mid .right .conhecimentos_text h3 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #fefefe;
+}
+section.single-projeto .container .mid .right .conhecimentos_text h4 {
+  font-weight: 400;
+  margin: 1rem 0;
+}
+section.single-projeto .container .mid .right .conhecimentos_text h4.avancado {
+  color: #448EEB;
+}
+section.single-projeto .container .mid .right .conhecimentos_text h4.intermediario {
+  color: #e2e216;
+}
+section.single-projeto .container .mid .right .conhecimentos_text p {
+  font-weight: 400;
+  color: #959BAD;
 }
 section.single-projeto .container .bottom h4 {
   font-weight: 400;
   color: #448EEB;
+  transition: all 0.2s ease;
+}
+section.single-projeto .container .bottom h4 span {
+  font-family: "Inter", sans-serif;
+}
+section.single-projeto .container .bottom h4:hover {
+  color: #fefefe;
 }
 
 .slider {
