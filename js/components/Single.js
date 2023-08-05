@@ -3,7 +3,7 @@ const Single = {
     <section class="single-projeto" id="single-projeto">
         <div class="container" v-for="(single, index) in single" :key="index">
             <div class="top">
-                <a href="../../index.html"><h4><span><- </span>Projetos</h4></a>
+                <a href="#"><h4><span><- </span>Projetos</h4></a>
                 <h2>{{ single.nome }}</h2>
                 <p>{{ single.descricao }}</p>
             </div>

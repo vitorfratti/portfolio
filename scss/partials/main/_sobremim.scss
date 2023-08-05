@@ -91,16 +91,18 @@ section.sobremim {
                 }
 
                 &.one {
+                    border: 1px solid #50F4E8;
+
                     &:hover {
-                        border: 1px solid #50F4E8;
-                       
+                        box-shadow: 0 0 20px #50F4E8;  
                     }
                 }
 
                 &.two {
+                    border: 1px solid #ff4d94;
+
                     &:hover {
-                        border: 1px solid #ff4d94;
-                        
+                        box-shadow: 0 0 20px #ff4d94;  
                     }
                 }
 
@@ -149,6 +151,11 @@ section.sobremim {
                         color: #fefefe;
                         font-size: 14px;
                         font-weight: 300;
+
+                        &.old {
+                            color: #fefefe50;
+                            font-size: 12px;
+                        }
                     }
 
                     @media (max-width: 470px) {

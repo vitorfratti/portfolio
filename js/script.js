@@ -1,20 +1,9 @@
-import Single from './components/Single.js';
-
-const routes = [
-    { path: '/single', component: Single },
-]
-
-const router = VueRouter.createRouter({
-    history: VueRouter.createWebHashHistory(),
-    routes
-})
-
 const app = Vue.createApp({
     data() {
         return {
             section: 'home',
             activeHeader: null,
-            activeModal: false,
+            activeModal: null,
             sliderPosition: 0,
             projetos: [
                 {
@@ -24,7 +13,7 @@ const app = Vue.createApp({
                     buttons: false,
                     status: true,
                     categoria: 'Corporativo',
-                    site: null,
+                    site: 'https://projetos.hangardigital.com.br/ecoa/',
                     repositorio: null,
                     conhecimentos: [
                         {
@@ -199,9 +188,6 @@ const app = Vue.createApp({
             ]
         }
     },
-    components: {
-        Single
-    },
     methods: {
         changeSection() {
             const element = document.getElementById(this.section);
@@ -229,6 +215,35 @@ const app = Vue.createApp({
             setTimeout(() => {
                 document.querySelector('.slick-next').classList.remove('animate__tada')
             }, 400)
+        },
+        dropHeaderScroll() {
+            if ($(window).scrollTop() > $('.original-header').offset().top) {
+                $('.active-header').removeClass('animate__fadeOut')
+                $('.active-header').removeClass('none')
+                $('.active-header').addClass('animate__fadeInDown')
+            } else {
+                $('.active-header').removeClass('animate__fadeInDown')
+                $('.active-header').addClass('animate__fadeOut')
+                setTimeout(() => {
+                    $('.active-header').addClass('none')
+                }, 500)
+            }
+        },
+        openModal() {
+            $('#background-full').removeClass('animate__fadeOut')
+            $('.modal-infos').removeClass('animate__zoomOut')
+            $('#background-full').removeClass('none')
+            $('#background-full').addClass('animate__fadeIn')
+            $('.modal-infos').addClass('animate__zoomIn')
+        },
+        closeModal() {
+            $('#background-full').remove('animate__fadeIn')
+            $('.modal-infos').remove('animate__zoomIn')
+            $('#background-full').addClass('animate__fadeOut')
+            $('.modal-infos').addClass('animate__zoomOut')
+            setTimeout(() => {
+                $('#background-full').addClass('none')
+            }, 100)
         },
         initSlick() {
             $('.slider').slick({
@@ -273,29 +288,17 @@ const app = Vue.createApp({
     mounted() {
         this.initSlick();
 
-        console.log('Oi')
+        $(window).on('scroll', () => {
+            this.dropHeaderScroll()
+        })
 
-        const header = document.getElementById('original-header').offsetTop;
-          
-            if (window.scrollY > header) {
-                this.activeHeader = true
-            } else if (window.scrollY <= header) {
-                this.activeHeader = false
-            }
-
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('original-header').offsetTop;
-          
-            if (window.scrollY > header) {
-                this.activeHeader = true
-            } else {
-                this.activeHeader = false
-            }
+        $('.header-link').click(function() {
+            $('.header-link').removeClass('selected');
+            $('.original-header').find('[data-section="' + $(this).attr('data-section') + '"]').addClass('selected');
+            $('.active-header').find('[data-section="' + $(this).attr('data-section') + '"]').addClass('selected');
         });
     }
 })
-
-app.use(router)
 
 app.mount('#app')
 

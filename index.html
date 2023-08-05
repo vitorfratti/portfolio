@@ -16,174 +16,124 @@
 
     <div id="app">
 
-        <div v-if="$route.path === '/single'">
-            <Single :single="this.single"/>
-        </div>
-
-        <div v-else>
-            <header class="original-header" id="original-header">
-                <div class="container">
-                    <div @click="section='home'; changeSection()" class="logo">
-                        <h1>FRATTI<span>()</span>;</h1>
-                    </div>
-                    <div class="links">
-                        <a v-if="section == 'home'" class="selected" @click="section='home'; changeSection()">Início</a>
-                        <a v-else @click="section='home'; changeSection()">Início</a>
-                        <a v-if="section == 'sobremim'" class="selected" @click="section='sobremim'; changeSection()">Sobre mim</a>
-                        <a v-else @click="section='sobremim'; changeSection()">Sobre mim</a>
-                        <a v-if="section == 'projetos'" class="selected" @click="section='projetos'; changeSection()">Projetos</a>
-                        <a v-else @click="section='projetos'; changeSection()">Projetos</a>
-                        <a v-if="section == 'conhecimentos'" class="selected" @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
-                        <a v-else @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
-                        <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection()">Contato</a>
-                        <a v-else @click="section='contato'; changeSection()">Contato</a>
-                    </div>
-                    <div class="link">
-                        <button title="Meus links" @click="this.activeModal = true">
-                            <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#959bad">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                                <g id="SVGRepo_iconCarrier"> <path d="M14 12C14 14.7614 11.7614 17 9 17H7C4.23858 17 2 14.7614 2 12C2 9.23858 4.23858 7 7 7H7.5M10 12C10 9.23858 12.2386 7 15 7H17C19.7614 7 22 9.23858 22 12C22 14.7614 19.7614 17 17 17H16.5" stroke="#959bad" stroke-width="2" stroke-linecap="round"/> </g>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="menu">
-                        <button @click="toggleMenu">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
-                                <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g>
-                            </svg>
-                        </button>
-                    </div>
+        <header class="original-header" id="original-header">
+            <div class="container">
+                <div @click="section='home'; changeSection()" class="logo">
+                    <h1>FRATTI<span>()</span>;</h1>
                 </div>
-            </header>
-            
-            <!-- Header ativada pelo scroll -->
-            
-            <header v-if="activeHeader == true" class="active-header animate__animated animate__fadeInDown">
-                <div class="container">
-                    <div @click="section='home'; changeSection()" class="logo">
-                        <h1>FRATTI<span>()</span>;</h1>
-                    </div>
-                    <div class="links">
-                        <a v-if="section == 'home'" class="selected" @click="section='home'; changeSection()">Início</a>
-                        <a v-else @click="section='home'; changeSection()">Início</a>
-                        <a v-if="section == 'sobremim'" class="selected" @click="section='sobremim'; changeSection()">Sobre mim</a>
-                        <a v-else @click="section='sobremim'; changeSection()">Sobre mim</a>
-                        <a v-if="section == 'projetos'" class="selected" @click="section='projetos'; changeSection()">Projetos</a>
-                        <a v-else @click="section='projetos'; changeSection()">Projetos</a>
-                        <a v-if="section == 'conhecimentos'" class="selected" @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
-                        <a v-else @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
-                        <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection()">Contato</a>
-                        <a v-else @click="section='contato'; changeSection()">Contato</a>
-                    </div>
-                    <div class="link">
-                        <button title="Meus links" @click="this.activeModal = true">
-                            <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#959bad">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                                <g id="SVGRepo_iconCarrier"> <path d="M14 12C14 14.7614 11.7614 17 9 17H7C4.23858 17 2 14.7614 2 12C2 9.23858 4.23858 7 7 7H7.5M10 12C10 9.23858 12.2386 7 15 7H17C19.7614 7 22 9.23858 22 12C22 14.7614 19.7614 17 17 17H16.5" stroke="#959bad" stroke-width="2" stroke-linecap="round"/> </g>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="menu">
-                        <button @click="toggleMenu">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
-                                <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g>
-                            </svg>
-                        </button>
-                    </div>
+                <div class="links">
+                    <a class="header-link selected" data-section="home" @click="section='home'; changeSection()">Início</a>
+                    <a class="header-link" data-section="sobremim" @click="section='sobremim'; changeSection()">Sobre mim</a>
+                    <a class="header-link" data-section="projetos" @click="section='projetos'; changeSection()">Projetos</a>
+                    <a class="header-link" data-section="conhecimentos" @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
+                    <a class="header-link" data-section="contato" @click="section='contato'; changeSection()">Contato</a>
                 </div>
-            </header>
-            
-            <header v-else-if="activeHeader == false" class="active-header animate__animated animate__fadeOut layer">
-                <div class="container">
-                    <div @click="section='home'; changeSection()" class="logo">
-                        <h1>FRATTI<span>()</span>;</h1>
-                    </div>
-                    <div class="links">
-                        <a v-if="section == 'home'" class="selected" @click="section='home'; changeSection()">Início</a>
-                        <a v-else @click="section='home'; changeSection()">Início</a>
-                        <a v-if="section == 'sobremim'" class="selected" @click="section='sobremim'; changeSection()">Sobre mim</a>
-                        <a v-else @click="section='sobremim'; changeSection()">Sobre mim</a>
-                        <a v-if="section == 'projetos'" class="selected" @click="section='projetos'; changeSection()">Projetos</a>
-                        <a v-else @click="section='projetos'; changeSection()">Projetos</a>
-                        <a v-if="section == 'conhecimentos'" class="selected" @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
-                        <a v-else @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
-                        <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection()">Contato</a>
-                        <a v-else @click="section='contato'; changeSection()">Contato</a>
-                    </div>
-                    <div class="link">
-                        <button @click="this.activeModal = true">
-                            <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#959bad">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                                <g id="SVGRepo_iconCarrier"> <path d="M14 12C14 14.7614 11.7614 17 9 17H7C4.23858 17 2 14.7614 2 12C2 9.23858 4.23858 7 7 7H7.5M10 12C10 9.23858 12.2386 7 15 7H17C19.7614 7 22 9.23858 22 12C22 14.7614 19.7614 17 17 17H16.5" stroke="#959bad" stroke-width="2" stroke-linecap="round"/> </g>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="menu">
-                        <button title="Meus links" @click="toggleMenu">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
-                                <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g>
-                            </svg>
-                        </button>
-                    </div>
+                <div class="link">
+                    <button title="Meus links" @click="openModal()">
+                        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#959bad">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                            <g id="SVGRepo_iconCarrier"> <path d="M14 12C14 14.7614 11.7614 17 9 17H7C4.23858 17 2 14.7614 2 12C2 9.23858 4.23858 7 7 7H7.5M10 12C10 9.23858 12.2386 7 15 7H17C19.7614 7 22 9.23858 22 12C22 14.7614 19.7614 17 17 17H16.5" stroke="#959bad" stroke-width="2" stroke-linecap="round"/> </g>
+                        </svg>
+                    </button>
                 </div>
-            </header>
-            
-            <!-- Menu Lateral -->
-            
-            <div class="menu-lateral">
-                <div class="container">
-                    <div class="header">
-                        <div @click="section='home'; changeSection(); toggleMenu()" class="logo">
-                            <h1>FRATTI<span>()</span>;</h1>
-                        </div>
-                        <button @click="toggleMenu">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
-                                <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path transform="translate(24.00059,-9.94113) rotate(45.001)" d="M21.5,4.5h5.001v39h-5.001z"></path><path transform="translate(57.94113,24.00474) rotate(135.008)" d="M21.5,4.5h5v39.001h-5z"></path></g></g>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="links">
-                        <a v-if="section == 'home'" class="selected" @click="section='home'; changeSection(); toggleMenu()">Início</a>
-                        <a v-else @click="section='home'; changeSection(); toggleMenu()">Início</a>
-                        <a v-if="section == 'sobremim'" class="selected" @click="section='sobremim'; changeSection(); toggleMenu()">Sobre mim</a>
-                        <a v-else="section == 'sobremim'" @click="section='sobremim'; changeSection(); toggleMenu()">Sobre mim</a>
-                        <a v-if="section == 'projetos'" class="selected" @click="section='projetos'; changeSection(); toggleMenu()">Projetos</a>
-                        <a v-else @click="section='projetos'; changeSection(); toggleMenu()">Projetos</a>
-                        <a v-if="section == 'conhecimentos'" class="selected" @click="section='conhecimentos'; changeSection(); toggleMenu()">Conhecimentos</a>
-                        <a v-else @click="section='conhecimentos'; changeSection(); toggleMenu()">Conhecimentos</a>
-                        <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection(); toggleMenu()">Contato</a>
-                        <a v-else @click="section='contato'; changeSection(); toggleMenu()">Contato</a>
-                    </div>
+                <div class="menu">
+                    <button @click="toggleMenu">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
+                            <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g>
+                        </svg>
+                    </button>
                 </div>
             </div>
-            
-            <!-- Modal - Infos -->
-            
-            <div v-if="this.activeModal == true" @click="this.activeModal = false" class="animate__animated animate__fadeIn" id="background-full">
-                <div @click.stop class="modal-infos animate__animated animate__zoomIn">
-                    <div class="header">
-                        <div class="top">
-                            <div></div>
-                            <span>
-                                <img src="image/svg/link.svg" alt="info">
-                            </span>
-                            <button @click="this.activeModal = false" class="close-modal_btn">
-                                <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <g id="SVGRepo_iconCarrier"> <g id="Menu / Close_MD"> <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#959bad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g> </g>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="bottom">
-                            <h1>Acesse meus links</h1>
-                            <p>Aqui estão meus links e algumas informações de contato</p>
-                        </div>
+        </header>
+        
+        <!-- Header ativada pelo scroll -->
+        
+        <header class="active-header animate__animated none">
+            <div class="container">
+                <div @click="section='home'; changeSection()" class="logo">
+                    <h1>FRATTI<span>()</span>;</h1>
+                </div>
+                <div class="links">
+                    <a class="header-link selected" data-section="home" @click="section='home'; changeSection()">Início</a>
+                    <a class="header-link" data-section="sobremim" @click="section='sobremim'; changeSection()">Sobre mim</a>
+                    <a class="header-link" data-section="projetos" @click="section='projetos'; changeSection()">Projetos</a>
+                    <a class="header-link" data-section="conhecimentos" @click="section='conhecimentos'; changeSection()">Conhecimentos</a>
+                    <a class="header-link" data-section="contato" @click="section='contato'; changeSection()">Contato</a>
+                </div>
+                <div class="link">
+                    <button title="Meus links" @click="openModal()">
+                        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#959bad">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                            <g id="SVGRepo_iconCarrier"> <path d="M14 12C14 14.7614 11.7614 17 9 17H7C4.23858 17 2 14.7614 2 12C2 9.23858 4.23858 7 7 7H7.5M10 12C10 9.23858 12.2386 7 15 7H17C19.7614 7 22 9.23858 22 12C22 14.7614 19.7614 17 17 17H16.5" stroke="#959bad" stroke-width="2" stroke-linecap="round"/> </g>
+                        </svg>
+                    </button>
+                </div>
+                <div class="menu">
+                    <button @click="toggleMenu">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
+                            <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Menu Lateral -->
+        
+        <div class="menu-lateral">
+            <div class="container">
+                <div class="header">
+                    <div @click="section='home'; changeSection(); toggleMenu()" class="logo">
+                        <h1>FRATTI<span>()</span>;</h1>
                     </div>
-                    <div class="main">
+                    <button @click="toggleMenu">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256" style="fill:#000000;">
+                            <g fill="#959bad" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path transform="translate(24.00059,-9.94113) rotate(45.001)" d="M21.5,4.5h5.001v39h-5.001z"></path><path transform="translate(57.94113,24.00474) rotate(135.008)" d="M21.5,4.5h5v39.001h-5z"></path></g></g>
+                        </svg>
+                    </button>
+                </div>
+                <div class="links">
+                    <a v-if="section == 'home'" class="selected" @click="section='home'; changeSection(); toggleMenu()">Início</a>
+                    <a v-else @click="section='home'; changeSection(); toggleMenu()">Início</a>
+                    <a v-if="section == 'sobremim'" class="selected" @click="section='sobremim'; changeSection(); toggleMenu()">Sobre mim</a>
+                    <a v-else="section == 'sobremim'" @click="section='sobremim'; changeSection(); toggleMenu()">Sobre mim</a>
+                    <a v-if="section == 'projetos'" class="selected" @click="section='projetos'; changeSection(); toggleMenu()">Projetos</a>
+                    <a v-else @click="section='projetos'; changeSection(); toggleMenu()">Projetos</a>
+                    <a v-if="section == 'conhecimentos'" class="selected" @click="section='conhecimentos'; changeSection(); toggleMenu()">Conhecimentos</a>
+                    <a v-else @click="section='conhecimentos'; changeSection(); toggleMenu()">Conhecimentos</a>
+                    <a v-if="section == 'contato'" class="selected" @click="section='contato'; changeSection(); toggleMenu()">Contato</a>
+                    <a v-else @click="section='contato'; changeSection(); toggleMenu()">Contato</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal - Infos -->
+        
+        <div @click="closeModal()" class="animate__animated none" id="background-full">
+            <div @click.stop class="modal-infos animate__animated">
+                <div class="header">
+                    <div class="top">
+                        <div></div>
+                        <span>
+                            <img src="image/svg/link.svg" alt="info">
+                        </span>
+                        <button @click="closeModal()" class="close-modal_btn">
+                            <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier"> <g id="Menu / Close_MD"> <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#959bad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g> </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="bottom">
+                        <h1>Acesse meus links</h1>
+                        <p>Aqui estão meus links e algumas informações de contato</p>
+                    </div>
+                </div>
+                <div class="main">
+                    <div>
                         <a href="https://www.linkedin.com/in/vitor-fratti/" target="_blank">
                             <img src="image/svg/linkedin 1.svg" alt="linkedin">
                             <h4>LinkedIn</h4>
@@ -192,6 +142,8 @@
                             <img src="image/svg/github 1.svg" alt="github">
                             <h4>Github</h4>
                         </a>
+                    </div>
+                    <div>
                         <a href="mailto:vifratti@gmail.com" target="_blank">
                             <img src="image/svg/gmail.svg" alt="gmail">
                             <h4>Gmail</h4>
@@ -200,252 +152,217 @@
                             <img src="image/svg/whatsapp.svg" alt="whatsapp">
                             <h4>WhatsApp</h4>
                         </a>
-                        <a class="download" href="image/Currículo - Vitor Fratti.pdf" download>
-                            <h4>Baixar Currículo</h4>
-                            <img src="image/svg/download.svg" alt="download">
-                        </a>
                     </div>
+                    <a class="download" href="image/Currículo - Vitor Fratti.pdf" download>
+                        <h4>Baixar Currículo</h4>
+                        <img src="image/svg/download.svg" alt="download">
+                    </a>
                 </div>
             </div>
-            <div v-if="this.activeModal == false" @click="this.activeModal = false" class="animate__animated animate__fadeOut layer" id="background-full">
-                <div @click.stop class="modal-infos animate__animated animate__zoomOut">
-                    <div class="header">
-                        <div class="top">
-                            <div></div>
-                            <span>
-                                <img src="image/svg/link.svg" alt="info">
-                            </span>
-                            <button @click="this.activeModal = false" class="close-modal_btn">
-                                <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <g id="SVGRepo_iconCarrier"> <g id="Menu / Close_MD"> <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#959bad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g> </g>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="bottom">
-                            <h1>Acesse meus links</h1>
-                            <p>Aqui estão algumas informações de contato</p>
-                        </div>
-                    </div>
-                    <div class="main">
-                        <a href="https://www.linkedin.com/in/vitor-fratti/" target="_blank">
-                            <img src="image/svg/linkedin 1.svg" alt="linkedin">
-                            <h4>LinkedIn</h4>
-                        </a>
-                        <a href="https://github.com/vitorfratti" target="_blank">
-                            <img src="image/svg/github 1.svg" alt="github">
-                            <h4>Github</h4>
-                        </a>
-                        <a href="mailto:vifratti@gmail.com" target="_blank">
-                            <img src="image/svg/gmail.svg" alt="gmail">
-                            <h4>Gmail</h4>
-                        </a>
-                        <a class="download" href="image/Currículo - Vitor Fratti.pdf" download>
-                            <h4>Baixar Currículo</h4>
-                            <img src="image/svg/download.svg" alt="download">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <main>
-            
-                <!-- Home -->
-            
-                <section class="home" id="home">
-                    <div class="container">
-                        <h1>Bem-vindo, meu nome é <span class="name-typing">Vitor Fratti</span>.</h1>
-                        <p>Desenvolvedor front-end, focado em aplicações web.</p>
-                        <div>
-                            <button @click="this.activeModal = true">Acessar meus links</button>
-                        </div>
-                    </div>
-                    <img class="top" src="image/blur.png" alt="blur">
-                    <img class="left" src="image/blur.png" alt="blur">
-                </section>
-            
-                <!-- Sobre mim -->
-            
-                <section class="sobremim" id="sobremim">
-                    <img class="blur" src="image/blur.png" alt="blur">
-                    <div class="container">
-                        <div class="top">
-                            <h4><span>-></span> Sobre mim</h4>
-                            <h2>Sobre mim</h2>
-                            <p>Tenho 19 anos e sou desenvolvedor front-end. Atualmente estou cursando o 2º semestre de <span>Engenharia de Software</span> e atuando como <span>estagiário</span> em <span>desenvolvimento web</span>.</p>
-                        </div>
-                        <div class="bottom">
-                            <a class="box one" href="https://hangar.digital/" target="_blank">
-                                <div class="logo">
-                                    <img src="image/svg/logo-hangar.svg" alt="hangar">
-                                </div>
-                                <div class="texts">
-                                    <h1>Hangar Digital</h1>
-                                    <p class="trabalho">Agência de marketing digital em Joinville, Santa Catarina</p>
-                                    <h5>Estagiário de desenvolvimento web · abr de 2023 - o momento (4 meses)</h5>
-                                </div>
-                            </a>
-                            <a class="box two" href="https://www.catolicasc.org.br/?gad=1&gclid=Cj0KCQjwwvilBhCFARIsADvYi7J6-s0zm9mQZNMC_dZR6Lfwzo_69PdY1z_vyOu4y_OjChZtKEaOpocaAvKGEALw_wcB" target="_blank">
-                                <div class="logo">
-                                    <img src="image/catolicasc.png" alt="catolicasc">
-                                </div>
-                                <div class="texts">
-                                    <h1>Católica de Santa Catarina</h1>
-                                    <p class="faculdade">Centro Universitário em Joinville, Santa Catarina</p>
-                                    <h5>Bacharelado - Engenharia de Software · fev de 2023 (2º semestre)</h5>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            
-                <!-- Projetos -->
-            
-                <section class="projetos" id="projetos">
-                    <img class="blur" src="image/blur.png" alt="blur">
-                    <div class="container">
-                        <div class="top">
-                            <div class="left">
-                                <h4><span>-></span> Projetos</h4>
-                                <h2>Projetos</h2>
-                                <p>Uma coleção de projetos onde são aplicados meus conhecimentos técnicos e habilidades em desenvolvimento.</p>
-                            </div>
-                            <div class="right">
-                                <button @click="animateJumpLeft()" class="slick-prev animate__animated" aria-label="Previous"><img src="image/svg/arrow.svg" alt="arrow"></button>
-                                <button @click="animateJumpRight()" class="slick-next animate__animated" aria-label="Next"><img class="rotate" src="image/svg/arrow.svg" alt="arrow"></button>
-                            </div>
-                        </div>
-            
-                        <div class="slider">
-                            <router-link to="/single" v-for="(projeto, index) in projetos" :key="index" ref="projeto" @mouseleave="projeto.buttons = false" @mouseover="projeto.buttons = true" class="projeto" @click="showProject(index)">
-                                <div v-if="projeto.buttons == true" class="clique animate__animated animate__fadeInDown">
-                                    <h6>Clique para ver mais</h6>
-                                    <img src="image/svg/click-svgrepo-com.svg" alt="click">
-                                </div>
-                                <div v-if="projeto.buttons == false" class="image animate__animated animate__fadeInDown">
-                                    <img v-if="projeto.status == true" :src="projeto.src" alt="example">
-                                    <div v-if="projeto.status == false">
-                                        <img class="tools" :src="projeto.src" alt="example">
-                                    </div>
-                                </div>
-                                <div v-if="projeto.buttons == false && projeto.categoria != null" class="categoria animate__animated animate__fadeInDown">
-                                    <span>{{ projeto.categoria }}</span>
-                                </div>
-                                <div v-if="projeto.buttons == true" class="texts animate__animated animate__fadeInUp">
-                                    <h3>{{ projeto.nome }}</h3>
-                                    <p>{{ projeto.descricao }}</p>
-                                </div>
-                                <div v-if="projeto.buttons == false" class="texts animate__animated animate__fadeInDown">
-                                    <h3>{{ projeto.nome }}</h3>
-                                    <p>{{ projeto.descricao }}</p>
-                                </div>
-                                <div v-if="projeto.buttons == true" class="buttons animate__animated animate__fadeInUp">
-                                    <a @click.stop :href="projeto.site" target="_blank" class="site">Ir para o site</a>
-                                    <a v-if="projeto.categoria == 'Corporativo'" @click.stop :href="projeto.repositorio" target="_blank" title="Projeto Corporativo" class="repositorio disabled" disabled>
-                                        Ver repositório
-                                        <img src="image/svg/blocked.svg" alt="blocked">
-                                    </a>
-                                    <a v-else @click.stop class="repositorio" :href="projeto.repositorio" target="_blank">Ver repositório</a>
-                                </div>
-                                <div v-if="projeto.buttons == false" class="buttons animate__animated animate__fadeOutDown none">
-                                    <a @click.stop :href="projeto.site" target="_blank" class="site">Ir para o site</a>
-                                    <a v-if="projeto.categoria == 'Corporativo'" @click.stop :href="projeto.repositorio" target="_blank" class="repositorio disabled" disabled>
-                                        Ver repositório
-                                        <img src="image/svg/blocked.svg" alt="blocked">
-                                    </a>
-                                    <a v-else @click.stop class="repositorio" :href="projeto.repositorio" target="_blank">Ver repositório</a>
-                                </div>
-                            </router-link>
-                        </div>
-            
-                        <div class="bottom">
-                            <a href="https://github.com/vitorfratti?tab=repositories" target="_blank">Ver todos os repositórios <span>-></span></a>
-                        </div>
-                    </div>
-                </section>
-            
-                <!-- Conhecimentos -->
-            
-                <section class="conhecimentos" id="conhecimentos">
-                    <img class="blur" src="image/blur.png" alt="blur">
-                    <div class="container">
-                        <div class="top">
-                            <h4><span>-></span> Conhecimentos</h4>
-                            <h2>Conhecimentos</h2>
-                            <p>Um conjunto de habilidades e conhecimentos técnicos, abrangendo linguagens de programação e ferramentas essenciais para o desenvolvimento.</p>
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <span v-for="(conhecimento, index) in conhecimentos" :key="index" @mouseover="conhecimentoActive = []; conhecimentoActive.push(conhecimento)" @click="conhecimentoActive = []; conhecimentoActive.push(conhecimento)">
-                                    <img :src="conhecimento.src" alt="">
-                                </span>
-                            </div>
-                            <div class="right">
-                                <span v-for="(conhecimento, index) in conhecimentoActive" :key="index">
-                                    <h3>{{ conhecimento.name }}</h3>
-                                    <h4 v-if="conhecimento.level === 'Avançado'" class="avancado">{{ conhecimento.level }}</h4>
-                                    <h4 v-if="conhecimento.level === 'Intermediário'" class="intermediario">{{ conhecimento.level }}</h4>
-                                    <h4 v-if="conhecimento.level === 'Básico'" class="basico">{{ conhecimento.level }}</h4>
-                                    <p>{{ conhecimento.descricao }}</p>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            
-                <!-- Contato -->
-            
-                <section class="contato" id="contato">
-                    <img class="blur" src="image/blur.png" alt="blur">
-                    <div class="container">
-                        <div class="top">
-                            <h4><span>-></span> Contato</h4>
-                            <h2>Contato</h2>
-                            <p>Fique à vontade para deixar sua mensagem ou pergunta.</p>
-                        </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <input type="text" placeholder="Nome">
-                                <input type="text" placeholder="Email">
-                                <textarea placeholder="Mensagem"></textarea>
-                                <button data-aos-duration="500">Enviar mensagem</button>
-                            </div>
-                            <div class="right">
-                                <a href="https://www.linkedin.com/in/vitor-fratti/" target="_blank">
-                                    <img src="image/svg/linkedin 1.svg" alt="linkedin">
-                                    <h4>LinkedIn</h4>
-                                </a>
-                                <a href="https://github.com/vitorfratti" target="_blank">
-                                    <img src="image/svg/github 1.svg" alt="github">
-                                    <h4>Github</h4>
-                                </a>
-                                <a href="mailto:vifratti@gmail.com" target="_blank">
-                                    <img src="image/svg/gmail.svg" alt="gmail">
-                                    <h4>Gmail</h4>
-                                </a>
-                                <a href="https://wa.me/5511998874399" title="(11) 99887-4399" target="_blank">
-                                    <img src="image/svg/whatsapp.svg" alt="whatsapp">
-                                    <h4>WhatsApp</h4>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            
-            </main>
-            
-            <!-- Footer -->
-            
-            <footer>
-                <div class="container">
-                    <h4>Copyright © 2023 <span>vitorfratti</span>. Todos os direitos reservados.</h4>
-                    <div @click="this.section = 'home'; changeSection()" class="logo">
-                        <h1>FRATTI<span>()</span>;</h1>
-                    </div>
-                </div>
-            </footer>
         </div>
+        
+        <main>
+        
+            <!-- Home -->
+        
+            <section class="home" id="home">
+                <div class="container">
+                    <h1>Bem-vindo, meu nome é <span class="name-typing">Vitor Fratti</span>.</h1>
+                    <p>Desenvolvedor front-end, focado em aplicações web.</p>
+                    <div>
+                        <button @click="openModal()">Acessar meus links</button>
+                    </div>
+                </div>
+                <img class="top" src="image/blur.png" alt="blur">
+                <img class="left" src="image/blur.png" alt="blur">
+            </section>
+        
+            <!-- Sobre mim -->
+        
+            <section class="sobremim" id="sobremim">
+                <img class="blur" src="image/blur.png" alt="blur">
+                <div class="container">
+                    <div class="top">
+                        <h4><span>-></span> Sobre mim</h4>
+                        <h2>Sobre mim</h2>
+                        <p>Tenho 19 anos e sou desenvolvedor front-end. Atualmente estou cursando o 2º semestre de <span>Engenharia de Software</span> e atuando como <span>estagiário</span> em <span>desenvolvimento web</span>.</p>
+                    </div>
+                    <div class="bottom">
+                        <a class="box one" href="https://hangar.digital/" target="_blank">
+                            <div class="logo">
+                                <img src="image/svg/logo-hangar.svg" alt="hangar">
+                            </div>
+                            <div class="texts">
+                                <h1>Hangar Digital</h1>
+                                <p class="trabalho">Agência de marketing digital em Joinville, Santa Catarina</p>
+                                <h5 class="old">Estagiário de desenvolvimento web · abr/2023 - jul/2023</h5>
+                                <h5>Desenvolvedor Front-end · ago/2023 - o momento</h5>
+                            </div>
+                        </a>
+                        <a class="box two" href="https://www.catolicasc.org.br/?gad=1&gclid=Cj0KCQjwwvilBhCFARIsADvYi7J6-s0zm9mQZNMC_dZR6Lfwzo_69PdY1z_vyOu4y_OjChZtKEaOpocaAvKGEALw_wcB" target="_blank">
+                            <div class="logo">
+                                <img src="image/catolicasc.png" alt="catolicasc">
+                            </div>
+                            <div class="texts">
+                                <h1>Católica de Santa Catarina</h1>
+                                <p class="faculdade">Centro Universitário em Joinville, Santa Catarina</p>
+                                <h5>Engenharia de Software · 2º semestre</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Projetos -->
+        
+            <section class="projetos" id="projetos">
+                <img class="blur" src="image/blur.png" alt="blur">
+                <div class="container">
+                    <div class="top">
+                        <div class="left">
+                            <h4><span>-></span> Projetos</h4>
+                            <h2>Projetos</h2>
+                            <p>Uma coleção de projetos onde são aplicados meus conhecimentos técnicos e habilidades em desenvolvimento.</p>
+                        </div>
+                        <div class="right">
+                            <button @click="animateJumpLeft()" class="slick-prev animate__animated" aria-label="Previous"><img src="image/svg/arrow.svg" alt="arrow"></button>
+                            <button @click="animateJumpRight()" class="slick-next animate__animated" aria-label="Next"><img class="rotate" src="image/svg/arrow.svg" alt="arrow"></button>
+                        </div>
+                    </div>
+        
+                    <div class="slider">
+                        <div v-for="(projeto, index) in projetos" :key="index" ref="projeto" @mouseleave="projeto.buttons = false" @mouseover="projeto.buttons = true" class="projeto" @click="showProject(index)">
+                            <div v-if="projeto.buttons == true" class="clique animate__animated animate__fadeInDown">
+                                <h6>Clique para ver mais</h6>
+                                <img src="image/svg/click-svgrepo-com.svg" alt="click">
+                            </div>
+                            <div v-if="projeto.buttons == false" class="image animate__animated animate__fadeInDown">
+                                <img v-if="projeto.status == true" :src="projeto.src" alt="example">
+                                <div v-if="projeto.status == false">
+                                    <img class="tools" :src="projeto.src" alt="example">
+                                </div>
+                            </div>
+                            <div v-if="projeto.buttons == false && projeto.categoria != null" class="categoria animate__animated animate__fadeInDown">
+                                <span>{{ projeto.categoria }}</span>
+                            </div>
+                            <div v-if="projeto.buttons == true" class="texts animate__animated animate__fadeInUp">
+                                <h3>{{ projeto.nome }}</h3>
+                                <p>{{ projeto.descricao }}</p>
+                            </div>
+                            <div v-if="projeto.buttons == false" class="texts animate__animated animate__fadeInDown">
+                                <h3>{{ projeto.nome }}</h3>
+                                <p>{{ projeto.descricao }}</p>
+                            </div>
+                            <div v-if="projeto.buttons == true" class="buttons animate__animated animate__fadeInUp">
+                                <a @click.stop :href="projeto.site" target="_blank" class="site">Ir para o site</a>
+                                <a v-if="projeto.categoria == 'Corporativo'" @click.stop :href="projeto.repositorio" target="_blank" title="Projeto Corporativo" class="repositorio disabled" disabled>
+                                    Ver repositório
+                                    <img src="image/svg/blocked.svg" alt="blocked">
+                                </a>
+                                <a v-else @click.stop class="repositorio" :href="projeto.repositorio" target="_blank">Ver repositório</a>
+                            </div>
+                            <div v-if="projeto.buttons == false" class="buttons animate__animated animate__fadeOutDown none">
+                                <a @click.stop :href="projeto.site" target="_blank" class="site">Ir para o site</a>
+                                <a v-if="projeto.categoria == 'Corporativo'" @click.stop :href="projeto.repositorio" target="_blank" class="repositorio disabled" disabled>
+                                    Ver repositório
+                                    <img src="image/svg/blocked.svg" alt="blocked">
+                                </a>
+                                <a v-else @click.stop class="repositorio" :href="projeto.repositorio" target="_blank">Ver repositório</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="bottom">
+                        <a href="https://github.com/vitorfratti?tab=repositories" target="_blank">Ver todos os repositórios <span>-></span></a>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Conhecimentos -->
+        
+            <section class="conhecimentos" id="conhecimentos">
+                <img class="blur" src="image/blur.png" alt="blur">
+                <div class="container">
+                    <div class="top">
+                        <h4><span>-></span> Conhecimentos</h4>
+                        <h2>Conhecimentos</h2>
+                        <p>Um conjunto de habilidades e conhecimentos técnicos, abrangendo linguagens de programação e ferramentas essenciais para o desenvolvimento.</p>
+                    </div>
+                    <div class="bottom">
+                        <div class="left">
+                            <span v-for="(conhecimento, index) in conhecimentos" :key="index" @mouseover="conhecimentoActive = []; conhecimentoActive.push(conhecimento)" @click="conhecimentoActive = []; conhecimentoActive.push(conhecimento)">
+                                <img :src="conhecimento.src" alt="">
+                            </span>
+                        </div>
+                        <div class="right">
+                            <span v-for="(conhecimento, index) in conhecimentoActive" :key="index">
+                                <h3>{{ conhecimento.name }}</h3>
+                                <h4 v-if="conhecimento.level === 'Avançado'" class="avancado">{{ conhecimento.level }}</h4>
+                                <h4 v-if="conhecimento.level === 'Intermediário'" class="intermediario">{{ conhecimento.level }}</h4>
+                                <h4 v-if="conhecimento.level === 'Básico'" class="basico">{{ conhecimento.level }}</h4>
+                                <p>{{ conhecimento.descricao }}</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Contato -->
+        
+            <section class="contato" id="contato">
+                <img class="blur" src="image/blur.png" alt="blur">
+                <div class="container">
+                    <div class="top">
+                        <h4><span>-></span> Contato</h4>
+                        <h2>Contato</h2>
+                        <p>Fique à vontade para deixar sua mensagem ou pergunta.</p>
+                    </div>
+                    <div class="bottom">
+
+                        <form action="https://formsubmit.co/vifratti@gmail.com" method="POST" class="left">
+                            <input type="text" name="Nome" placeholder="Nome" required>
+                            <input type="email" name="Email" placeholder="Email" required>
+                            <textarea name="Mensagem" placeholder="Mensagem"></textarea>
+                            <button type="submit">Enviar mensagem</button>
+                            <input type="hidden" name="_subject" value="Formulário - Portfólio">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="http://127.0.0.1:5501/thanks.html">
+                        </form>
+
+                        <div class="right">
+                            <a href="https://www.linkedin.com/in/vitor-fratti/" target="_blank">
+                                <img src="image/svg/linkedin 1.svg" alt="linkedin">
+                                <h4>LinkedIn</h4>
+                            </a>
+                            <a href="https://github.com/vitorfratti" target="_blank">
+                                <img src="image/svg/github 1.svg" alt="github">
+                                <h4>Github</h4>
+                            </a>
+                            <a href="mailto:vifratti@gmail.com" target="_blank">
+                                <img src="image/svg/gmail.svg" alt="gmail">
+                                <h4>Gmail</h4>
+                            </a>
+                            <a href="https://wa.me/5511998874399" title="(11) 99887-4399" target="_blank">
+                                <img src="image/svg/whatsapp.svg" alt="whatsapp">
+                                <h4>WhatsApp</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+        </main>
+        
+        <!-- Footer -->
+        
+        <footer>
+            <div class="container">
+                <h4>Copyright © 2023 <span>vitorfratti</span>. Todos os direitos reservados.</h4>
+                <div @click="this.section = 'home'; changeSection()" class="logo">
+                    <h1>FRATTI<span>()</span>;</h1>
+                </div>
+            </div>
+        </footer>
 
     </div>
 
