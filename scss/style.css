@@ -900,7 +900,7 @@ section.projetos .container .bottom {
 }
 @media (max-width: 768px) {
   section.projetos .container .bottom {
-    padding: 1rem 0;
+    padding: 0;
     justify-content: center !important;
   }
 }
