@@ -25,6 +25,10 @@
         flex-direction: column;
         gap: 1rem;
 
+        @media (max-width: 500px) {
+            gap: 0.25rem;
+        }
+
         .top {
             display: flex;
             justify-content: space-between;
