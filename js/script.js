@@ -243,7 +243,7 @@ const app = Vue.createApp({
             $('.modal-infos').addClass('animate__zoomOut')
             setTimeout(() => {
                 $('#background-full').addClass('none')
-            }, 100)
+            }, 500)
         },
         initSlick() {
             $('.slider').slick({

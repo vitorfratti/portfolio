@@ -74,7 +74,7 @@ section.sobremim {
                 justify-content: center;
                 gap: 1.5rem;
                 width: 50%;
-                height: 20rem;
+                height: 18rem;
                 background: linear-gradient(225deg, #1B2138 0%, #1b213840 100%);
                 border: 1px solid #959bad40;
                 border-radius: 10px;
@@ -87,7 +87,7 @@ section.sobremim {
 
                 @media (max-width: 450px) {
                     height: auto;
-                    padding: 2rem 1rem;
+                    padding: 1.75rem 1rem;
                 }
 
                 &.one {
