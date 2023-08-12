@@ -1904,7 +1904,7 @@ section.thanks .container a:hover {
 }
 @media (max-width: 500px) {
   .modal-infos .main {
-    gap: 1rem;
+    margin-top: 1rem;
   }
 }
 .modal-infos .main div {
