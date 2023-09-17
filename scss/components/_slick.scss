@@ -28,10 +28,6 @@
     display: block;
     display: flex;
     gap: 1rem;
-
-    @media (max-width: 480px) {
-        gap: 0 !important;
-    }
 }
 
 .slick-slide {
@@ -70,7 +66,6 @@
     border: 1px solid #fefefe;
 }
 
-/* Estilize os botões Next e Prev */
 .slick-prev,
 .slick-next {
     width: 3rem;

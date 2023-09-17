@@ -3,7 +3,7 @@
     width: 100%;
     height: 100vh;
     z-index: 9999;
-    background: rgba(0, 0, 0, 0.700);
+    background: #00000090;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,8 @@
 
 .modal-infos {
     width: 40rem;
-    background: #1B2138;
+    background: #00000099;
+    backdrop-filter: blur(100px);
     border: 1px solid #959bad40;
     padding: 1.5rem 1.5rem 2rem 1.5rem;
     box-shadow: 0 0 50px #000;
@@ -141,7 +142,9 @@
             flex-shrink: 0;
             border-radius: 10px;
             border: 1px solid #959bad40;
-            background: linear-gradient(225deg, #1B2138 0%, #1b213840 100%);
+            backdrop-filter: blur(100px);
+            background: none;
+            /* background: linear-gradient(225deg, #1B2138 0%, #1b213840 100%); */
             gap: 0.5rem;
             transition: all 0.2s;
             cursor: pointer;

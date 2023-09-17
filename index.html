@@ -166,14 +166,13 @@
         
             <section class="home" id="home">
                 <div class="container">
-                    <h1>Bem-vindo, meu nome é <span class="name-typing">Vitor Fratti</span>.</h1>
-                    <p>Desenvolvedor Front-end, focado em aplicações web.</p>
-                    <div>
+                    <h1 data-aos="fade-down">Bem-vindo, meu nome é <span class="name-typing">Vitor Fratti</span>.</h1>
+                    <p data-aos="fade-in">Desenvolvedor Front-end, focado em aplicações web.</p>
+                    <div data-aos="fade-up">
                         <button @click="openModal()">Acessar meus links</button>
                     </div>
                 </div>
-                <img class="top" src="image/blur.png" alt="blur">
-                <img class="left" src="image/blur.png" alt="blur">
+                <img class="background-abstract" src="image/background-abstract-3.gif" alt="background-abstract">
             </section>
         
             <!-- Sobre mim -->
@@ -188,20 +187,20 @@
                     </div>
                     <div class="bottom">
                         <a class="box one" href="https://hangar.digital/" target="_blank">
-                            <div class="logo">
+                            <div class="logo" data-aos="fade-down">
                                 <img src="image/svg/logo-hangar.svg" alt="hangar">
                             </div>
-                            <div class="texts">
+                            <div class="texts" data-aos="fade-up">
                                 <h1>Hangar Digital</h1>
                                 <p class="trabalho">Agência de marketing digital em Joinville, Santa Catarina</p>
                                 <h5>Desenvolvedor Front-end · ago/2023 - o momento</h5>
                             </div>
                         </a>
                         <a class="box two" href="https://www.catolicasc.org.br/?gad=1&gclid=Cj0KCQjwwvilBhCFARIsADvYi7J6-s0zm9mQZNMC_dZR6Lfwzo_69PdY1z_vyOu4y_OjChZtKEaOpocaAvKGEALw_wcB" target="_blank">
-                            <div class="logo">
+                            <div class="logo" data-aos="fade-down">
                                 <img src="image/catolicasc.png" alt="catolicasc">
                             </div>
-                            <div class="texts">
+                            <div class="texts" data-aos="fade-up">
                                 <h1>Católica de Santa Catarina</h1>
                                 <p class="faculdade">Centro Universitário em Joinville, Santa Catarina</p>
                                 <h5>Engenharia de Software · 2º semestre</h5>
@@ -228,7 +227,7 @@
                         </div>
                     </div>
         
-                    <div class="slider">
+                    <div class="slider" data-aos="fade-in">
                         <div v-for="(projeto, index) in projetos" :key="index" ref="projeto" @mouseleave="projeto.buttons = false" @mouseover="projeto.buttons = true" class="projeto" @click="showProject(index)">
                             <div v-if="projeto.buttons == true" class="clique animate__animated animate__fadeInDown">
                                 <h6>Clique para ver mais</h6>
@@ -287,18 +286,18 @@
                         <p>Um conjunto de habilidades e conhecimentos técnicos, abrangendo linguagens de programação e ferramentas essenciais para o desenvolvimento.</p>
                     </div>
                     <div class="bottom">
-                        <div class="left">
+                        <div data-aos="fade-up" class="left">
                             <span v-for="(conhecimento, index) in conhecimentos" :key="index" @mouseover="conhecimentoActive = []; conhecimentoActive.push(conhecimento)" @click="conhecimentoActive = []; conhecimentoActive.push(conhecimento)">
                                 <img :src="conhecimento.src" alt="">
                             </span>
                         </div>
                         <div class="right">
                             <span v-for="(conhecimento, index) in conhecimentoActive" :key="index">
-                                <h3>{{ conhecimento.name }}</h3>
+                                <h3 data-aos="fade-down">{{ conhecimento.name }}</h3>
                                 <h4 v-if="conhecimento.level === 'Avançado'" class="avancado">{{ conhecimento.level }}</h4>
                                 <h4 v-if="conhecimento.level === 'Intermediário'" class="intermediario">{{ conhecimento.level }}</h4>
                                 <h4 v-if="conhecimento.level === 'Básico'" class="basico">{{ conhecimento.level }}</h4>
-                                <p>{{ conhecimento.descricao }}</p>
+                                <p data-aos="fade-up">{{ conhecimento.descricao }}</p>
                             </span>
                         </div>
                     </div>
@@ -316,8 +315,7 @@
                         <p>Fique à vontade para deixar sua mensagem ou pergunta.</p>
                     </div>
                     <div class="bottom">
-
-                        <form action="https://formsubmit.co/e2d065247b07695f1883ed0aa7720d8a" method="POST" class="left">
+                        <form data-aos="fade-right" action="https://formsubmit.co/e2d065247b07695f1883ed0aa7720d8a" method="POST" class="left">
                             <input type="text" name="Nome" placeholder="Nome" required>
                             <input type="email" name="Email" placeholder="Email" required>
                             <textarea name="Mensagem" placeholder="Mensagem"></textarea>
@@ -327,7 +325,7 @@
                             <input type="hidden" name="_next" value="https://portfolio-vitorfratti.netlify.app/thanks.html">
                         </form>
 
-                        <div class="right">
+                        <div data-aos="fade-left" class="right">
                             <a href="https://www.linkedin.com/in/vitor-fratti-1b0310288/" target="_blank">
                                 <img src="image/svg/linkedin 1.svg" alt="linkedin">
                                 <h4>LinkedIn</h4>

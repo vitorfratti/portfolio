@@ -75,7 +75,8 @@ section.sobremim {
                 gap: 1.5rem;
                 width: 50%;
                 height: 18rem;
-                background: linear-gradient(225deg, #1B2138 0%, #1b213840 100%);
+                backdrop-filter: blur(100px);
+                /* background: linear-gradient(225deg, #00000095 0%, #00000095 100%); */
                 border: 1px solid #959bad40;
                 border-radius: 10px;
                 padding: 0 2rem;
@@ -91,18 +92,14 @@ section.sobremim {
                 }
 
                 &.one {
-                    border: 1px solid #50F4E8;
-
                     &:hover {
-                        box-shadow: 0 0 20px #50F4E8;  
+                        border: 1px solid #50F4E8;
                     }
                 }
 
                 &.two {
-                    border: 1px solid #ff4d94;
-
                     &:hover {
-                        box-shadow: 0 0 20px #ff4d94;  
+                        border: 1px solid #ff4d94;
                     }
                 }
 

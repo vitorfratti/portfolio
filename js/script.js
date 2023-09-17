@@ -78,7 +78,14 @@ const app = Vue.createApp({
                             src: 'image/svg/wordpress.svg'
                         }
                     ],
-                    conhecimentoActive: []
+                    conhecimentoActive: [
+                        {
+                            name: 'HTML',
+                            level: 'Avançado',
+                            descricao: 'HTML é uma linguagem de marcação usada para estruturar e exibir conteúdo na web. Composta por elementos e tags, o HTML define a estrutura e semântica de uma página, permitindo adicionar texto, imagens e links. Combinado com CSS e JavaScript, o HTML possibilita criar páginas web dinâmicas e interativas.',
+                            src: 'image/svg/html.svg'
+                        }
+                    ]
                 },
                 {
                     nome: 'Em desenvolvimento',
@@ -172,10 +179,10 @@ const app = Vue.createApp({
                     src: 'image/svg/sql.svg'
                 },
                 {
-                    name: 'Linux',
-                    level: 'Intermediário',
-                    descricao: 'Linux é um Sistema Operacional, assim como o Windows e o Mac OS, que possibilita a execução de programas em um computador e outros dispositivos. Linux pode ser livremente modificado e distribuído. Apesar desta interpretação ser simplista é perfeitamente correta e aceitável.',
-                    src: 'image/svg/linux.svg'
+                    name: 'Styled Components',
+                    level: 'Avançado',
+                    descricao: 'Styled Components é uma biblioteca de estilização para React que permite escrever estilos diretamente em JavaScript, facilitando a criação de componentes estilizados de forma isolada.',
+                    src: 'image/svg/styled-components.svg'
                 }
             ],
             conhecimentoActive: [
@@ -313,7 +320,7 @@ $('.slick-next').click(function () {
 // AOS
 
 AOS.init({
-    duration: 1500
+    duration: 800
 });
   
   

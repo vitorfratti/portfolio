@@ -83,7 +83,8 @@ section.projetos {
                 position: relative;
                 min-width: 22rem;
                 height: 23rem;
-                background: linear-gradient(225deg, #1B2138 0%, #1b213840 100%);
+                backdrop-filter: blur(100px);
+                /* background: linear-gradient(225deg, #1B2138 0%, #1b213840 100%); */
                 border: 1px solid #959bad40;
                 overflow-y: hidden;
                 border-radius: 10px;
@@ -102,7 +103,7 @@ section.projetos {
 
                 &:hover {
                     border: 1px solid #959BAD;
-                    background: #1B2138;
+                    /* background: #1B2138; s*/
                 }
 
                 &::-webkit-scrollbar {
