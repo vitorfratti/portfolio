@@ -322,5 +322,6 @@ $('.slick-next').click(function () {
 AOS.init({
     duration: 800
 });
+
   
   

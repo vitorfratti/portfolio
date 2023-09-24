@@ -293,11 +293,11 @@
                         </div>
                         <div class="right">
                             <span v-for="(conhecimento, index) in conhecimentoActive" :key="index">
-                                <h3 data-aos="fade-down">{{ conhecimento.name }}</h3>
+                                <h3>{{ conhecimento.name }}</h3>
                                 <h4 v-if="conhecimento.level === 'Avançado'" class="avancado">{{ conhecimento.level }}</h4>
                                 <h4 v-if="conhecimento.level === 'Intermediário'" class="intermediario">{{ conhecimento.level }}</h4>
                                 <h4 v-if="conhecimento.level === 'Básico'" class="basico">{{ conhecimento.level }}</h4>
-                                <p data-aos="fade-up">{{ conhecimento.descricao }}</p>
+                                <p>{{ conhecimento.descricao }}</p>
                             </span>
                         </div>
                     </div>
@@ -325,7 +325,7 @@
                             <input type="hidden" name="_next" value="https://portfolio-vitorfratti.netlify.app/thanks.html">
                         </form>
 
-                        <div data-aos="fade-left" class="right">
+                        <div class="right">
                             <a href="https://www.linkedin.com/in/vitor-fratti-1b0310288/" target="_blank">
                                 <img src="image/svg/linkedin 1.svg" alt="linkedin">
                                 <h4>LinkedIn</h4>
