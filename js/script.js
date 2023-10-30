@@ -117,7 +117,7 @@ const app = Vue.createApp({
                 },
                 {
                     name: 'WordPress',
-                    level: 'Intermediário',
+                    level: 'Avançado',
                     descricao: 'WordPress é uma plataforma de gerenciamento de conteúdo (CMS) popular e de código aberto, usada para criar e gerenciar sites e blogs. Com recursos flexíveis e uma grande variedade de plugins e temas, o WordPress permite criar sites personalizados de forma acessível e amigável.',
                     src: 'image/svg/wordpress.svg'
                 },
@@ -129,7 +129,7 @@ const app = Vue.createApp({
                 },
                 {
                     name: 'jQuery',
-                    level: 'Intermediário',
+                    level: 'Avançado',
                     descricao: 'jQuery é uma biblioteca JavaScript de alto desempenho que simplifica a manipulação e interação com elementos HTML, tratamento de eventos, animações e requisições assíncronas. Com uma sintaxe concisa e poderosa, o jQuery agiliza o desenvolvimento web e garante compatibilidade com diferentes navegadores.',
                     src: 'image/svg/jquery.svg'
                 },
