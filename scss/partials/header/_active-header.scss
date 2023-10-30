@@ -77,12 +77,6 @@ header.active-header {
             &.selected {
                 color: #fefefe;
             }
-
-            &:hover {
-                color: #fefefe;
-                background: #959bad15;
-                border: 1px solid #959badd0;
-            }
         }
     }
 
@@ -101,7 +95,7 @@ header.active-header {
             align-items: center;
             background: none;
             border: none;
-            padding: 0.5rem 0;
+            padding: 0.5rem;
             border-radius: 4px;
             cursor: pointer;
             border: 1px solid #959bad00;
@@ -114,6 +108,17 @@ header.active-header {
 
                 path {
                     transition: all 0.3s;
+                }
+            }
+
+            &:hover {
+                background: #959bad15;
+                border: 1px solid #959badd0;
+
+                svg {
+                    path {
+                        stroke: #fefefe;
+                    }
                 }
             }
         }
@@ -134,7 +139,7 @@ header.active-header {
             align-items: center;
             background: none;
             border: none;
-            padding: 0.5rem;
+            padding: 0.5rem 0;
             cursor: pointer;
             border: 1px solid #959bad00;
             border-radius: 2px;
@@ -143,18 +148,6 @@ header.active-header {
             svg {
                 g {
                     transition: all 0.2s;
-                }
-            }
-
-            &:hover {
-                color: #fefefe;
-                background: #959bad15;
-                border: 1px solid #959badd0;
-
-                svg {
-                    g {
-                        fill: #fefefe;
-                    }
                 }
             }
         }
