@@ -166,13 +166,13 @@
         
             <section class="home" id="home">
                 <div class="container">
-                    <h1 data-aos="fade-down">Bem-vindo, meu nome é <span class="name-typing">Vitor Fratti</span>.</h1>
+                    <h1 data-aos="fade-in">Bem-vindo, meu nome é <span class="name-typing">Vitor Fratti</span>.</h1>
                     <p data-aos="fade-in">Desenvolvedor Front-end, focado em aplicações web.</p>
-                    <div data-aos="fade-up">
+                    <div data-aos="fade-in">
                         <button @click="openModal()">Acessar meus links</button>
                     </div>
                 </div>
-                <img class="background-abstract" src="image/background-abstract-3.gif" alt="background-abstract">
+                <img class="blur" src="image/blur.png" alt="blur">
             </section>
         
             <!-- Sobre mim -->
@@ -183,24 +183,24 @@
                     <div class="top">
                         <h4><span>-></span> Sobre mim</h4>
                         <h2>Sobre mim</h2>
-                        <p>Tenho 19 anos e sou desenvolvedor front-end. Atualmente estou cursando o 2º semestre de <span>Engenharia de Software</span> e atuando como <span>Desenvolvedor Front-end</span>.</p>
+                        <p>Tenho 19 anos e sou desenvolvedor front-end. Atualmente estou cursando o 2º semestre de <span>Engenharia de Software</span> e atuando como <span>Desenvolvedor Web</span>.</p>
                     </div>
                     <div class="bottom">
-                        <a class="box one" href="https://hangar.digital/" target="_blank">
-                            <div class="logo" data-aos="fade-down">
+                        <a data-aos="fade-in" class="box one" href="https://hangar.digital/" target="_blank">
+                            <div class="logo">
                                 <img src="image/svg/logo-hangar.svg" alt="hangar">
                             </div>
-                            <div class="texts" data-aos="fade-up">
+                            <div class="texts">
                                 <h1>Hangar Digital</h1>
                                 <p class="trabalho">Agência de marketing digital em Joinville, Santa Catarina</p>
-                                <h5>Desenvolvedor Front-end · ago/2023 - o momento</h5>
+                                <h5>Desenvolvedor Web · ago/2023 - o momento</h5>
                             </div>
                         </a>
-                        <a class="box two" href="https://www.catolicasc.org.br/?gad=1&gclid=Cj0KCQjwwvilBhCFARIsADvYi7J6-s0zm9mQZNMC_dZR6Lfwzo_69PdY1z_vyOu4y_OjChZtKEaOpocaAvKGEALw_wcB" target="_blank">
-                            <div class="logo" data-aos="fade-down">
+                        <a data-aos="fade-in" class="box two" href="https://www.catolicasc.org.br/?gad=1&gclid=Cj0KCQjwwvilBhCFARIsADvYi7J6-s0zm9mQZNMC_dZR6Lfwzo_69PdY1z_vyOu4y_OjChZtKEaOpocaAvKGEALw_wcB" target="_blank">
+                            <div class="logo">
                                 <img src="image/catolicasc.png" alt="catolicasc">
                             </div>
-                            <div class="texts" data-aos="fade-up">
+                            <div class="texts">
                                 <h1>Católica de Santa Catarina</h1>
                                 <p class="faculdade">Centro Universitário em Joinville, Santa Catarina</p>
                                 <h5>Engenharia de Software · 2º semestre</h5>
@@ -286,7 +286,7 @@
                         <p>Um conjunto de habilidades e conhecimentos técnicos, abrangendo linguagens de programação e ferramentas essenciais para o desenvolvimento.</p>
                     </div>
                     <div class="bottom">
-                        <div data-aos="fade-up" class="left">
+                        <div data-aos="fade-in" class="left">
                             <span v-for="(conhecimento, index) in conhecimentos" :key="index" @mouseover="conhecimentoActive = []; conhecimentoActive.push(conhecimento)" @click="conhecimentoActive = []; conhecimentoActive.push(conhecimento)">
                                 <img :src="conhecimento.src" alt="">
                             </span>
@@ -315,7 +315,7 @@
                         <p>Fique à vontade para deixar sua mensagem ou pergunta.</p>
                     </div>
                     <div class="bottom">
-                        <form data-aos="fade-right" action="https://formsubmit.co/e2d065247b07695f1883ed0aa7720d8a" method="POST" class="left">
+                        <form data-aos="fade-in" action="https://formsubmit.co/e2d065247b07695f1883ed0aa7720d8a" method="POST" class="left">
                             <input type="text" name="Nome" placeholder="Nome" required>
                             <input type="email" name="Email" placeholder="Email" required>
                             <textarea name="Mensagem" placeholder="Mensagem"></textarea>

@@ -18,7 +18,7 @@
     padding: 1.5rem 1.5rem 2rem 1.5rem;
     box-shadow: 0 0 50px #000;
     border-radius: 4px;
-    z-index: 99999;
+    z-index: 999999999;
     --animate-duration: 300ms;
 
     .header {
@@ -42,7 +42,7 @@
                 width: 3rem;
                 
                 img {
-                    width: 3rem;
+                    width: 2.5rem;
                 }
             }
 

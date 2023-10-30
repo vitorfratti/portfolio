@@ -9,7 +9,7 @@ header.active-header {
     backdrop-filter: blur(12px);
     opacity: 0.6;
     animation-duration: 0.5s;
-    z-index: 99999;
+    z-index: 999;
 
     @media (max-width: 990px) {
         height: 4rem;
@@ -101,7 +101,7 @@ header.active-header {
             align-items: center;
             background: none;
             border: none;
-            padding: 0.5rem;
+            padding: 0.5rem 0;
             border-radius: 4px;
             cursor: pointer;
             border: 1px solid #959bad00;
@@ -114,17 +114,6 @@ header.active-header {
 
                 path {
                     transition: all 0.3s;
-                }
-            }
-
-            &:hover {
-                background: #959bad15;
-                border: 1px solid #959badd0;
-
-                svg {
-                    path {
-                        stroke: #fefefe;
-                    }
                 }
             }
         }
