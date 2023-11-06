@@ -77,6 +77,12 @@ header.active-header {
             &.selected {
                 color: #fefefe;
             }
+
+            &:hover {
+                color: #fefefe;
+                background: #959bad15;
+                border: 1px solid #959badd0;
+            }
         }
     }
 
