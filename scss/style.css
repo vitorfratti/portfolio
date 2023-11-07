@@ -762,9 +762,6 @@ section.sobremim {
 
 section.sobremim img.blur {
   position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   max-width: 100%;
   opacity: 1;
   z-index: -1;
