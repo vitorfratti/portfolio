@@ -197,7 +197,7 @@ header.original-header .menu button {
           align-items: center;
   background: none;
   border: none;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   cursor: pointer;
   border: 1px solid #959bad00;
   border-radius: 2px;
@@ -211,7 +211,8 @@ header.original-header .menu button svg g {
 }
 
 header.original-header .menu button:hover {
-  opacity: 0.5;
+  background: #959bad15;
+  border: 1px solid #959badd0;
 }
 
 header.active-header {
@@ -423,7 +424,7 @@ header.active-header .menu button {
           align-items: center;
   background: none;
   border: none;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   cursor: pointer;
   border: 1px solid #959bad00;
   border-radius: 2px;
@@ -437,7 +438,8 @@ header.active-header .menu button svg g {
 }
 
 header.active-header .menu button:hover {
-  opacity: 0.5;
+  background: #959bad15;
+  border: 1px solid #959badd0;
 }
 
 .menu-lateral {
@@ -456,8 +458,8 @@ header.active-header .menu button:hover {
   -webkit-box-shadow: 0 0 1px #959badd0;
           box-shadow: 0 0 1px #959badd0;
   z-index: 99999;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .menu-lateral.closed {
@@ -536,7 +538,7 @@ header.active-header .menu button:hover {
           align-items: center;
   background: none;
   border: none;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   cursor: pointer;
   border: 1px solid #959bad00;
   border-radius: 2px;
@@ -550,7 +552,8 @@ header.active-header .menu button:hover {
 }
 
 .menu-lateral .container .header button:hover {
-  opacity: 0.5;
+  background: #959bad15;
+  border: 1px solid #959badd0;
 }
 
 .menu-lateral .container .links {
@@ -2886,8 +2889,8 @@ section.thanks .container a:hover {
 }
 
 .modal-infos .main a img {
-  width: 24px;
-  height: 24px;
+  width: 21px;
+  height: 21px;
 }
 
 .modal-infos .main a:hover {
@@ -2997,6 +3000,12 @@ h2 {
 @media (max-width: 769px) {
   header h1, .menu-lateral h1 {
     font-size: 18px !important;
+  }
+}
+
+@media (max-width: 1280px) {
+  .home h1 {
+    font-size: 46px !important;
   }
 }
 

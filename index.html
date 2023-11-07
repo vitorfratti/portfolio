@@ -183,7 +183,7 @@
                     <div class="top">
                         <h4><span>-></span> Sobre mim</h4>
                         <h2>Sobre mim</h2>
-                        <p>Tenho 19 anos e sou desenvolvedor front-end. Atualmente estou cursando o 2º semestre de <span>Engenharia de Software</span> e atuando como <span>Desenvolvedor Web</span>.</p>
+                        <p>Tenho 19 anos e sou Desenvolvedor Front-end. Atualmente estou cursando o 2º semestre de <span>Engenharia de Software</span> e atuando como <span>Desenvolvedor Web</span>.</p>
                     </div>
                     <div class="bottom">
                         <a data-aos="fade-in" class="box one" href="https://hangar.digital/" target="_blank">
@@ -288,7 +288,7 @@
                     <div class="bottom">
                         <div data-aos="fade-in" class="left">
                             <span v-for="(conhecimento, index) in conhecimentos" :key="index" @mouseover="conhecimentoActive = []; conhecimentoActive.push(conhecimento)" @click="conhecimentoActive = []; conhecimentoActive.push(conhecimento)">
-                                <img :src="conhecimento.src" alt="">
+                                <img :src="conhecimento.src" :alt="conhecimento.name">
                             </span>
                         </div>
                         <div class="right">

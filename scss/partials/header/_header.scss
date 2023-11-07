@@ -137,7 +137,7 @@ header.original-header {
             align-items: center;
             background: none;
             border: none;
-            padding: 0.5rem 0;
+            padding: 0.5rem;
             cursor: pointer;
             border: 1px solid #959bad00;
             border-radius: 2px;
@@ -150,7 +150,8 @@ header.original-header {
             }
 
             &:hover {
-                opacity: 0.5;
+                background: #959bad15;
+                border: 1px solid #959badd0;
             }
         }
     }
