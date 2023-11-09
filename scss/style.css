@@ -2966,8 +2966,7 @@ section.thanks .container a:hover {
 }
 
 body {
-  background-color: #0e1425;
-  background-image: radial-gradient(at 79% 18%, #000d33 0px, transparent 50%), radial-gradient(at 63% 21%, #000d33 0px, transparent 50%), radial-gradient(at 17% 13%, rgba(46, 140, 255, 0.3) 0px, transparent 50%), radial-gradient(at 100% 98%, rgba(46, 140, 255, 0.3) 0px, transparent 50%);
+  background: #0F1527;
   overflow-x: hidden;
 }
 
