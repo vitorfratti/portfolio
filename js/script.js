@@ -13,7 +13,7 @@ const app = Vue.createApp({
                     buttons: false,
                     status: true,
                     categoria: 'Corporativo',
-                    site: 'https://hml.ecoaenergias.com.br/',
+                    site: 'https://ecoaenergias.com.br/',
                     repositorio: null,
                     conhecimentos: [
                         {
