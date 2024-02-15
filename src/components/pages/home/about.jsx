@@ -89,6 +89,11 @@ const AboutContent = styled.section`
             gap: 1rem;
             margin-top: 1.5rem;
 
+            @media (max-width: 767px) {
+                flex-direction: column;
+                gap: 0;
+            }
+
             .card {
                 display: flex;
                 flex-direction: column;
@@ -103,8 +108,18 @@ const AboutContent = styled.section`
                 padding: 0.5rem;
                 transition: all .1s ease;
 
+                @media (max-width: 767px) {
+                    width: 100%;
+                    height: auto;
+                    padding: 2rem 1rem;
+                }
+
                 img {
                     width: 10rem;
+
+                    @media (max-width: 767px) {
+                        width: 7rem;
+                    }
                 }
 
                 span {
@@ -114,10 +129,18 @@ const AboutContent = styled.section`
                     gap: 0.25rem;
                     text-align: center;
 
+                    @media (max-width: 767px) {
+                        gap: 0.5rem;
+                    }
+
                     h3 {
                         color: #FEFEFE;
                         font-size: 2rem;
                         font-weight: 600;
+
+                        @media (max-width: 767px) {
+                            font-size: 1.5rem;
+                        }
                     }
 
                     p {
@@ -143,6 +166,10 @@ const AboutContent = styled.section`
                 flex-direction: column;
                 gap: 1rem;
 
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
+
                 .cards {
                     display: flex;
                     justify-content: space-between;
@@ -159,6 +186,10 @@ const AboutContent = styled.section`
                         border: 1px solid #1d1e20;
                         text-decoration: none;
                         transition: all .1s ease;
+
+                        @media (max-width: 767px) {
+                            display: none;
+                        }
 
                         img {
                             width: 1.5rem;
@@ -193,6 +224,10 @@ const AboutContent = styled.section`
                         text-decoration: none;
                         transition: all .1s ease;
                         cursor: pointer;
+
+                        @media (max-width: 767px) {
+                            padding: 1.5rem 0;
+                        }
 
                         img {
                             width: 1.5rem;

@@ -37,13 +37,25 @@ const HomeContent = styled.section`
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            padding: 0 15rem;
+            padding: 0 20%;
             text-align: center;
+
+            @media (max-width: 1000px) {
+                padding: 0 10%;
+            }
+
+            @media (max-width: 700px) {
+                padding: 0;
+            }
 
             h1 {
                 color: #FEFEFE;
                 font-size: 3.5rem;
                 font-weight: 600;
+
+                @media (max-width: 700px) {
+                    font-size: 2.5rem;
+                }
 
                 span {
                     background: linear-gradient(to left, #FEFEFE 20%, #FEFEFE80 40%, #FEFEFE80 60%, #FEFEFE 80%);
@@ -69,6 +81,10 @@ const HomeContent = styled.section`
                 color: #A2A1A7;
                 font-size: 2rem;
                 font-weight: 500;
+
+                @media (max-width: 700px) {
+                    font-size: 1.5rem;
+                }
             }
         }
 

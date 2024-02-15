@@ -151,6 +151,10 @@ const TechsContent = styled.section`
             display: flex;
             justify-content: space-between;
             gap: 1rem;
+
+            @media (max-width: 1000px) {
+                flex-direction: column;
+            }
             
             .left {
                 display: flex;
@@ -158,6 +162,10 @@ const TechsContent = styled.section`
                 gap: 1rem;
                 width: 50%;
                 height: auto;
+
+                @media (max-width: 1000px) {
+                    width: 100%;
+                }
 
                 .card {
                     display: flex;
@@ -181,6 +189,10 @@ const TechsContent = styled.section`
 
             .right {
                 width: 50%;
+
+                @media (max-width: 1000px) {
+                    width: 100%;
+                }
 
                 span {
                     display: flex;

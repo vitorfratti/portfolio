@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Project = ({ name, description, imageSrc, type, link, techs }) => {
+const Project = ({ name, slug, description, imageSrc, type, link, techs }) => {
     return(
         <ProjectContent>
             <div className="image">
@@ -17,12 +17,12 @@ const Project = ({ name, description, imageSrc, type, link, techs }) => {
             </div>
             <div className="techs">
                 {techs.map((tech, index) => (
-                    <img key={tech.name} src={tech.iconSrc} alt={tech.name}/>
+                    <img key={tech.name} src={tech.iconSrc} alt={tech.name} title={tech.name}/>
                 ))}
             </div>
             <div className="buttons">
-                <button>Visitar site</button>
-                <button>Ver detalhes</button>
+                <a href={link} target="_blank">Visitar site</a>
+                <button disabled>Ver repositório</button>
             </div>
         </ProjectContent>
     )
@@ -75,13 +75,22 @@ const ProjectContent = styled.div`
             padding: 0.25rem 0.5rem;
             border: 1px solid #A2A1A7;
             box-shadow: 0 0 5px #00000050;
+            user-select: none;
 
             &.corporativo {
-                background: #000
+                background: #1d1e20;
+
+                p {
+                    color: #FEFEFE;
+                }
             }
 
             &.pessoal {
-                background: #3c4adb;
+                background: #FEFEFE;
+
+                p {
+                    color: #1d1e20;
+                }
             }
 
             .type {
@@ -89,7 +98,7 @@ const ProjectContent = styled.div`
                 z-index: 10;
 
                 p {
-                    color: #FEFEFE;
+                    
                     font-size: 1rem;
                     font-weight: 600;
                     text-transform: uppercase;
@@ -108,18 +117,19 @@ const ProjectContent = styled.div`
             font-size: 1.25rem;
             font-weight: 500;
             color: #FEFEFE;
+            user-select: none;
         }
 
         p {
             font-size: 1rem;
             font-weight: 400;
             color: #A2A1A7;
+            user-select: none;
         }
     }
 
     .techs {
         display: flex;
-        justify-content: flex-start;
         align-items: center;
         gap: 1rem;
 
@@ -134,13 +144,12 @@ const ProjectContent = styled.div`
         gap: 1rem;
         margin-top: 1rem;
 
-        button {
+        a {
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             width: 50%;
-            gap: 0.5rem;
             background: #1d1e20;
             color: #FEFEFE;
             font-size: 1rem;
@@ -151,13 +160,27 @@ const ProjectContent = styled.div`
             transition: all .1s ease;
             cursor: pointer;
 
-            img {
-                width: 1.5rem;
-            }
-
             &:hover {
                 border: 1px solid #FEFEFE;
             }
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0.5;
+            width: 50%;
+            background: #1d1e20;
+            color: #FEFEFE;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.5rem;
+            border: 1px solid #1d1e20;
+            text-decoration: none;
+            transition: all .1s ease;
+            cursor: not-allowed;
         }
     }
 `;

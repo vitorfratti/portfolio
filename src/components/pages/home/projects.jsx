@@ -2,84 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Project from '../../partials/project'
 
-const Projects = () => {
-
-    const [projects, setProjects] = useState([])
-
-    useEffect(() => {
-        setProjects([
-            {
-                id: 1,
-                name: 'Ecoa Energias Renováveis',
-                slug: 'ecoa-energias-renovaveis',
-                description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                imageSrc: './images/ecoa-banner.png',
-                type: 'Corporativo',
-                link: 'https://ecoaenergias.com.br/',
-                techs: [
-                    {
-                        name: 'jQuery',
-                        iconSrc: './images/svg/jquery.svg'
-                    },
-                    {
-                        name: 'Sass',
-                        iconSrc: './images/svg/sass.svg'
-                    },
-                    {
-                        name: 'WordPress',
-                        iconSrc: './images/svg/wordpress.svg'
-                    }
-                ]
-            },
-            {
-                id: 2,
-                name: 'Marmello Studio',
-                slug: 'marmello-studio',
-                description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                imageSrc: './images/marmello-banner.png',
-                type: 'Corporativo',
-                link: 'https://marmellostudio.com/',
-                techs: [
-                    {
-                        name: 'jQuery',
-                        iconSrc: './images/svg/jquery.svg'
-                    },
-                    {
-                        name: 'Sass',
-                        iconSrc: './images/svg/sass.svg'
-                    },
-                    {
-                        name: 'WordPress',
-                        iconSrc: './images/svg/wordpress.svg'
-                    }
-                ]
-            },
-            {
-                id: 3,
-                name: 'ControlPAGE',
-                slug: 'controlpage',
-                description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                imageSrc: './images/controlpage-banner.png',
-                type: 'Pessoal',
-                link: 'https://www.controlpagebr.com/',
-                techs: [
-                    {
-                        name: 'Django',
-                        iconSrc: './images/svg/django.svg'
-                    },
-                    {
-                        name: 'jQuery',
-                        iconSrc: './images/svg/jquery.svg'
-                    },
-                    {
-                        name: 'Sass',
-                        iconSrc: './images/svg/sass.svg'
-                    },
-                ]
-            }
-        ])
-    }, [])
-
+const Projects = ({ projects }) => {
     return(
         <ProjectsContent data-section="projetos">
             <div className="container">
@@ -92,6 +15,7 @@ const Projects = () => {
                         <Project
                         key={project.id}
                         name={project.name}
+                        slug={project.slug}
                         description={project.description}
                         imageSrc={project.imageSrc}
                         type={project.type}
@@ -158,7 +82,7 @@ const ProjectsContent = styled.section`
                 position: relative;
                 font-size: 1.25rem;
                 font-weight: 600;
-                color: #3c4adb;
+                color: #FEFEFE;
                 text-decoration: none;
 
                 &::before {
@@ -166,7 +90,7 @@ const ProjectsContent = styled.section`
                     width: 0;
                     height: 2px;
                     border-radius: 2px;
-                    background-color: #3c4adb;
+                    background-color: #FEFEFE;
                     position: absolute;
                     bottom: -.25rem;
                     right: 0;
