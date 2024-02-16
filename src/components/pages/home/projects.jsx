@@ -1,8 +1,37 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import Slider from "react-slick";
 import Project from '../../partials/project'
 
 const Projects = ({ projects }) => {
+
+    let settings = {
+        dots: false,
+        arrows: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 2,
+                    initialSlide: 2,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1,
+                    initialSlide: 1,
+                    infinite: true
+                }
+            }
+        ]
+    }
+
     return(
         <ProjectsContent data-section="projetos">
             <div className="container">
@@ -11,17 +40,19 @@ const Projects = ({ projects }) => {
                     <p>Alguns dos projetos onde são aplicados meus conhecimentos.</p>
                 </div>
                 <div className="projects">
-                    {projects.map((project, index) => (
-                        <Project
-                        key={project.id}
-                        name={project.name}
-                        slug={project.slug}
-                        description={project.description}
-                        imageSrc={project.imageSrc}
-                        type={project.type}
-                        link={project.link}
-                        techs={project.techs}/>
-                    ))}
+                    <Slider {...settings}>
+                        {projects.map((project, index) => (
+                            <Project
+                            key={project.id}
+                            name={project.name}
+                            slug={project.slug}
+                            description={project.description}
+                            imageSrc={project.imageSrc}
+                            type={project.type}
+                            link={project.link}
+                            techs={project.techs}/>
+                        ))}
+                    </Slider>
                 </div>
                 <div className="link">
                     <a href="https://github.com/vitorfratti?tab=repositories" target="_blank">
@@ -40,6 +71,10 @@ const ProjectsContent = styled.section`
     width: 100%;
     background: #08090a;
     padding: 5rem 0 2.5rem 0;
+
+    @media (max-width: 500px) {
+        padding: 2.5rem 0;
+    }
 
     .container {
         display: flex;
@@ -69,6 +104,22 @@ const ProjectsContent = styled.section`
             display: flex;
             justify-content: space-between;
             gap: 1rem;
+
+            .slick-slider {
+                width: 100%;
+                height: auto;
+
+                .slick-list {
+                    width: 100%;
+
+                    .slick-track {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 1rem;
+                    }
+                }
+            }
         }
 
         .link {

@@ -27,6 +27,10 @@ const HomeContent = styled.section`
     width: 100%;
     height: 100vh;
 
+    @media (max-width: 500px) {
+        height: 90vh;
+    }
+
     .container {
         display: flex;
         justify-content: center;
@@ -54,7 +58,7 @@ const HomeContent = styled.section`
                 font-weight: 600;
 
                 @media (max-width: 700px) {
-                    font-size: 2.5rem;
+                    font-size: 3rem;
                 }
 
                 span {

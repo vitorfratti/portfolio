@@ -26,6 +26,7 @@ const FooterContent = styled.footer`
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
 
         p {
             font-size: 1.25rem;

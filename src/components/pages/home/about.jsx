@@ -20,16 +20,16 @@ const About = ({ setActiveSection, activeSection, goToSection }) => {
                     <div className="infos">
                         <div className="cards">
                             <a href="https://www.linkedin.com/in/vitor-fratti-1b0310288/" target="_blank">
-                                <img src="./images/svg/linkedin.svg" alt="linkedin"/>
+                                <img src="/images/svg/linkedin.svg" alt="linkedin"/>
                             </a>
                             <a href="https://github.com/vitorfratti" target="_blank">
-                                <img src="./images/svg/github.svg" alt="github"/>
+                                <img src="/images/svg/github.svg" alt="github"/>
                             </a>
                             <a href="mailto:vifratti@gmail.com">
-                                <img src="./images/svg/gmail.svg" alt="gmail"/>
+                                <img src="/images/svg/gmail.svg" alt="gmail"/>
                             </a>
                             <a href="https://api.whatsapp.com/send?phone=5511998874399">
-                                <img src="./images/svg/whatsapp.svg" alt="whatsapp"/>
+                                <img src="/images/svg/whatsapp.svg" alt="whatsapp"/>
                             </a>
                         </div>
                         <div className="scroll-buttons">
@@ -37,13 +37,13 @@ const About = ({ setActiveSection, activeSection, goToSection }) => {
                             href="#projetos"
                             onClick={goToSection}>
                                 Projetos
-                                <img src="./images/svg/arrow-circle.svg" alt="arrow"/>
+                                <img src="/images/svg/arrow.svg" alt="arrow"/>
                             </a>
                             <a
                             href="#conhecimentos"
                             onClick={goToSection}>
                                 Conhecimentos
-                                <img src="./images/svg/arrow-circle.svg" alt="arrow"/>
+                                <img src="/images/svg/arrow.svg" alt="arrow"/>
                             </a>
                         </div>
                     </div>
@@ -59,6 +59,10 @@ const AboutContent = styled.section`
     position: relative;
     width: 100%;
     padding: 5rem 0 2.5rem 0;
+
+    @media (max-width: 500px) {
+        padding: 2.5rem 0;
+    }
 
     .container {
         display: flex;
@@ -192,7 +196,7 @@ const AboutContent = styled.section`
                         }
 
                         img {
-                            width: 1.5rem;
+                            width: 1.75rem;
                         }
 
                         &:hover {
@@ -215,7 +219,7 @@ const AboutContent = styled.section`
                         text-align: center;
                         width: 100%;
                         height: 50%;
-                        gap: 0.5rem;
+                        gap: 0.25rem;
                         background: #1d1e20;
                         color: #FEFEFE;
                         font-size: 1.5rem;

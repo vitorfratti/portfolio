@@ -123,6 +123,10 @@ const TechsContent = styled.section`
     background: #08090a;
     padding: 5rem 0;
 
+    @media (max-width: 500px) {
+        padding: 2.5rem 0 5rem 0;
+    }
+
     .container {
         display: flex;
         flex-direction: column;
@@ -154,6 +158,7 @@ const TechsContent = styled.section`
 
             @media (max-width: 1000px) {
                 flex-direction: column;
+                gap: 2rem;
             }
             
             .left {
@@ -165,6 +170,11 @@ const TechsContent = styled.section`
 
                 @media (max-width: 1000px) {
                     width: 100%;
+                    justify-content: space-between;
+                }
+
+                @media (max-width: 500px) {
+                    gap: 0.5rem;
                 }
 
                 .card {
@@ -177,8 +187,16 @@ const TechsContent = styled.section`
                     border: 1px solid #1d1e20;
                     transition: all .1s ease;
 
+                    @media (max-width: 500px) {
+                        width: calc(25% - 0.5rem);
+                    }
+
                     img {
                         width: 3.5rem;
+
+                        @media (max-width: 500px) {
+                            width: 3rem;
+                        }
                     }
 
                     &:hover, &.selected {

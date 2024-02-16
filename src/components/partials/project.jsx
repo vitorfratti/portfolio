@@ -34,7 +34,7 @@ const ProjectContent = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 33%;
+    width: 100%;
     height: auto;
 
     &:hover {
