@@ -15,17 +15,17 @@ const Techs = () => {
             },
             {
                 name: 'CSS',
-                description: 'Mecanismo para adicionar estilos a uma página web, aplicado diretamente nas tags HTML ou ficar contido dentro das tags <style>.',
+                description: 'Linguagem que estiliza páginas web, controlando o design e a apresentação do conteúdo HTML.',
                 iconSrc: './images/svg/css.svg'
             },
             {
                 name: 'JavaScript',
-                description: 'Linguagem de programação interpretada estruturada. Juntamente com HTML e CSS, o JavaScript é uma das três principais tecnologias da World Wide Web.',
+                description: 'Linguagem de programação utilizada para tornar as páginas web interativas.',
                 iconSrc: './images/svg/javascript.svg'
             },
             {
                 name: 'PHP',
-                description: 'Linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicações presentes e atuantes no lado do servidor, capazes de gerar conteúdo dinâmico na World Wide Web.',
+                description: 'Linguagem de programação utilizada para criar páginas web dinâmicas, processando dados no servidor para oferecer conteúdo personalizado aos usuários.',
                 iconSrc: './images/svg/php.svg'
             },
             {
@@ -35,7 +35,7 @@ const Techs = () => {
             },
             {
                 name: 'Next.js',
-                description: 'Estrutura da web de desenvolvimento front-end React de código aberto criada por Vercel que permite funcionalidades como renderização do lado do servidor e geração de sites estáticos para aplicativos da web baseados em React.',
+                description: 'Framework de React utilizado para construir aplicações web eficientes, com foco em renderização do lado do servidor e simplicidade no desenvolvimento.',
                 iconSrc: './images/svg/next.svg'
             },
             {
@@ -45,12 +45,12 @@ const Techs = () => {
             },
             {
                 name: 'jQuery',
-                description: 'Biblioteca livre que contém funções da linguagem de programação JavaScript que interage com páginas em HTML, desenvolvida para simplificar os scripts executados/interpretados no navegador de internet do usuário.',
+                description: 'Biblioteca JavaScript que simplifica a interação com HTML, eventos e requisições AJAX, facilitando o desenvolvimento web.',
                 iconSrc: './images/svg/jquery.svg'
             },
             {
                 name: 'Sass',
-                description: 'Pré-processador CSS que melhora a escrita de estilos com recursos como variáveis e mixins. Ele simplifica a criação de folhas de estilo mais organizadas e reutilizáveis, convertendo-se em CSS durante a compilação e sendo amplamente utilizado para aumentar a eficiência no desenvolvimento web.',
+                description: 'Pré-processador CSS que melhora a escrita e simplifica a criação de folhas de estilo mais organizadas e reutilizáveis.',
                 iconSrc: './images/svg/sass.svg'
             },
             {
@@ -60,12 +60,12 @@ const Techs = () => {
             },
             {
                 name: 'Tailwind CSS',
-                description: 'Estrutura CSS de código aberto. A principal característica desta biblioteca é que, ao contrário de outros frameworks CSS como Bootstrap, ela não fornece uma série de classes predefinidas para elementos como botões ou tabelas.',
+                description: 'Framework que simplifica a estilização web, fornecendo classes predefinidas para facilitar o desenvolvimento rápido sem a necessidade de CSS personalizado.',
                 iconSrc: './images/svg/tailwind.svg'
             },
             {
                 name: 'WordPress',
-                description: 'Sistema livre e aberto de gestão de conteúdo para internet, baseado em PHP com banco de dados MySQL, executado em um servidor interpretador, voltado principalmente para a criação de páginas eletrônicas e blogs online.',
+                description: 'Plataforma de gerenciamento de conteúdo utilizada para criar sites e blogs, facilitando a publicação e personalização com temas e plugins.',
                 iconSrc: './images/svg/wordpress.svg'
             }
         ])
@@ -189,6 +189,7 @@ const TechsContent = styled.section`
 
                     @media (max-width: 500px) {
                         width: calc(25% - 0.5rem);
+                        padding: 1.25rem 0;
                     }
 
                     img {

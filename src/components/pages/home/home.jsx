@@ -28,7 +28,7 @@ const HomeContent = styled.section`
     height: 100vh;
 
     @media (max-width: 500px) {
-        height: 90vh;
+        height: 85vh;
     }
 
     .container {
