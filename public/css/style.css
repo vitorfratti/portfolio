@@ -7,6 +7,10 @@
     font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     overflow-x: hidden;
     background: #08090a;
