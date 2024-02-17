@@ -66,19 +66,6 @@ const HomeContent = styled.section`
         width: 100%;
         height: 100%;
         opacity: 0.2;
-        animation: light 3s infinite;
-    }
-
-    @keyframes light {
-        0% {
-            opacity: 0.1;
-        }
-        50% {
-            opacity: 0.3;
-        }
-        100% {
-            opacity: 0.2;
-        }
     }
 
     .container {
