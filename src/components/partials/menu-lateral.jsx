@@ -72,7 +72,7 @@ const MenuLateralContent = styled.div`
     position: fixed;
     top: 0;
     right: -100%;
-    z-index: 999;
+    z-index: 9999;
     width: 100%;
     height: 100vh;
     padding: 1.25rem 1.5rem;
