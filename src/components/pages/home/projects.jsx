@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
+import { Pagination } from 'swiper/modules';
 import Project from '../../partials/project'
 
 const Projects = ({ projects }) => {
@@ -26,6 +27,10 @@ const Projects = ({ projects }) => {
                 </div>
                 <div className="projects">
                     <Swiper
+                    pagination={{
+                        dynamicBullets: true,
+                    }}
+                    modules={[Pagination]}
                     spaceBetween={15}
                     slidesPerView={1}
                     breakpoints={{
@@ -100,7 +105,15 @@ const ProjectsContent = styled.section`
         .projects {
             display: flex;
             justify-content: space-between;
-            gap: 1rem;
+            height: 23.5rem;
+
+            .swiper-pagination {
+                z-index: 999;
+
+                .swiper-pagination-bullet {
+                    background: #FEFEFE;
+                }
+            }
         }
 
         .link {
@@ -108,7 +121,7 @@ const ProjectsContent = styled.section`
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
 
             a {
                 position: relative;
