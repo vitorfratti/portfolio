@@ -29,8 +29,8 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
     return(
         <HomeContent data-section="home">
             <div className="container">
-                <div className="content" data-aos="fade-down">
-                    <h1>Bem-vindo, meu nome é <span>Vitor Fratti</span></h1>
+                <div className="content">
+                    <h1 data-aos="fade-in">Bem-vindo, meu nome é <span>Vitor Fratti</span></h1>
                     <h3>{typedText}</h3>
                 </div>
                 <div className="scroll-guide">
