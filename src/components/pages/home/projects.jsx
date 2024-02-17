@@ -43,12 +43,12 @@ const Projects = ({ projects }) => {
 
     return(
         <ProjectsContent data-section="projetos">
-            <div className="container">
-                <div className="title" data-aos="fade-up">
+            <div className="container" data-aos="fade-up">
+                <div className="title">
                     <h2>Projetos</h2>
                     <p>Alguns dos projetos onde são aplicados meus conhecimentos.</p>
                 </div>
-                <div className="projects" data-aos="fade-up">
+                <div className="projects">
                     <Slider {...settings}>
                         {projects.map((project, index) => (
                             <Project
