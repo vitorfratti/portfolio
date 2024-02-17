@@ -40,7 +40,7 @@ const HomeContent = styled.section`
         transform: rotate(180deg);
         opacity: 0.2;
         z-index: -1;
-        max-height: 130%;
+        max-height: 120%;
     }
 
     .container {
