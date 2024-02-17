@@ -41,7 +41,7 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
                     </a>
                 </div>
             </div>
-            <img src="/images/dark-abstract.avif" alt="dark-abstract" className="abstract"/>
+            <img src="/images/dark-abstract.jpg" alt="dark-abstract" className="abstract"/>
         </HomeContent>
     )
 }
@@ -65,7 +65,7 @@ const HomeContent = styled.section`
         z-index: -1;
         width: 100%;
         height: 100%;
-        opacity: 0.2;
+        opacity: 0.6;
     }
 
     .container {
