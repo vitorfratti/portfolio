@@ -41,7 +41,6 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
                     </a>
                 </div>
             </div>
-            <img src="/images/svg/blur.svg" alt="blur" className="blur"/>
         </HomeContent>
     )
 }
@@ -56,16 +55,6 @@ const HomeContent = styled.section`
 
     @media (max-width: 500px) {
         height: 85vh;
-    }
-
-    img.blur {
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: rotate(180deg);
-        opacity: 0.15;
-        z-index: -1;
-        max-height: 120%;
     }
 
     .container {
