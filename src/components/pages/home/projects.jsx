@@ -12,8 +12,6 @@ const Projects = ({ projects }) => {
         speed: 400,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 6000,
         responsive: [
             {
                 breakpoint: 800,
