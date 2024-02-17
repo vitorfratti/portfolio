@@ -134,7 +134,7 @@ const TechsContent = styled.section`
         top: 0;
         right: 0;
         transform: rotate(180deg);
-        opacity: 0.2;
+        opacity: 0.15;
         z-index: -1;
         max-height: 100%;
     }
@@ -197,6 +197,7 @@ const TechsContent = styled.section`
                     padding: 1.75rem 0;
                     background: #1d1e20;
                     border: 1px solid #1d1e20;
+                    box-shadow: 0 0 2px #000;
                     transition: all .1s ease;
 
                     @media (max-width: 500px) {

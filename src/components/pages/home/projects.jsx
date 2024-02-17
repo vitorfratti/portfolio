@@ -9,11 +9,11 @@ const Projects = ({ projects }) => {
         dots: false,
         arrows: false,
         infinite: false,
-        speed: 300,
+        speed: 400,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 6000,
         responsive: [
             {
                 breakpoint: 800,

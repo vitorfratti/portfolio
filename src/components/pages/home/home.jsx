@@ -38,7 +38,7 @@ const HomeContent = styled.section`
         top: 0;
         right: 0;
         transform: rotate(180deg);
-        opacity: 0.2;
+        opacity: 0.15;
         z-index: -1;
         max-height: 120%;
     }
