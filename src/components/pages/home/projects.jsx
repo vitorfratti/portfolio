@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Slider from "react-slick";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css';
 import Project from '../../partials/project'
 
 const Projects = ({ projects }) => {
@@ -14,33 +17,6 @@ const Projects = ({ projects }) => {
         })
     }, [])
 
-    let settings = {
-        dots: false,
-        arrows: false,
-        infinite: false,
-        speed: 400,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 800,
-                settings: {
-                    slidesToShow: 2,
-                    initialSlide: 2,
-                    infinite: true
-                }
-            },
-            {
-                breakpoint: 500,
-                settings: {
-                    slidesToShow: 1,
-                    initialSlide: 1,
-                    infinite: true
-                }
-            }
-        ]
-    }
-
     return(
         <ProjectsContent data-section="projetos">
             <div className="container" data-aos="fade-up">
@@ -49,19 +25,30 @@ const Projects = ({ projects }) => {
                     <p>Alguns dos projetos onde são aplicados meus conhecimentos.</p>
                 </div>
                 <div className="projects">
-                    <Slider {...settings}>
+                    <Swiper
+                    spaceBetween={15}
+                    slidesPerView={1}
+                    breakpoints={{
+                        1000: {
+                            slidesPerView: 3,
+                        },
+                        500: {
+                            slidesPerView: 2,
+                        }
+                    }}>
                         {projects.map((project, index) => (
-                            <Project
-                            key={project.id}
-                            name={project.name}
-                            slug={project.slug}
-                            description={project.description}
-                            imageSrc={project.imageSrc}
-                            type={project.type}
-                            link={project.link}
-                            techs={project.techs}/>
+                            <SwiperSlide key={project.id}>
+                                <Project
+                                name={project.name}
+                                slug={project.slug}
+                                description={project.description}
+                                imageSrc={project.imageSrc}
+                                type={project.type}
+                                link={project.link}
+                                techs={project.techs}/>
+                            </SwiperSlide>
                         ))}
-                    </Slider>
+                    </Swiper>
                 </div>
                 <div className="link">
                     <a href="https://github.com/vitorfratti?tab=repositories" target="_blank">
@@ -114,22 +101,6 @@ const ProjectsContent = styled.section`
             display: flex;
             justify-content: space-between;
             gap: 1rem;
-
-            .slick-slider {
-                width: 100%;
-                height: auto;
-
-                .slick-list {
-                    width: 100%;
-
-                    .slick-track {
-                        width: 100%;
-                        display: flex;
-                        justify-content: space-between;
-                        gap: 1rem;
-                    }
-                }
-            }
         }
 
         .link {
