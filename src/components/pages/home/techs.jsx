@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Techs = () => {
+
+    useEffect(() => {
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 2500
+        })
+    }, [])
 
     const [techs, setTechs] = useState([])
     const [activeTech, setActiveTech] = useState([])
@@ -86,11 +95,11 @@ const Techs = () => {
     return(
         <TechsContent data-section="conhecimentos">
             <div className="container">
-                <div className="title">
+                <div className="title" data-aos="fade-up">
                     <h2>Conhecimentos</h2>
                     <p>Algumas das linguagens que trabalho diariamente.</p>
                 </div>
-                <div className="techs">
+                <div className="techs" data-aos="fade-up">
                     <div className="left">
                         {techs.map((tech, index) => (
                             <div

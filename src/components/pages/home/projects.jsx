@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Slider from "react-slick";
 import Project from '../../partials/project'
 
 const Projects = ({ projects }) => {
+
+    useEffect(() => {
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 2500
+        })
+    }, [])
 
     let settings = {
         dots: false,
@@ -35,11 +44,11 @@ const Projects = ({ projects }) => {
     return(
         <ProjectsContent data-section="projetos">
             <div className="container">
-                <div className="title">
+                <div className="title" data-aos="fade-up">
                     <h2>Projetos</h2>
                     <p>Alguns dos projetos onde são aplicados meus conhecimentos.</p>
                 </div>
-                <div className="projects">
+                <div className="projects" data-aos="fade-up">
                     <Slider {...settings}>
                         {projects.map((project, index) => (
                             <Project

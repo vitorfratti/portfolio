@@ -1,14 +1,25 @@
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const About = ({ setActiveSection, activeSection, goToSection }) => {
+
+    useEffect(() => {
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 2500
+        })
+    }, [])
+
     return(
         <AboutContent data-section="sobre">
             <div className="container">
-                <div className="title">
+                <div className="title" data-aos="fade-up">
                     <h2>Sobre mim</h2>
                     <p>Tenho 20 anos e sou Desenvolvedor Web & Front-end. Atualmente estou cursando o 3º semestre de Engenharia de Software e atuando como Desenvolvedor Web desde 2023.</p>
                 </div>
-                <div className="content">
+                <div className="content" data-aos="fade-up">
                     <a href="https://hangar.digital/" target="_blank" className="card">
                         <img src="./images/svg/hangar.svg" alt="hangar"/>
                         <span>

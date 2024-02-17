@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Header = ({ setActiveSection, activeSection, goToSection }) => {
+
+    useEffect(() => {
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1500
+        })
+    }, [])
 
     const verifySection = () => {
         const hash = window.location.hash.substring(1)
@@ -19,7 +28,7 @@ const Header = ({ setActiveSection, activeSection, goToSection }) => {
     return (
         <HeaderContent>
             <div className="container">
-                <div className="links">
+                <div className="links" data-aos="fade-right">
                     <a
                     href="#home"
                     className={activeSection == 'home' ? 'selected' : ''}
@@ -45,7 +54,7 @@ const Header = ({ setActiveSection, activeSection, goToSection }) => {
                         Conhecimentos
                     </a>
                 </div>
-                <div className="social-media">
+                <div className="social-media" data-aos="fade-left">
                     <a href="https://www.linkedin.com/in/vitor-fratti-1b0310288/" target="_blank">
                         <img src="/images/svg/linkedin.svg" alt="linkedin"/>
                     </a>

@@ -1,12 +1,37 @@
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = ({ setActiveSection, activeSection, goToSection }) => {
+
+    const [typedText, setTypedText] = useState('')
+    const textToType = 'Desenvolvedor Web | Front-end'
+    const caret = '|'
+
+    useEffect(() => {
+        AOS.init({
+        easing: 'ease-out-back',
+        duration: 3000,
+        })
+
+        const typeText = () => {
+            for (let i = 0; i <= textToType.length; i++) {
+                setTimeout(() => {
+                    setTypedText(textToType.substring(0, i) + caret)
+                }, i * 100)
+            }
+        }
+
+        typeText()
+    }, [])
+
     return(
         <HomeContent data-section="home">
             <div className="container">
-                <div className="content">
+                <div className="content" data-aos="fade-down">
                     <h1>Bem-vindo, meu nome é <span>Vitor Fratti</span></h1>
-                    <h3>Desenvolvedor Web | Front-end</h3>
+                    <h3>{typedText}</h3>
                 </div>
                 <div className="scroll-guide">
                     <a
