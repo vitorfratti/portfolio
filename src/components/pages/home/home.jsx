@@ -11,8 +11,8 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
 
     useEffect(() => {
         AOS.init({
-        easing: 'ease-out-back',
-        duration: 3000,
+            easing: 'ease-out-back',
+            duration: 3000,
         })
 
         const typeText = () => {
@@ -29,8 +29,8 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
     return(
         <HomeContent data-section="home">
             <div className="container">
-                <div className="content">
-                    <h1 data-aos="fade-in">Bem-vindo, meu nome é <span>Vitor Fratti</span></h1>
+                <div className="content" data-aos="slide-down">
+                    <h1>Bem-vindo, meu nome é <span>Vitor Fratti</span></h1>
                     <h3>{typedText}</h3>
                 </div>
                 <div className="scroll-guide">

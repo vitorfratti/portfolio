@@ -8,7 +8,7 @@ const Header = ({ setActiveSection, activeSection, goToSection }) => {
     useEffect(() => {
         AOS.init({
             easing: 'ease-out-back',
-            duration: 1500
+            duration: 3000
         })
     }, [])
 
