@@ -68,7 +68,7 @@ const Header = ({ setActiveSection, activeSection, goToSection }) => {
                         <img src="/images/svg/whatsapp.svg" alt="whatsapp"/>
                     </a>
                 </div>
-                <button className="ham" onClick={openMenu}>
+                <button className="ham" onClick={openMenu} data-aos="fade-left">
                     <span></span>
                     <span></span>
                     <span></span>
