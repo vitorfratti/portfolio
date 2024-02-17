@@ -7,6 +7,11 @@
     font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
+::selection {
+    background: #1d1e2050;
+    color: #FEFEFE;
+}
+
 html {
     overflow-x: hidden;
 }

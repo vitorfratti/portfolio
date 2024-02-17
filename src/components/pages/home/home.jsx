@@ -41,6 +41,7 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
                     </a>
                 </div>
             </div>
+            <img src="/images/dark-abstract.avif" alt="dark-abstract" className="abstract"/>
         </HomeContent>
     )
 }
@@ -55,6 +56,29 @@ const HomeContent = styled.section`
 
     @media (max-width: 500px) {
         height: 85vh;
+    }
+
+    img.abstract {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        animation: light 3s infinite;
+    }
+
+    @keyframes light {
+        0% {
+            opacity: 0.1;
+        }
+        50% {
+            opacity: 0.3;
+        }
+        100% {
+            opacity: 0.2;
+        }
     }
 
     .container {
@@ -88,7 +112,7 @@ const HomeContent = styled.section`
                 }
 
                 span {
-                    background: linear-gradient(to left, #FEFEFE 20%, #FEFEFE80 40%, #FEFEFE80 60%, #FEFEFE 80%);
+                    background: linear-gradient(to left, #FEFEFE 20%, #FEFEFE90 40%, #FEFEFE95 60%, #FEFEFE 80%);
                     background-size: 200% auto;
                     background-clip: text;
                     -webkit-background-clip: text;
