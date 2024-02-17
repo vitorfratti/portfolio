@@ -111,6 +111,7 @@ const Techs = () => {
                     </div>
                 </div>
             </div>
+            <img src="/images/svg/blur.svg" alt="blur" className="blur"/>
         </TechsContent>
     )
 }
@@ -119,12 +120,23 @@ export default Techs
 
 const TechsContent = styled.section`
     position: relative;
+    z-index: 10;
     width: 100%;
     background: #08090a;
     padding: 5rem 0;
 
     @media (max-width: 500px) {
         padding: 2.5rem 0 5rem 0;
+    }
+
+    img.blur {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: rotate(180deg);
+        opacity: 0.2;
+        z-index: -1;
+        max-height: 100%;
     }
 
     .container {

@@ -24,6 +24,7 @@ const Project = ({ name, slug, description, imageSrc, type, link, techs }) => {
                 <a href={link} target="_blank">Visitar site</a>
                 <button disabled>Ver repositório</button>
             </div>
+            <a href={link} target="_blank" className="full-link"></a>
         </ProjectContent>
     )
 }
@@ -37,13 +38,27 @@ const ProjectContent = styled.div`
     width: 100%;
     height: auto;
 
-    &:hover {
-        .image {
-            height: calc(12rem - 1rem - 38px);
-        }
+    .full-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
 
-        .buttons {
-            display: flex;
+        @media (min-width: 800px) {
+            display: none;
+        }
+    }
+
+    @media (min-width: 800px) {
+        &:hover {
+            .image {
+                height: calc(12rem - 1rem - 38px);
+            }
+
+            .buttons {
+                display: flex;
+            }
         }
     }
 

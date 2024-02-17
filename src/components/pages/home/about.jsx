@@ -12,7 +12,6 @@ const About = ({ setActiveSection, activeSection, goToSection }) => {
                     <a href="https://hangar.digital/" target="_blank" className="card">
                         <img src="./images/svg/hangar.svg" alt="hangar"/>
                         <span>
-                            <h3>Hangar Digital</h3>
                             <p>Agência de marketing digital em Joinville, Santa Catarina</p>
                             <p>Desenvolvedor Web · abr/2023 - o momento</p>
                         </span>
@@ -37,13 +36,11 @@ const About = ({ setActiveSection, activeSection, goToSection }) => {
                             href="#projetos"
                             onClick={goToSection}>
                                 Projetos
-                                <img src="/images/svg/arrow.svg" alt="arrow"/>
                             </a>
                             <a
                             href="#conhecimentos"
                             onClick={goToSection}>
                                 Conhecimentos
-                                <img src="/images/svg/arrow.svg" alt="arrow"/>
                             </a>
                         </div>
                     </div>
@@ -57,6 +54,7 @@ export default About
 
 const AboutContent = styled.section`
     position: relative;
+    z-index: 10;
     width: 100%;
     padding: 5rem 0 2.5rem 0;
 
@@ -106,7 +104,8 @@ const AboutContent = styled.section`
                 gap: 1.5rem;
                 width: 50%;
                 height: 20rem;
-                background: #1d1e20;
+                background: #1d1e2085;
+                backdrop-filter: blur(50px);
                 border: 1px solid #1d1e20;
                 text-decoration: none;
                 padding: 0.5rem;
@@ -137,16 +136,6 @@ const AboutContent = styled.section`
                         gap: 0.5rem;
                     }
 
-                    h3 {
-                        color: #FEFEFE;
-                        font-size: 2rem;
-                        font-weight: 600;
-
-                        @media (max-width: 767px) {
-                            font-size: 1.5rem;
-                        }
-                    }
-
                     p {
                         font-size: 1.25rem;
                         font-weight: 500;
@@ -159,7 +148,7 @@ const AboutContent = styled.section`
                 }
 
                 &:hover {
-                    border: 1px solid #FEFEFE;
+                    border: 1px solid #50F4E8;
                 }
             }
 

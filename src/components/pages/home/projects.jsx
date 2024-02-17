@@ -12,6 +12,8 @@ const Projects = ({ projects }) => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
         responsive: [
             {
                 breakpoint: 800,
@@ -68,6 +70,7 @@ export default Projects
 
 const ProjectsContent = styled.section`
     position: relative;
+    z-index: 10;
     width: 100%;
     background: #08090a;
     padding: 5rem 0 2.5rem 0;
