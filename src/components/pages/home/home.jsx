@@ -29,7 +29,7 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
     return(
         <HomeContent data-section="home">
             <div className="container">
-                <div className="content" data-aos="slide-down">
+                <div className="content" data-aos="fade-in">
                     <h1>Bem-vindo, meu nome é <span>Vitor Fratti</span></h1>
                     <h3>{typedText}</h3>
                 </div>
