@@ -116,8 +116,8 @@ const AboutContent = styled.section`
                 width: 50%;
                 height: 20rem;
                 background: #1d1e2090;
-                backdrop-filter: blur(12px);
-                border: 1px solid #1d1e2050;
+                backdrop-filter: blur(50px);
+                border: 1px solid #1d1e2075;
                 text-decoration: none;
                 padding: 0.5rem;
                 transition: all .1s ease;
