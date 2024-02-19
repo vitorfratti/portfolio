@@ -29,7 +29,7 @@ const Header = ({ setActiveSection, activeSection, goToSection }) => {
         <HeaderContent>
             <div className="container">
                 <div className="links">
-                    <span data-aos="fade-right" data-aos-delay="0">
+                    <span data-aos="fade-right" data-aos-delay="1500">
                         <a
                         href="#home"
                         className={activeSection == 'home' ? 'selected' : ''}
@@ -37,7 +37,7 @@ const Header = ({ setActiveSection, activeSection, goToSection }) => {
                             Home
                         </a>
                     </span>
-                    <span data-aos="fade-right" data-aos-delay="500">
+                    <span data-aos="fade-right" data-aos-delay="1000">
                         <a
                         href="#sobre"
                         className={activeSection == 'sobre' ? 'selected' : ''}
@@ -45,7 +45,7 @@ const Header = ({ setActiveSection, activeSection, goToSection }) => {
                             Sobre
                         </a>
                     </span>
-                    <span data-aos="fade-right" data-aos-delay="1000">
+                    <span data-aos="fade-right" data-aos-delay="500">
                         <a
                         href="#projetos"
                         className={activeSection == 'projetos' ? 'selected' : ''}
@@ -53,7 +53,7 @@ const Header = ({ setActiveSection, activeSection, goToSection }) => {
                             Projetos
                         </a>
                     </span>
-                    <span data-aos="fade-right" data-aos-delay="1500">
+                    <span data-aos="fade-right" data-aos-delay="0">
                         <a
                         href="#conhecimentos"
                         className={activeSection == 'conhecimentos' ? 'selected' : ''}
