@@ -132,7 +132,7 @@ const AboutContent = styled.section`
                     width: 10rem;
 
                     @media (max-width: 767px) {
-                        width: 7rem;
+                        width: 8rem;
                     }
                 }
 
@@ -231,6 +231,12 @@ const AboutContent = styled.section`
 
                         @media (max-width: 767px) {
                             padding: 1.5rem 0;
+                        }
+
+                        &:last-child {
+                            @media (max-width: 767px) {
+                                display: none;
+                            }
                         }
 
                         img {
