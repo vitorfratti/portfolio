@@ -55,7 +55,7 @@ const Header = ({ setActiveSection, activeSection, goToSection }) => {
                     </a>
                 </div>
                 <div className="social-media" data-aos="fade-left">
-                    <a href="https://www.linkedin.com/in/vitor-fratti-1b0310288/" target="_blank">
+                    <a href="https://www.linkedin.com/in/vitorfratti/" target="_blank">
                         <img src="/images/svg/linkedin.svg" alt="linkedin"/>
                     </a>
                     <a href="https://github.com/vitorfratti" target="_blank">
