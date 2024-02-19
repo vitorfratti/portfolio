@@ -57,6 +57,7 @@ const About = ({ setActiveSection, activeSection, goToSection }) => {
                     </div>
                 </div>
             </div>
+            <img src="/images/svg/blur.svg" alt="blur" className="blur"/>
         </AboutContent>
     )
 }
@@ -71,6 +72,15 @@ const AboutContent = styled.section`
 
     @media (max-width: 500px) {
         padding: 2.5rem 0;
+    }
+
+    img.blur {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.15;
+        z-index: -1;
+        max-height: 100%;
     }
 
     .container {
@@ -115,7 +125,7 @@ const AboutContent = styled.section`
                 gap: 1.5rem;
                 width: 50%;
                 height: 20rem;
-                background: #1d1e2090;
+                background: #1d1e2050;
                 backdrop-filter: blur(50px);
                 border: 1px solid #1d1e2075;
                 text-decoration: none;
