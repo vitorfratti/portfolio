@@ -110,7 +110,7 @@ const ProjectsContent = styled.section`
             height: 22rem;
 
             @media (max-width: 1000px) {
-                height: 23.5rem;
+                height: 24rem;
             }
 
             .swiper-pagination {
