@@ -52,7 +52,7 @@ const About = ({ setActiveSection, activeSection, goToSection }) => {
                             <a
                             href="#projetos"
                             onClick={goToSection}>
-                                Ver Projetos
+                                Projetos
                             </a>
                         </div>
                     </div>
