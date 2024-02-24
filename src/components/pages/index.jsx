@@ -17,7 +17,7 @@ const Index = ({ projects }) => {
         const section = document.querySelector(`section[data-section="${href}"]`)
     
         if (section) {
-            const offsetTop = section.offsetTop - 20
+            const offsetTop = section.offsetTop - 25
     
             window.scrollTo({
                 top: offsetTop,

@@ -101,7 +101,8 @@ const HeaderContent = styled.header`
     z-index: 999;
     width: 100%;
     padding: 1.25rem 0;
-    background: #08090a;
+    background: #08090a90;
+    backdrop-filter: blur(12px);
 
     .container {
         display: flex;

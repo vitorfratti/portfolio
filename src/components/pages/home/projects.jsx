@@ -29,6 +29,7 @@ const Projects = ({ projects }) => {
                     <Swiper
                     pagination={{
                         dynamicBullets: true,
+                        clickable: true
                     }}
                     modules={[Pagination]}
                     spaceBetween={15}
@@ -48,6 +49,7 @@ const Projects = ({ projects }) => {
                                 slug={project.slug}
                                 description={project.description}
                                 imageSrc={project.imageSrc}
+                                gif={project.gif}
                                 type={project.type}
                                 link={project.link}
                                 techs={project.techs}/>
@@ -105,7 +107,7 @@ const ProjectsContent = styled.section`
         .projects {
             display: flex;
             justify-content: space-between;
-            height: 23.5rem;
+            height: 22rem;
 
             .swiper-pagination {
                 z-index: 999;
@@ -121,7 +123,7 @@ const ProjectsContent = styled.section`
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 1rem;
+            margin-top: 0;
 
             a {
                 position: relative;

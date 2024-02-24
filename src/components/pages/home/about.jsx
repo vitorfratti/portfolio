@@ -44,14 +44,15 @@ const About = ({ setActiveSection, activeSection, goToSection }) => {
                         </div>
                         <div className="scroll-buttons">
                             <a
-                            href="#projetos"
-                            onClick={goToSection}>
-                                Projetos
+                            href="/images/curriculo-vitorfratti.pdf"
+                            target="_blank">
+                                Visualizar Currículo
+                                <img src="/images/svg/curriculo.svg" alt="curriculo"/>
                             </a>
                             <a
-                            href="#conhecimentos"
+                            href="#projetos"
                             onClick={goToSection}>
-                                Conhecimentos
+                                Ver Projetos
                             </a>
                         </div>
                     </div>
@@ -125,7 +126,7 @@ const AboutContent = styled.section`
                 gap: 1.5rem;
                 width: 50%;
                 height: 20rem;
-                background: #1d1e2050;
+                background: #1d1e2075;
                 backdrop-filter: blur(50px);
                 border: 1px solid #1d1e2075;
                 text-decoration: none;
@@ -223,13 +224,15 @@ const AboutContent = styled.section`
                     height: 75%;
 
                     a {
+                        position: relative;
+                        z-index: 5;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         text-align: center;
                         width: 100%;
                         height: 50%;
-                        gap: 0.25rem;
+                        gap: 0.75rem;
                         background: #1d1e20;
                         color: #FEFEFE;
                         font-size: 1.5rem;

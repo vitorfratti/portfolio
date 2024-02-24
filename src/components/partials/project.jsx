@@ -1,24 +1,41 @@
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-const Project = ({ name, slug, description, imageSrc, type, link, techs }) => {
+const Project = ({ name, slug, description, imageSrc, gif, type, link, techs }) => {
+    const [showGif, setShowGif] = useState(false);
+
+    const playGif = () => {
+        setShowGif(!showGif)
+    }
+    
+
     return(
         <ProjectContent>
             <div className="image">
-                <img src={imageSrc} alt="bg" className="banner"/>
-                <span className={type == 'Corporativo' ? "tag corporativo" : "tag pessoal"}>
-                    <div className="type">
-                        <p>{type}</p>
-                    </div>
-                </span>
+                <img src={showGif ? gif : imageSrc} alt="bg" className="gif"/>
+                <button className="play-gif" onClick={playGif}>
+                    {showGif ?
+                        <img src="/images/svg/image.svg" alt="icon"/>
+                        : 
+                        <img src="/images/svg/play.svg" alt="play"/>
+                    }
+                </button>
             </div>
             <div className="texts">
                 <h5>{name}</h5>
                 <p>{description}</p>
             </div>
-            <div className="techs">
-                {techs.map((tech, index) => (
-                    <img key={tech.name} src={tech.iconSrc} alt={tech.name} title={tech.name}/>
-                ))}
+            <div className="infos">
+                <div className="techs">
+                    {techs.map((tech, index) => (
+                        <img key={tech.name} src={tech.iconSrc} alt={tech.name} title={tech.name}/>
+                    ))}
+                </div>
+                <span className={type == 'Corporativo' ? "tag corporativo" : "tag pessoal"}>
+                    <div className="type">
+                        <p>{type}</p>
+                    </div>
+                </span>
             </div>
             <div className="buttons">
                 <a href={link} target="_blank">Visitar site</a>
@@ -68,7 +85,7 @@ const ProjectContent = styled.div`
         height: 12rem;
         transition: all .2s ease;
 
-        img.banner {
+        img.banner, img.gif {
             position: absolute;
             top: 0;
             left: 0;
@@ -77,47 +94,37 @@ const ProjectContent = styled.div`
             object-fit: cover;
         }
 
-        .tag {
+        button.play-gif {
             position: absolute;
-            top: 0;
-            right: 0;
-            z-index: 99;
-            width: fit-content;
+            z-index: 999999;
+            top: 0.5rem;
+            left: 0.5rem;
+            background: #1d1e2090;
+            backdrop-filter: blur(50px);
+            border-radius: 50%;
+            border: 1px solid #FEFEFE00;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.25rem 0.5rem;
-            border: 1px solid #A2A1A7;
-            box-shadow: 0 0 5px #00000050;
-            user-select: none;
+            padding: 0.25rem;
+            cursor: pointer;
+            transition: all .2s ease;
 
-            &.corporativo {
+            @media (max-width: 500px) {
+                padding: 0.5rem;
+
+                img {
+                    width: 1.5rem;
+                }
+            }
+
+            img {
+                width: 1.5rem;
+            }
+
+            &:hover {
                 background: #1d1e20;
-
-                p {
-                    color: #FEFEFE;
-                }
-            }
-
-            &.pessoal {
-                background: #FEFEFE;
-
-                p {
-                    color: #1d1e20;
-                }
-            }
-
-            .type {
-                position: relative;
-                z-index: 10;
-
-                p {
-                    
-                    font-size: 1rem;
-                    font-weight: 600;
-                    text-transform: uppercase;
-                }
+                border: 1px solid #FEFEFE75;
             }
         }
     }
@@ -143,13 +150,52 @@ const ProjectContent = styled.div`
         }
     }
 
-    .techs {
+    .infos {
         display: flex;
+        justify-content: space-between;
         align-items: center;
         gap: 1rem;
 
-        img {
-            width: 1.25rem;
+        .techs {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            img {
+                width: 1.25rem;
+            }
+        }
+
+        .tag {
+            width: fit-content;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            user-select: none;
+
+            p {
+                background: linear-gradient(to left, #FEFEFE 20%, #FEFEFE90 40%, #FEFEFE95 60%, #FEFEFE 80%);
+                background-size: 200% auto;
+                background-clip: text;
+                -webkit-background-clip: text;
+                text-fill-color: transparent;
+                -webkit-text-fill-color: transparent;
+                animation: textMove 2s linear infinite;
+            }
+
+            .type {
+                position: relative;
+                z-index: 10;
+
+                p {
+                    
+                    font-size: 1rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+            }
         }
     }
 

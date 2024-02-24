@@ -42,4 +42,8 @@ body {
 ::-webkit-scrollbar-thumb {
     background-color: #FEFEFE;
 }
+
+.none {
+    display: none !important;
+}
   
