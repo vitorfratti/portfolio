@@ -46,8 +46,8 @@ const About = ({ setActiveSection, activeSection, goToSection }) => {
                             <a
                             href="/images/curriculo-vitorfratti.pdf"
                             target="_blank">
-                                Visualizar Currículo
-                                <img src="/images/svg/curriculo.svg" alt="curriculo"/>
+                                Currículo
+                                <img src="/images/svg/curriculo.svg" alt="curriculo" className="icon"/>
                             </a>
                             <a
                             href="#projetos"
@@ -252,7 +252,7 @@ const AboutContent = styled.section`
                             }
                         }
 
-                        img {
+                        img.icon {
                             width: 1.5rem;
                         }
 

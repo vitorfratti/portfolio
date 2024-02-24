@@ -96,8 +96,10 @@ const Techs = () => {
         <TechsContent data-section="conhecimentos">
             <div className="container">
                 <div className="title" data-aos="fade-up">
-                    <h2>Conhecimentos</h2>
-                    <p>Algumas das linguagens que trabalho diariamente.</p>
+                    <div>
+                        <h2>Conhecimentos</h2>
+                        <p>Algumas das linguagens que trabalho diariamente.</p>
+                    </div>
                 </div>
                 <div className="techs" data-aos="fade-up">
                     <div className="left">

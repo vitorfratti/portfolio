@@ -15,7 +15,7 @@ const AppRouter = () => {
                 slug: 'ecoa-energias-renovaveis',
                 description: 'Site institucional + Blog integrado. 100% desenvolvido por mim.',
                 imageSrc: '/images/ecoa/ecoa-banner.png',
-                gif: '/images/ecoa/ecoa-banner.gif',
+                video: '/images/ecoa/ecoa-banner.mp4',
                 gallery: [
                     {
                         src: '/images/ecoa/ecoa-1.png'
@@ -53,7 +53,7 @@ const AppRouter = () => {
                 slug: 'marmello-studio',
                 description: 'Site institucional + Portfólio de projetos. 100% desenvolvido por mim.',
                 imageSrc: '/images/marmello/marmello-banner.png',
-                gif: '/images/marmello/marmello-banner.gif',
+                video: '/images/marmello/marmello-banner.mp4',
                 gallery: [
                     {
                         src: '/images/marmello/marmello-1.png'
@@ -94,7 +94,7 @@ const AppRouter = () => {
                 slug: 'controlpage',
                 description: 'Plataforma interna para franquias da empresa "Cartão de TODOS". Front-end desenvolvido por mim.',
                 imageSrc: '/images/controlpage/controlpage-banner.png',
-                gif: '/images/controlpage/controlpage-banner.gif',
+                video: '/images/controlpage/controlpage-banner.mp4',
                 gallery: [
                     {
                         src: '/images/ecoa/ecoa-1.png'

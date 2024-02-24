@@ -19,7 +19,7 @@ const FooterContent = styled.footer`
     position: relative;
     z-index: 999;
     width: 100%;
-    padding: 1.25rem 0;
+    padding: 1.5rem 0;
     background: #08090a;
 
     .container {

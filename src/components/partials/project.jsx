@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-const Project = ({ name, slug, description, imageSrc, gif, type, link, techs }) => {
+const Project = ({ name, slug, description, imageSrc, video, type, link, techs }) => {
     const [showGif, setShowGif] = useState(false);
 
     const playGif = () => {
@@ -12,7 +12,11 @@ const Project = ({ name, slug, description, imageSrc, gif, type, link, techs }) 
     return(
         <ProjectContent>
             <div className="image">
-                <img src={showGif ? gif : imageSrc} alt="bg" className="gif"/>
+                {showGif ?
+                    <video src={video} autoPlay muted></video>
+                    : 
+                    <img src={imageSrc} alt="bg" className="banner"/>
+                }
                 <button className="play-gif" onClick={playGif}>
                     {showGif ?
                         <img src="/images/svg/image.svg" alt="icon"/>
@@ -85,7 +89,7 @@ const ProjectContent = styled.div`
         height: 12rem;
         transition: all .2s ease;
 
-        img.banner, img.gif {
+        img.banner, video {
             position: absolute;
             top: 0;
             left: 0;

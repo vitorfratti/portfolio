@@ -49,7 +49,7 @@ const Projects = ({ projects }) => {
                                 slug={project.slug}
                                 description={project.description}
                                 imageSrc={project.imageSrc}
-                                gif={project.gif}
+                                video={project.video}
                                 type={project.type}
                                 link={project.link}
                                 techs={project.techs}/>
@@ -109,6 +109,10 @@ const ProjectsContent = styled.section`
             justify-content: space-between;
             height: 22rem;
 
+            @media (max-width: 1000px) {
+                height: 23.5rem;
+            }
+
             .swiper-pagination {
                 z-index: 999;
 
@@ -123,7 +127,6 @@ const ProjectsContent = styled.section`
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 0;
 
             a {
                 position: relative;
