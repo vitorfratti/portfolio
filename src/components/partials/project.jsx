@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-const Project = ({ name, slug, description, imageSrc, video, type, link, techs }) => {
+const Project = ({ name, slug, description, imageSrc, videoSrc, type, link, techs }) => {
     const [showGif, setShowGif] = useState(false);
 
     const playGif = () => {
@@ -13,7 +13,7 @@ const Project = ({ name, slug, description, imageSrc, video, type, link, techs }
         <ProjectContent>
             <div className="image">
                 {showGif ?
-                    <video src={video} autoPlay muted></video>
+                    <video src={videoSrc} autoPlay muted playsInline></video>
                     : 
                     <img src={imageSrc} alt="bg" className="banner"/>
                 }

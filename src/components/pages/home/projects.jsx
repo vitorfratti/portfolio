@@ -49,7 +49,7 @@ const Projects = ({ projects }) => {
                                 slug={project.slug}
                                 description={project.description}
                                 imageSrc={project.imageSrc}
-                                video={project.video}
+                                videoSrc={project.videoSrc}
                                 type={project.type}
                                 link={project.link}
                                 techs={project.techs}/>
