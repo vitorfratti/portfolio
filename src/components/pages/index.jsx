@@ -7,24 +7,7 @@ import Projects from './home/projects'
 import Techs from './home/techs'
 import Footer from '../partials/footer'
 
-const Index = ({ projects }) => {
-
-    const [activeSection, setActiveSection] = useState('')
-
-    const goToSection = (e) => {
-        const href = e.target.closest('a').getAttribute('href').substring(1)
-        setActiveSection(href)
-        const section = document.querySelector(`section[data-section="${href}"]`)
-    
-        if (section) {
-            const offsetTop = section.offsetTop - 25
-    
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            })
-        }
-    }
+const Index = ({ projects, activeSection, setActiveSection, goToSection }) => {
 
     return(
         <>

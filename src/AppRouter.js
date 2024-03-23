@@ -2,8 +2,26 @@ import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import Index from './components/pages/index';
+import Single from './components/pages/single/single';
 
 const AppRouter = () => {
+    
+    const [activeSection, setActiveSection] = useState('')
+
+    const goToSection = (e) => {
+        const href = e.target.closest('a').getAttribute('href').substring(1)
+        setActiveSection(href)
+        const section = document.querySelector(`section[data-section="${href}"]`)
+    
+        if (section) {
+            const offsetTop = section.offsetTop - 25
+    
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            })
+        }
+    }
 
     const [projects, setProjects] = useState([])
 
@@ -132,7 +150,20 @@ const AppRouter = () => {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Index projects={projects}/>}/>
+                <Route path="/" element={
+                    <Index
+                    projects={projects}
+                    activeSection={activeSection}
+                    setActiveSection={setActiveSection}
+                    goToSection={goToSection}/>
+                }/>
+                <Route path="/projetos/:slug" element={
+                    <Single
+                    projects={projects}
+                    activeSection={activeSection}
+                    setActiveSection={setActiveSection}
+                    goToSection={goToSection}/>
+                }/>
             </Routes>
         </Router>
     );

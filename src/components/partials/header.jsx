@@ -12,15 +12,6 @@ const Header = ({ setActiveSection, activeSection, goToSection }) => {
         })
     }, [])
 
-    const verifySection = () => {
-        const hash = window.location.hash.substring(1)
-        hash ? setActiveSection(hash) : setActiveSection('home')
-    }
-
-    useEffect(() => {
-        verifySection()
-    }, [])
-
     const openMenu = () => {
         document.querySelector('.menu-lateral').classList.add('open')
     }
