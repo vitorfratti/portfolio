@@ -125,18 +125,19 @@ const HeaderContent = styled.header`
                 &::before {
                     content: '';
                     width: 0;
-                    height: 2px;
+                    height: 0;
                     border-radius: 2px;
                     background-color: #A2A1A7;
                     position: absolute;
                     bottom: -.25rem;
-                    right: 0;
-                    transition: right .4s, width .4s, left .4s;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: all .3s ease;
                 }
 
                 &:hover::before {
                     width: 100%;
-                    left: 0;
+                    height: 2px;
                 }
 
                 &.selected {

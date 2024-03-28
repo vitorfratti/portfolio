@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 
 const Home = ({ setActiveSection, activeSection, goToSection }) => {
 
-    const [typedText, setTypedText] = useState('')
+    const [typedText, setTypedText] = useState('D')
     const textToType = 'Desenvolvedor Web | Front-end'
     const caret = '|'
 
