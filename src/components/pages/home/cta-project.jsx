@@ -51,7 +51,7 @@ const CtaProjectContainer = styled.section `
         .texts {
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
+            gap: 0.5rem;
 
             h2 {
                 font-size: 2.25rem;

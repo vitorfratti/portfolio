@@ -66,19 +66,6 @@ const HomeContent = styled.section`
         width: 100%;
         height: 100%;
         opacity: 0.6;
-        animation: moving infinite 10s;
-    }
-
-    @keyframes moving {
-        0% {
-            transform: scale(1.0) rotate(0) translateY(0);
-        }
-        50% {
-            transform: scale(1.25) rotate(5deg) translateY(-5%);
-        }
-        100% {
-            transform: scale(1.0) rotate(0) translateY(0);
-        }
     }
 
     .container {

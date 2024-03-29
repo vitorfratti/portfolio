@@ -19,7 +19,7 @@ const About = ({ setActiveSection, activeSection, goToSection }) => {
             <div className="container">
                 <div className="title" data-aos="fade-up">
                     <h2>Sobre mim</h2>
-                    <p>Meu nome é Vitor Fratti, tenho 20 anos e atuo como Desenvolvedor Web. Trabalho focado no desenvolvimento de interfaces de sites e plataformas com tecnologias modernas e de alta performance.</p>
+                    <p>Meu nome é Vitor Fratti, tenho 20 anos e atuo como Desenvolvedor Web. Trabalho desenvolvendo sites e plataformas com tecnologias modernas e de alta performance.</p>
                 </div>
                 <div className="content" data-aos="fade-up">
                     <div className="infos">
