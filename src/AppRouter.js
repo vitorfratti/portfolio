@@ -6,7 +6,7 @@ import Single from './components/pages/single/single';
 
 const AppRouter = () => {
     
-    const [activeSection, setActiveSection] = useState('')
+    const [activeSection, setActiveSection] = useState('home')
 
     const goToSection = (e) => {
         const href = e.target.closest('a').getAttribute('href').substring(1)

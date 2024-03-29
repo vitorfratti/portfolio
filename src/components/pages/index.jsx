@@ -5,6 +5,7 @@ import Home from './home/home'
 import About from './home/about'
 import Projects from './home/projects'
 import Techs from './home/techs'
+import CtaProject from './home/cta-project'
 import Footer from '../partials/footer'
 
 const Index = ({ projects, activeSection, setActiveSection, goToSection }) => {
@@ -29,6 +30,7 @@ const Index = ({ projects, activeSection, setActiveSection, goToSection }) => {
             goToSection={goToSection}/>
             <Projects projects={projects}/>
             <Techs/>
+            <CtaProject/>
             <Footer/>
         </>
     )
