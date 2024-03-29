@@ -55,7 +55,7 @@ const About = ({ setActiveSection, activeSection, goToSection }) => {
                         className={activeOption == 'formacao' ? 'card formacao' : 'none'}>
                             <img src="./images/svg/catolica.svg" alt="catolica" className="catolica"/>
                             <span>
-                                <p>Centro Universitário - Católica de Santa Catarina em Joinville</p>
+                                <p>Centro Universitário - Católica SC em Joinville</p>
                                 <p>Engenharia de Software - 3° semestre</p>
                             </span>
                         </a>
@@ -109,7 +109,6 @@ const AboutContent = styled.section`
 
             @media (max-width: 900px) {
                 flex-direction: column;
-                gap: 1.5rem;
             }
 
             .infos {

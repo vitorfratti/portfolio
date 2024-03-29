@@ -70,7 +70,7 @@ const Header = ({ setActiveSection, activeSection, goToSection }) => {
                         </a>
                     </span>
                     <span data-aos="fade-left" data-aos-delay="1500">
-                        <a href="https://api.whatsapp.com/send?phone=5511998874399">
+                        <a href="https://wa.me/5511998874399">
                             <img src="/images/svg/whatsapp.svg" alt="whatsapp"/>
                         </a>
                     </span>

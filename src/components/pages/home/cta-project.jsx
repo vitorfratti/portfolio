@@ -10,7 +10,7 @@ const CtaProject = () => {
                     <p>Deixe-me ajudar a transformar sua visão em realidade. Entre em contato para discutir como podemos fazer seu próximo projeto acontecer.</p>
                 </div>
                 <div className="button">
-                    <a target="_blank" href="https://api.whatsapp.com/send?phone=5511998874399">Entre em contato</a>
+                    <a target="_blank" href="https://wa.me/5511998874399">Entre em contato</a>
                 </div>
             </div>
             <img src="/images/dark-abstract.jpg" alt="dark-abstract" className="abstract"/>
@@ -33,7 +33,7 @@ const CtaProjectContainer = styled.section `
         z-index: -1;
         width: 100%;
         height: 100%;
-        opacity: 0.3;
+        opacity: 0.5;
     }
 
     .container {
