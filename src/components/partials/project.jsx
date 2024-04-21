@@ -87,6 +87,7 @@ const ProjectContent = styled.div`
         position: relative;
         width: 100%;
         height: 12rem;
+        border: 1px solid #2e2e32;
         transition: all .2s ease;
 
         img.banner, video {
@@ -103,10 +104,10 @@ const ProjectContent = styled.div`
             z-index: 999999;
             top: 0.5rem;
             left: 0.5rem;
-            background: #1d1e2090;
             backdrop-filter: blur(50px);
             border-radius: 50%;
-            border: 1px solid #FEFEFE00;
+            background: #23232699;
+            border: 1px solid #2e2e32;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -128,7 +129,7 @@ const ProjectContent = styled.div`
 
             &:hover {
                 background: #1d1e20;
-                border: 1px solid #FEFEFE75;
+                border: 1px solid #f7f8f875;
             }
         }
     }
@@ -142,15 +143,16 @@ const ProjectContent = styled.div`
         h5 {
             font-size: 1.25rem;
             font-weight: 500;
-            color: #FEFEFE;
+            color: #f7f8f8;
             user-select: none;
         }
 
         p {
             font-size: 1rem;
             font-weight: 400;
-            color: #A2A1A7;
+            color: #d0d6e0;
             user-select: none;
+            line-height: 1.5;
         }
     }
 
@@ -180,7 +182,7 @@ const ProjectContent = styled.div`
             user-select: none;
 
             p {
-                background: linear-gradient(to left, #FEFEFE 20%, #FEFEFE90 40%, #FEFEFE95 60%, #FEFEFE 80%);
+                background: linear-gradient(to left, #f7f8f8 20%, #f7f8f890 40%, #f7f8f895 60%, #f7f8f8 80%);
                 background-size: 200% auto;
                 background-clip: text;
                 -webkit-background-clip: text;
@@ -194,7 +196,6 @@ const ProjectContent = styled.div`
                 z-index: 10;
 
                 p {
-                    
                     font-size: 1rem;
                     font-weight: 600;
                     text-transform: uppercase;
@@ -215,18 +216,18 @@ const ProjectContent = styled.div`
             align-items: center;
             text-align: center;
             width: 50%;
-            background: #1d1e20;
-            color: #FEFEFE;
+            background: #232326;
+            border: 1px solid #2e2e32;
+            color: #f7f8f8;
             font-size: 1rem;
             font-weight: 600;
             padding: 0.5rem;
-            border: 1px solid #1d1e20;
             text-decoration: none;
             transition: all .1s ease;
             cursor: pointer;
 
             &:hover {
-                border: 1px solid #FEFEFE;
+                border: 1px solid #f7f8f8;
             }
         }
 
@@ -238,7 +239,7 @@ const ProjectContent = styled.div`
             opacity: 0.5;
             width: 50%;
             background: #1d1e20;
-            color: #FEFEFE;
+            color: #f7f8f8;
             font-size: 1rem;
             font-weight: 600;
             padding: 0.5rem;

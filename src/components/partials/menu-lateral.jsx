@@ -79,7 +79,7 @@ const MenuLateralContent = styled.div`
     background: #08090a;
     display: flex;
     flex-direction: column;
-    gap: 8rem;
+    gap: 6rem;
     transition: all .3s ease;
 
     @media (min-width: 650px) {
@@ -131,7 +131,7 @@ const MenuLateralContent = styled.div`
 
             a {
                 position: relative;
-                color: #A2A1A7;
+                color: #d0d6e0;
                 font-size: 1.5rem;
                 font-weight: 600;
                 text-decoration: none;
@@ -141,7 +141,7 @@ const MenuLateralContent = styled.div`
                     width: 0;
                     height: 2px;
                     border-radius: 2px;
-                    background-color: #A2A1A7;
+                    background-color: #d0d6e0;
                     position: absolute;
                     bottom: -.25rem;
                     right: 0;
@@ -154,10 +154,10 @@ const MenuLateralContent = styled.div`
                 }
 
                 &.selected {
-                    color: #FEFEFE;
+                    color: #f7f8f8;
 
                     &::before {
-                        background-color: #FEFEFE;
+                        background-color: #f7f8f8;
                     }
                 }
             }

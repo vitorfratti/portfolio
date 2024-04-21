@@ -20,7 +20,6 @@ const FooterContent = styled.footer`
     z-index: 999;
     width: 100%;
     padding: 1.5rem 0;
-    background: #08090a;
 
     .container {
         display: flex;
@@ -29,9 +28,9 @@ const FooterContent = styled.footer`
         text-align: center;
 
         p {
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: #A2A1A7;
+            font-size: 1.125rem;
+            font-weight: 400;
+            color: #d0d6e0;
         }
     }
 `

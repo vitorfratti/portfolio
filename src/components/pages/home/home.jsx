@@ -5,14 +5,14 @@ import 'aos/dist/aos.css';
 
 const Home = ({ setActiveSection, activeSection, goToSection }) => {
 
-    const [typedText, setTypedText] = useState('D')
+    const [typedText, setTypedText] = useState('Des')
     const textToType = 'Desenvolvedor Web | Front-end'
     const caret = '|'
 
     useEffect(() => {
         AOS.init({
             easing: 'ease-out-back',
-            duration: 3000,
+            duration: 2000,
         })
 
         const typeText = () => {
@@ -31,17 +31,31 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
             <div className="container">
                 <div className="content" data-aos="fade-in">
                     <h1>Bem-vindo, meu nome é <span>Vitor Fratti</span></h1>
-                    <h3>{typedText}</h3>
-                </div>
-                <div className="scroll-guide">
-                    <a
-                    href="#sobre"
-                    onClick={goToSection}>
-                        <img src="./images/svg/arrows.svg" alt="arrows"/>
-                    </a>
+                    <h4>{typedText}</h4>
+                    <div className="buttons">
+                        <a
+                        href="#sobre"
+                        className={activeSection == 'sobre' ? 'selected' : ''}
+                        onClick={goToSection}>
+                            Quem sou
+                        </a>
+                        <a
+                        href="#projetos"
+                        className={activeSection == 'projetos' ? 'selected' : ''}
+                        onClick={goToSection}>
+                            Ver projetos
+                        </a>
+                    </div>
                 </div>
             </div>
-            <img src="/images/dark-abstract.jpg" alt="dark-abstract" className="abstract"/>
+            <div className="scroll-guide">
+                <a
+                href="#sobre"
+                onClick={goToSection}>
+                    <img src="./images/svg/arrows.svg" alt="arrows"/>
+                </a>
+            </div>
+            <img src="/images/svg/blur.svg" alt="blur" className="blur"/>
         </HomeContent>
     )
 }
@@ -53,32 +67,44 @@ const HomeContent = styled.section`
     z-index: 10;
     width: 100%;
     height: 100vh;
+    background: #08090a;
 
     @media (max-width: 500px) {
-        height: 85vh;
+        height: 90vh;
     }
 
-    img.abstract {
+    img.blur {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         z-index: -1;
         width: 100%;
-        height: 100%;
-        opacity: 0.6;
+        height: 200%;
+        opacity: 0.15;
+        animation: open 1s ease;
+    }
+
+    @keyframes open {
+        to {
+            width: 100%;
+        }
+        from {
+            width: 50%;
+        }
     }
 
     .container {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         height: 100%;
 
         .content {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
-            padding: 0 20%;
+            gap: 1rem;
+            padding: 2rem 20% 0 20%;
             text-align: center;
 
             @media (max-width: 1000px) {
@@ -90,22 +116,23 @@ const HomeContent = styled.section`
             }
 
             h1 {
-                color: #FEFEFE;
-                font-size: 3.5rem;
+                color: #f7f8f8;
+                font-size: 56px;
                 font-weight: 600;
+                line-height: 1.25;
 
                 @media (max-width: 700px) {
-                    font-size: 3rem;
+                    font-size: 2.75rem;
                 }
 
                 span {
-                    background: linear-gradient(to left, #FEFEFE 20%, #FEFEFE90 40%, #FEFEFE95 60%, #FEFEFE 80%);
+                    background: linear-gradient(to left, #f7f8f8 20%, #f7f8f895 40%, #f7f8f8 60%, #f7f8f8 80%);
                     background-size: 200% auto;
                     background-clip: text;
                     -webkit-background-clip: text;
                     text-fill-color: transparent;
                     -webkit-text-fill-color: transparent;
-                    animation: textMove 2s linear infinite;
+                    animation: textMove 4s linear infinite;
                 }
 
                 @keyframes textMove {
@@ -118,55 +145,92 @@ const HomeContent = styled.section`
                 }
             }
 
-            h3 {
-                color: #A2A1A7;
-                font-size: 2rem;
-                font-weight: 500;
+            h4 {
+                color: #d0d6e0;
+                font-size: 1.75rem;
+                font-weight: 400;
 
                 @media (max-width: 700px) {
                     font-size: 1.5rem;
                 }
             }
-        }
 
-        .scroll-guide {
-            position: absolute;
-            bottom: 0.5rem;
-            width: 100%;
+            .buttons {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                margin-top: 1rem;
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.5rem;
+                    text-align: center;
+                    background: #232326;
+                    border: 1px solid #2e2e32;
+                    color: #f7f8f8;
+                    font-size: 1.125rem;
+                    font-weight: 600;
+                    padding: 0.75rem 1.25rem;
+                    border-radius: 6px;
+                    text-decoration: none;
+                    transition: all .1s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        border: 1px solid #f7f8f8;
+                    }
+
+                    svg {
+                        width: 1rem;
+                        height: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .scroll-guide {
+        position: absolute;
+        bottom: 0.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            background: none;
+            border: none;
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: 50%;
+            padding: 0.5rem;
+            background: #23232600;
+            border: 1px solid #2e2e3200;
+            cursor: pointer;
+            animation: move 2s infinite;
+            transition: all .2s ease;
 
-            a {
-                background: none;
-                border: none;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 50%;
-                padding: 0.5rem;
-                cursor: pointer;
-                animation: move 2s infinite;
-                transition: all .2s ease;
+            img {
+                width: 32px;
+            }
 
-                img {
-                    width: 32px;
+            &:hover {
+                background: #232326;
+                border: 1px solid #2e2e32;
+            }
+
+            @keyframes move {
+                0% {
+                    transform: translateY(0)
                 }
-
-                &:hover {
-                    background: #1d1e20;
+                50% {
+                    transform: translateY(-25%)
                 }
-
-                @keyframes move {
-                    0% {
-                        transform: translateY(0)
-                    }
-                    50% {
-                        transform: translateY(-25%)
-                    }
-                    100% {
-                        transform: translateY(0)
-                    }
+                100% {
+                    transform: translateY(0)
                 }
             }
         }

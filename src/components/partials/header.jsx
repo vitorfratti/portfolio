@@ -33,7 +33,7 @@ const Header = ({ setActiveSection, activeSection, goToSection }) => {
                         href="#sobre"
                         className={activeSection == 'sobre' ? 'selected' : ''}
                         onClick={goToSection}>
-                            Sobre
+                            Sobre mim
                         </a>
                     </span>
                     <span data-aos="fade-right" data-aos-delay="500">
@@ -91,9 +91,13 @@ const HeaderContent = styled.header`
     position: fixed;
     z-index: 999;
     width: 100%;
-    padding: 1.25rem 0;
-    background: #08090a90;
-    backdrop-filter: blur(12px);
+    padding: 0.75rem 0;
+    background: #08090a00;
+    backdrop-filter: blur(5px);
+
+    @media (max-width: 650px) {
+        padding: 1.5rem 0;
+    }
 
     .container {
         display: flex;
@@ -117,34 +121,37 @@ const HeaderContent = styled.header`
 
             a {
                 position: relative;
-                color: #A2A1A7;
-                font-size: 1.25rem;
+                z-index: 10;
+                color: #d0d6e0;
+                font-size: 1.125rem;
                 font-weight: 600;
                 text-decoration: none;
 
                 &::before {
                     content: '';
                     width: 0;
-                    height: 0;
+                    height: 1px;
                     border-radius: 2px;
-                    background-color: #A2A1A7;
+                    background-color: #d0d6e0;
                     position: absolute;
-                    bottom: -.25rem;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    transition: all .3s ease;
+                    bottom: -0.5rem;
+                    right: 0;
+                    transition: right .4s, width .4s, left .4s;
                 }
 
                 &:hover::before {
                     width: 100%;
-                    height: 2px;
+                    left: 0;
                 }
 
                 &.selected {
-                    color: #FEFEFE;
+                    color: #f7f8f8;
 
-                    &::before {
-                        background-color: #FEFEFE;
+                    &:hover {
+                        &::before {
+                            width: 100%;
+                            background: #f7f8f8;
+                        }
                     }
                 }
             }
@@ -182,7 +189,7 @@ const HeaderContent = styled.header`
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            width: 2.5rem;
+            width: 2.25rem;
             height: 100%;
             cursor: pointer;
 
@@ -197,7 +204,7 @@ const HeaderContent = styled.header`
             span {
                 width: 100%;
                 height: 2px;
-                background: #FEFEFE;
+                background: #f7f8f8;
             }
         }
     }

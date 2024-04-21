@@ -8,12 +8,13 @@ const Techs = () => {
     useEffect(() => {
         AOS.init({
             easing: 'ease-out-back',
-            duration: 2500
+            duration: 2000
         })
     }, [])
 
     const [techs, setTechs] = useState([])
-    const [activeTech, setActiveTech] = useState([])
+    const [showMore, setShowMore] = useState(false)
+    const [nums, setNums] = useState(9)
 
     useEffect(() => {
         setTechs([
@@ -79,49 +80,39 @@ const Techs = () => {
             }
         ])
 
-        setActiveTech([
-            {
-                name: 'HTML',
-                description: 'Linguagem de marcação utilizada na construção de páginas na Web.',
-                iconSrc: './images/svg/html.svg'
-            }
-        ])
+        if(window.innerWidth < 650) {
+            setNums(5)
+        }
     }, [])
-
-    const hoverTech = (tech) => {
-        setActiveTech([tech])
-    }
 
     return(
         <TechsContent data-section="conhecimentos">
             <div className="container">
                 <div className="title" data-aos="fade-up">
-                    <div>
-                        <h2>Conhecimentos</h2>
-                        <p>Algumas das linguagens que trabalho diariamente.</p>
-                    </div>
+                    <h2>Conhecimentos</h2>
+                    <p>Algumas das tecnologias que trabalho diariamente.</p>
                 </div>
                 <div className="techs" data-aos="fade-up">
-                    <div className="left">
-                        {techs.map((tech, index) => (
-                            <div
-                            className={tech.name == activeTech[0].name ? 'card selected' : 'card'}
-                            key={tech.name}
-                            onMouseEnter={() => hoverTech(tech)}>
+                    {techs.slice(0, nums).map((tech, index) => (
+                        <div className="tech" key={tech.index}>
+                            <div className="top">
                                 <img src={tech.iconSrc} alt={tech.name}/>
+                                <h5>{tech.name}</h5>
                             </div>
-                        ))}
-                    </div>
-                    <div className="right">
-                        {activeTech.map((activeTech, index) => (
-                            <span key={activeTech.name}>
-                                <h3>{activeTech.name}</h3>
-                                <p>{activeTech.description}</p>
-                            </span>
-                        ))}
-                    </div>
+                            <div className="bottom">
+                                <p>{tech.description}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
+            {!showMore ?
+                <div className="shadow">
+                    <button onClick={() => { setShowMore(true); setNums(12) }}>Ver tudo</button>
+                </div>
+                :
+                <></>
+            }
             <img src="/images/svg/blur.svg" alt="blur" className="blur"/>
         </TechsContent>
     )
@@ -133,21 +124,22 @@ const TechsContent = styled.section`
     position: relative;
     z-index: 10;
     width: 100%;
-    background: #08090a;
-    padding: 5rem 0;
+    height: fit-content;
+    padding: 2.5rem 0;
 
     @media (max-width: 500px) {
-        padding: 2.5rem 0 5rem 0;
+        padding: 2.5rem 0;
     }
 
     img.blur {
         position: absolute;
-        top: 0;
-        right: 0;
-        transform: rotate(180deg);
-        opacity: 0.15;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         z-index: -1;
-        max-height: 100%;
+        width: 100%;
+        height: 100%;
+        opacity: 0.15;
     }
 
     .container {
@@ -159,101 +151,141 @@ const TechsContent = styled.section`
         .title {
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
+            gap: 0.5rem;
             
             h2 {
                 font-size: 2.5rem;
                 font-weight: 600;
-                color: #FEFEFE;
+                color: #f7f8f8;
+
+                @media (width <= 500px) {
+                    font-size: 2.25rem;
+                }
             }
 
             p {
-                font-size: 1.25rem;
-                font-weight: 500;
-                color: #A2A1A7;
+                font-size: 1.125rem;
+                line-height: 1.6;
+                font-weight: 400;
+                color: #d0d6e0;
             }
         }
 
         .techs {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
             gap: 1rem;
+            z-index: 10;
 
-            @media (max-width: 1000px) {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .left {
+            .tech {
                 display: flex;
-                flex-wrap: wrap;
+                flex-direction: column;
                 gap: 1rem;
-                width: 50%;
-                height: auto;
+                width: calc(33% - 0.5rem);
+                padding: 1.5rem;
+                border-radius: 6px;
+                background: #232326;
+                backdrop-filter: blur(5px);
+                border: 1px solid #2e2e32;
+                box-shadow: 0 0 2px #08090a;
+                transition: all .1s ease;
+                user-select: none;
 
-                @media (max-width: 1000px) {
+                &:hover {
+                    background: #23232650;
+                    border: 1px solid #f7f8f8;
+                }
+
+                @media (max-width: 900px) {
+                    width: calc(50% - 0.5rem);
+                }
+
+                @media (max-width: 650px) {
                     width: 100%;
-                    justify-content: space-between;
                 }
 
-                @media (max-width: 500px) {
-                    gap: 0.5rem;
-                }
-
-                .card {
+                .top {
                     display: flex;
-                    justify-content: center;
                     align-items: center;
-                    width: calc(25% - 1rem);
-                    padding: 1.75rem 0;
-                    background: #1d1e20;
-                    border: 1px solid #1d1e20;
-                    box-shadow: 0 0 2px #08090a;
-                    transition: all .1s ease;
-
-                    @media (max-width: 500px) {
-                        width: calc(25% - 0.5rem);
-                        padding: 1.25rem 0;
-                    }
+                    gap: 0.75rem;
 
                     img {
-                        width: 3.5rem;
-
-                        @media (max-width: 500px) {
-                            width: 3rem;
-                        }
+                        width: 1.5rem;
                     }
 
-                    &:hover, &.selected {
-                        border: 1px solid #FEFEFE;
+                    h5 {
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                        color: #f7f8f8;
+                        user-select: none;
+                    }
+                }
+
+                .bottom {
+                    p {
+                        font-size: 1rem;
+                        font-weight: 400;
+                        color: #d0d6e0;
+                        user-select: none;
+                        line-height: 1.5;
                     }
                 }
             }
+        }
+    }
 
-            .right {
-                width: 50%;
+    .shadow {
+        position: absolute;
+        height: 15.5rem;
+        bottom: 0px;
+        z-index: 50;
+        padding-top: 10rem;
+        width: 100%;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, transparent 0px, #08090a 150px);
+        transition: transform 400ms ease 0s, opacity 400ms ease 0s;
+        transform: translateY(0%);
+        opacity: 1;
+        pointer-events: all;
 
-                @media (max-width: 1000px) {
-                    width: 100%;
-                }
+        button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            font-size: 1.125rem;
+            font-weight: 600;
+            background: none;
+            border: none;
+            color: #FEFEFE;
+            text-decoration: none;
+            width: fit-content;
+            height: fit-content;
+            cursor: pointer;
 
-                span {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.25rem;
+            &::before {
+                content: '';
+                width: 0;
+                height: 1px;
+                border-radius: 2px;
+                background-color: #f7f8f8;
+                position: absolute;
+                bottom: -0.5rem;
+                right: 0;
+                transition: right .4s, width .4s, left .4s;
+            }
 
-                    h3 {
-                        font-size: 1.75rem;
-                        font-weight: 600;
-                        color: #FEFEFE;
-                    }
+            &:hover::before {
+                width: 100%;
+                left: 0;
+            }
 
-                    p {
-                        font-size: 1.25rem;
-                        font-weight: 500;
-                        color: #A2A1A7;
-                    }
-                }
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
             }
         }
     }
