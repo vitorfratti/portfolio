@@ -86,7 +86,7 @@ const CtaContent = styled.section`
             }
 
             @media (width <= 500px) {
-                padding: 1.5rem;
+                padding: 2rem;
             }
 
             h2 {
@@ -130,6 +130,10 @@ const CtaContent = styled.section`
 
                     img {
                         width: 2rem;
+
+                        @media (width <= 767px) {
+                            width: 1.75rem;
+                        }
                     }
                 }
             }

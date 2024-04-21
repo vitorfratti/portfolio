@@ -96,6 +96,7 @@ const HeaderContent = styled.header`
     backdrop-filter: blur(5px);
 
     @media (max-width: 650px) {
+        background: #08090a;
         padding: 1.5rem 0;
     }
 
@@ -189,7 +190,7 @@ const HeaderContent = styled.header`
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            width: 2.25rem;
+            width: 2.15rem;
             height: 100%;
             cursor: pointer;
 

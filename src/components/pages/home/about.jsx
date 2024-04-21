@@ -119,6 +119,10 @@ const AboutContent = styled.section`
 
                         img {
                             width: 2rem;
+
+                            @media (width <= 767px) {
+                                width: 1.75rem;
+                            }
                         }
                     }
                 }
