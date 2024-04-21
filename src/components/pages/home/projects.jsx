@@ -133,6 +133,7 @@ const ProjectsContent = styled.section`
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: 0.5rem;
 
             a {
                 display: flex;

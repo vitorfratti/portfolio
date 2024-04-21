@@ -83,19 +83,11 @@ const HomeContent = styled.section`
         height: 200%;
         opacity: 0.15;
         animation: open 1s ease;
-
-        @media (max-width: 700px) {
-            width: 150%;
-        }
     }
 
     @keyframes open {
         to {
             width: 100%;
-
-            @media (max-width: 700px) {
-                width: 150%;
-            }
         }
         from {
             width: 50%;

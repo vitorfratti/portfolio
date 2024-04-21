@@ -80,7 +80,9 @@ const Techs = () => {
             }
         ])
 
-        if(window.innerWidth < 650) {
+        if(window.innerWidth >= 650 && window.innerWidth <= 900) {
+            setNums(6)
+        } else if(window.innerWidth < 650) {
             setNums(5)
         }
     }, [])
@@ -193,8 +195,10 @@ const TechsContent = styled.section`
                 user-select: none;
 
                 &:hover {
-                    background: #23232650;
-                    border: 1px solid #f7f8f8;
+                    @media (width > 767px) {
+                        background: #23232650;
+                        border: 1px solid #f7f8f8;
+                    }
                 }
 
                 @media (max-width: 900px) {
