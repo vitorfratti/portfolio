@@ -28,7 +28,7 @@ const MenuLateral = ({ setActiveSection, activeSection, goToSection }) => {
                     href="#sobre"
                     className={activeSection == 'sobre' ? 'selected' : ''}
                     onClick={goToSection}>
-                        Sobre
+                        Sobre mim
                     </a>
                 </button>
                 <button onClick={closeMenu}>
