@@ -83,11 +83,19 @@ const HomeContent = styled.section`
         height: 200%;
         opacity: 0.15;
         animation: open 1s ease;
+
+        @media (max-width: 700px) {
+            width: 150%;
+        }
     }
 
     @keyframes open {
         to {
             width: 100%;
+
+            @media (max-width: 700px) {
+                width: 150%;
+            }
         }
         from {
             width: 50%;
@@ -158,6 +166,7 @@ const HomeContent = styled.section`
             .buttons {
                 display: flex;
                 justify-content: center;
+                flex-wrap: wrap;
                 gap: 1rem;
                 margin-top: 1rem;
 

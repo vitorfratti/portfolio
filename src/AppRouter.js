@@ -14,7 +14,7 @@ const AppRouter = () => {
         const section = document.querySelector(`section[data-section="${href}"]`)
     
         if (section) {
-            const offsetTop = section.offsetTop - 50
+            const offsetTop = section.offsetTop - 40
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
