@@ -38,7 +38,7 @@ const About = ({ setActiveSection, activeSection, goToSection }) => {
                             </a>
                         </div>
                     </div>
-                    <div className="image" data-aos="fade-left">
+                    <div className="image" data-aos="fade-up">
                         <div className="box"></div>
                     </div>
                 </div>
