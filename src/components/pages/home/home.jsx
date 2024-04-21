@@ -82,7 +82,14 @@ const HomeContent = styled.section`
         width: 100%;
         height: 200%;
         opacity: 0.15;
-        animation: open 1s ease;
+
+        @media (width > 767px) {
+            animation: open 1s ease;
+        }
+
+        @media (width <= 767px) {
+            width: 175%;
+        }
     }
 
     @keyframes open {
