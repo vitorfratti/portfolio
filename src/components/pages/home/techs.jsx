@@ -187,7 +187,7 @@ const TechsContent = styled.section`
                 width: calc(33% - 0.5rem);
                 padding: 1.5rem;
                 border-radius: 6px;
-                background: #232326;
+                background: linear-gradient(45deg, #23232650, #232326);
                 backdrop-filter: blur(5px);
                 border: 1px solid #2e2e32;
                 box-shadow: 0 0 2px #08090a;
@@ -196,8 +196,7 @@ const TechsContent = styled.section`
 
                 &:hover {
                     @media (width > 767px) {
-                        background: #23232650;
-                        border: 1px solid #f7f8f8;
+                        border: 1px solid #f7f8f875;
                     }
                 }
 

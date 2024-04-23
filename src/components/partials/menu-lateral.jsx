@@ -133,7 +133,7 @@ const MenuLateralContent = styled.div`
                 position: relative;
                 color: #d0d6e0;
                 font-size: 1.5rem;
-                font-weight: 600;
+                font-weight: 500;
                 text-decoration: none;
 
                 &::before {

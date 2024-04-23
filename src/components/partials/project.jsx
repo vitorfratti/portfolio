@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 const Project = ({ name, slug, description, imageSrc, videoSrc, type, link, techs }) => {
-    const [showGif, setShowGif] = useState(false);
+    const [showGif, setShowGif] = useState(false)
 
     const playGif = () => {
         setShowGif(!showGif)
     }
-    
 
     return(
         <ProjectContent>
@@ -56,8 +55,16 @@ const ProjectContent = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: calc(33% - 0.5rem);
     height: auto;
+
+    @media (width <= 900px) {
+        width: calc(50% - 0.5rem);
+    }
+
+    @media (width <= 500px) {
+        width: 100%;
+    }
 
     .full-link {
         position: absolute;
@@ -66,19 +73,21 @@ const ProjectContent = styled.div`
         width: 100%;
         height: 100%;
 
-        @media (min-width: 800px) {
+        @media (width > 800px) {
             display: none;
         }
     }
 
-    @media (min-width: 800px) {
+    @media (width > 800px) {
         &:hover {
             .image {
                 height: calc(12rem - 1rem - 38px);
             }
 
             .buttons {
-                display: flex;
+                a, button {
+                    transform: scale(1);
+                }
             }
         }
     }
@@ -106,8 +115,9 @@ const ProjectContent = styled.div`
             left: 0.5rem;
             backdrop-filter: blur(50px);
             border-radius: 50%;
-            background: #23232699;
+            background: #232326;
             border: 1px solid #2e2e32;
+            box-shadow: 0 0 50px #f7f8f890;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -205,33 +215,36 @@ const ProjectContent = styled.div`
     }
 
     .buttons {
-        display: none;
+        display: flex;
         justify-content: space-between;
         gap: 1rem;
         margin-top: 1rem;
+        transition: all .2s ease;
 
         a {
+            transform: scale(0);
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             width: 50%;
-            background: #232326;
+            background: linear-gradient(45deg, #23232650, #232326);
             border: 1px solid #2e2e32;
             color: #f7f8f8;
             font-size: 1rem;
             font-weight: 600;
             padding: 0.5rem;
             text-decoration: none;
-            transition: all .1s ease;
+            transition: all .2s ease;
             cursor: pointer;
 
             &:hover {
-                border: 1px solid #f7f8f8;
+                border: 1px solid #f7f8f875;
             }
         }
 
         button {
+            transform: scale(0);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -245,7 +258,7 @@ const ProjectContent = styled.div`
             padding: 0.5rem;
             border: 1px solid #1d1e20;
             text-decoration: none;
-            transition: all .1s ease;
+            transition: all .2s ease;
             cursor: not-allowed;
         }
     }

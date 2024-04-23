@@ -3,10 +3,8 @@ import styled from 'styled-components'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const About = ({ setActiveSection, activeSection, goToSection }) => {
-
-    const [activeOption, setActiveOption] = useState('experiencia')
-
+const About = () => {
+    
     useEffect(() => {
         AOS.init({
             easing: 'ease-out-back',
@@ -109,12 +107,12 @@ const AboutContent = styled.section`
                         align-items: center;
                         padding: 1rem;
                         border-radius: 6px;
-                        background: #232326;
+                        background: linear-gradient(45deg, #23232650, #232326);
                         border: 1px solid #2e2e32;
                         transition: all .2s ease;
 
                         &:hover {
-                            border: 1px solid #d0d6e0;
+                            border: 1px solid #f7f8f875;
                         }
 
                         img {

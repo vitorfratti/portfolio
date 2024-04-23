@@ -125,7 +125,7 @@ const HeaderContent = styled.header`
                 z-index: 10;
                 color: #d0d6e0;
                 font-size: 1.125rem;
-                font-weight: 600;
+                font-weight: 500;
                 text-decoration: none;
 
                 &::before {

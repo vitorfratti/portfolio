@@ -11,6 +11,7 @@ import { Pagination } from 'swiper/modules';
 import Project from '../../partials/project'
 
 const Projects = ({ projects }) => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 500)
 
     useEffect(() => {
         AOS.init({
@@ -27,42 +28,59 @@ const Projects = ({ projects }) => {
                     <p>Alguns dos projetos que desenvolvi recentemente.</p>
                 </div>
                 <div className="projects" data-aos="fade-up">
-                    <Swiper
-                    pagination={{
-                        dynamicBullets: true,
-                        clickable: true
-                    }}
-                    modules={[Pagination]}
-                    spaceBetween={15}
-                    slidesPerView={1}
-                    breakpoints={{
-                        1000: {
-                            slidesPerView: 3,
-                        },
-                        500: {
-                            slidesPerView: 2,
-                        }
-                    }}>
-                        {projects.map((project, index) => (
-                            <SwiperSlide key={project.id}>
-                                <Project
-                                name={project.name}
-                                slug={project.slug}
-                                description={project.description}
-                                imageSrc={project.imageSrc}
-                                videoSrc={project.videoSrc}
-                                type={project.type}
-                                link={project.link}
-                                techs={project.techs}/>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                    {isMobile ?
+                        <Swiper
+                        pagination={{
+                            dynamicBullets: true,
+                            clickable: true
+                        }}
+                        modules={[Pagination]}
+                        spaceBetween={15}
+                        slidesPerView={1}
+                        breakpoints={{
+                            1000: {
+                                slidesPerView: 3,
+                            },
+                            500: {
+                                slidesPerView: 2,
+                            }
+                        }}>
+                            {projects.map((project, index) => (
+                                <SwiperSlide key={project.id}>
+                                    <Project
+                                    name={project.name}
+                                    slug={project.slug}
+                                    description={project.description}
+                                    imageSrc={project.imageSrc}
+                                    videoSrc={project.videoSrc}
+                                    type={project.type}
+                                    link={project.link}
+                                    techs={project.techs}/>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                        :
+                        <>
+                            {projects.map((project, index) => (
+                                    <Project
+                                    key={project.id}
+                                    name={project.name}
+                                    slug={project.slug}
+                                    description={project.description}
+                                    imageSrc={project.imageSrc}
+                                    videoSrc={project.videoSrc}
+                                    type={project.type}
+                                    link={project.link}
+                                    techs={project.techs}/>
+                            ))}
+                        </>
+                    }
                 </div>
-                <div className="link">
-                    <Link to={'/projetos'}>
-                        Ver todos os projetos
-                        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#f7f8f8"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#f7f8f8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                    </Link>
+                <div className="see-repositories">
+                    <a href="https://github.com/vitorfratti?tab=repositories" target="_blank">
+                        Ver repositórios no GitHub
+                        <img src="/images/svg/github.svg" alt="github"/>
+                    </a>
                 </div>
             </div>
         </ProjectsContent>
@@ -113,10 +131,12 @@ const ProjectsContent = styled.section`
         .projects {
             display: flex;
             justify-content: space-between;
-            height: 22rem;
+            gap: 1rem;
+            flex-wrap: wrap;
 
-            @media (max-width: 1000px) {
-                height: 24rem;
+            &::after {
+                content: "";
+                width: calc(33% - 0.5rem);
             }
 
             .swiper-pagination {
@@ -128,7 +148,7 @@ const ProjectsContent = styled.section`
             }
         }
 
-        .link {
+        .see-repositories {
             position: relative;
             display: flex;
             justify-content: center;
@@ -162,9 +182,9 @@ const ProjectsContent = styled.section`
                     left: 0;
                 }
 
-                svg {
-                    width: 1.25rem;
-                    height: 1.25rem;
+                img {
+                    width: 1.125rem;
+                    height: 1.125rem;
                 }
             }
         }

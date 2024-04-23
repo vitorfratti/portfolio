@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import Index from './components/pages/index';
-import Projects from './components/pages/projects/projects';
+import Header from './components/partials/header'
+import MenuLateral from './components/partials/menu-lateral'
+import Footer from './components/partials/footer'
+import HomeIndex from './components/pages/index';
 import Single from './components/pages/single/single';
 
 const AppRouter = () => {
@@ -115,9 +117,47 @@ const AppRouter = () => {
             },
             {
                 id: 3,
+                name: 'Szoma',
+                slug: 'szoma',
+                description: 'Site institucional + Portfólio de projetos. 100% desenvolvido por mim.',
+                imageSrc: '/images/szoma/szoma-banner.png',
+                videoSrc: '/images/szoma/szoma-banner.mp4',
+                gallery: [
+                    {
+                        src: '/images/ecoa/ecoa-1.png'
+                    },
+                    {
+                        src: '/images/ecoa/ecoa-2.png'
+                    },
+                    {
+                        src: '/images/ecoa/ecoa-3.png'
+                    },
+                    {
+                        src: '/images/ecoa/ecoa-4.png'
+                    }
+                ],
+                type: 'Corporativo',
+                link: 'https://projetos.hangardigital.com.br/szoma/site/',
+                techs: [
+                    {
+                        name: 'Django',
+                        iconSrc: '/images/svg/django.svg'
+                    },
+                    {
+                        name: 'jQuery',
+                        iconSrc: '/images/svg/jquery.svg'
+                    },
+                    {
+                        name: 'Sass',
+                        iconSrc: '/images/svg/sass.svg'
+                    },
+                ]
+            },
+            {
+                id: 4,
                 name: 'ControlPAGE',
                 slug: 'controlpage',
-                description: 'Plataforma interna para franquias da empresa "Cartão de TODOS". Front-end desenvolvido por mim.',
+                description: 'Plataforma interna para franquias da "Cartão de TODOS". Front-end desenvolvido por mim.',
                 imageSrc: '/images/controlpage/controlpage-banner.png',
                 videoSrc: '/images/controlpage/controlpage-banner.mp4',
                 gallery: [
@@ -150,32 +190,119 @@ const AppRouter = () => {
                         iconSrc: '/images/svg/sass.svg'
                     },
                 ]
-            }
+            },
+            {
+                id: 1,
+                name: 'Ecoa Energias Renováveis',
+                slug: 'ecoa-energias-renovaveis',
+                description: 'Site institucional + Blog integrado. 100% desenvolvido por mim.',
+                imageSrc: '/images/ecoa/ecoa-banner.png',
+                videoSrc: '/images/ecoa/ecoa-banner.mp4',
+                gallery: [
+                    {
+                        src: '/images/ecoa/ecoa-1.png'
+                    },
+                    {
+                        src: '/images/ecoa/ecoa-2.png'
+                    },
+                    {
+                        src: '/images/ecoa/ecoa-3.png'
+                    },
+                    {
+                        src: '/images/ecoa/ecoa-4.png'
+                    }
+                ],
+                type: 'Corporativo',
+                link: 'https://ecoaenergias.com.br/',
+                techs: [
+                    {
+                        name: 'jQuery',
+                        iconSrc: '/images/svg/jquery.svg'
+                    },
+                    {
+                        name: 'Sass',
+                        iconSrc: '/images/svg/sass.svg'
+                    },
+                    {
+                        name: 'WordPress',
+                        iconSrc: '/images/svg/wordpress.svg'
+                    }
+                ]
+            },
+            {
+                id: 2,
+                name: 'Marmello Studio',
+                slug: 'marmello-studio',
+                description: 'Site institucional + Portfólio de projetos. 100% desenvolvido por mim.',
+                imageSrc: '/images/marmello/marmello-banner.png',
+                videoSrc: '/images/marmello/marmello-banner.mp4',
+                gallery: [
+                    {
+                        src: '/images/marmello/marmello-1.png'
+                    },
+                    {
+                        src: '/images/marmello/marmello-2.png'
+                    },
+                    {
+                        src: '/images/marmello/marmello-3.png'
+                    },
+                    {
+                        src: '/images/marmello/marmello-4.png'
+                    },
+                    {
+                        src: '/images/marmello/marmello-5.png'
+                    }
+                ],
+                type: 'Corporativo',
+                link: 'https://marmellostudio.com/',
+                techs: [
+                    {
+                        name: 'jQuery',
+                        iconSrc: '/images/svg/jquery.svg'
+                    },
+                    {
+                        name: 'Sass',
+                        iconSrc: '/images/svg/sass.svg'
+                    },
+                    {
+                        name: 'WordPress',
+                        iconSrc: '/images/svg/wordpress.svg'
+                    }
+                ]
+            },
         ])
     }, [])
 
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={
-                    <Index
-                    projects={projects}
-                    activeSection={activeSection}
-                    setActiveSection={setActiveSection}
-                    goToSection={goToSection}/>
-                }/>
-                <Route path="/projetos" element={
-                    <Projects/>
-                }/>
-                <Route path="/projetos/:slug" element={
-                    <Single
-                    projects={projects}
-                    activeSection={activeSection}
-                    setActiveSection={setActiveSection}
-                    goToSection={goToSection}/>
-                }/>
-            </Routes>
-        </Router>
+        <>
+            <Header
+            setActiveSection={setActiveSection}
+            activeSection={activeSection}
+            goToSection={goToSection}/>
+            <MenuLateral
+            setActiveSection={setActiveSection}
+            activeSection={activeSection}
+            goToSection={goToSection}/>
+            <Router>
+                <Routes>
+                    <Route path="/" element={
+                        <HomeIndex
+                        projects={projects}
+                        activeSection={activeSection}
+                        setActiveSection={setActiveSection}
+                        goToSection={goToSection}/>
+                    }/>
+                    <Route path="/projetos/:slug" element={
+                        <Single
+                        projects={projects}
+                        activeSection={activeSection}
+                        setActiveSection={setActiveSection}
+                        goToSection={goToSection}/>
+                    }/>
+                </Routes>
+            </Router>
+            <Footer/>
+        </>
     );
 };
 

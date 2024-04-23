@@ -175,7 +175,7 @@ const HomeContent = styled.section`
                     align-items: center;
                     gap: 0.5rem;
                     text-align: center;
-                    background: #232326;
+                    background: linear-gradient(45deg, #23232650, #232326);
                     border: 1px solid #2e2e32;
                     color: #f7f8f8;
                     font-size: 1.125rem;
@@ -187,7 +187,7 @@ const HomeContent = styled.section`
                     cursor: pointer;
 
                     &:hover {
-                        border: 1px solid #f7f8f8;
+                        border: 1px solid #f7f8f875;
                     }
 
                     svg {
