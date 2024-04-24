@@ -75,7 +75,7 @@ const CtaContent = styled.section`
             gap: 1rem;
             text-align: center;
             width: 100%;
-            background: linear-gradient(90deg, #23232650, #232326);
+            background: linear-gradient(45deg, #23232650, #232326);
             backdrop-filter: blur(4px);
             border: 1px solid #2e2e32;
             padding: 4rem 20rem;
@@ -120,7 +120,7 @@ const CtaContent = styled.section`
                     align-items: center;
                     padding: 1rem;
                     border-radius: 6px;
-                    background: linear-gradient(10deg, #23232650, #232326);
+                    background: #232326;
                     border: 1px solid #2e2e32;
                     transition: all .2s ease;
 

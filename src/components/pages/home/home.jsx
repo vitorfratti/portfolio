@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import AOS from 'aos';
-import 'aos/dist/aos.css';
+import 'aos/dist/aos.css'
+import Typewriter from 'typewriter-effect'
 
 const Home = ({ setActiveSection, activeSection, goToSection }) => {
 
@@ -31,7 +32,16 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
             <div className="container">
                 <div className="content" data-aos="fade-in">
                     <h1>Bem-vindo, meu nome é <span>Vitor Fratti</span></h1>
-                    <h4>{typedText}</h4>
+                    <h4>
+                        Desenvolvedor
+                        <Typewriter
+                            options={{
+                                strings: ['Web', 'Front-end'],
+                                autoStart: true,
+                                loop: true,
+                            }}
+                        />
+                    </h4>
                     <div className="buttons">
                         <a
                         href="#sobre"
@@ -89,6 +99,7 @@ const HomeContent = styled.section`
 
         @media (width <= 767px) {
             width: 175%;
+            height: 100%;
         }
     }
 
@@ -111,7 +122,7 @@ const HomeContent = styled.section`
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            padding: 2rem 20% 0 20%;
+            padding: 3rem 20% 0 20%;
             text-align: center;
 
             @media (max-width: 1000px) {
@@ -153,6 +164,10 @@ const HomeContent = styled.section`
             }
 
             h4 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
                 color: #d0d6e0;
                 font-size: 1.75rem;
                 font-weight: 400;
@@ -175,7 +190,7 @@ const HomeContent = styled.section`
                     align-items: center;
                     gap: 0.5rem;
                     text-align: center;
-                    background: linear-gradient(45deg, #23232650, #232326);
+                    background: #232326;
                     border: 1px solid #2e2e32;
                     color: #f7f8f8;
                     font-size: 1.125rem;

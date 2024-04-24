@@ -37,7 +37,9 @@ const About = () => {
                         </div>
                     </div>
                     <div className="image" data-aos="fade-up">
-                        <div className="box"></div>
+                        <div className="box">
+                            <img src="/images/about-image.JPG" alt="about"/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,7 +109,7 @@ const AboutContent = styled.section`
                         align-items: center;
                         padding: 1rem;
                         border-radius: 6px;
-                        background: linear-gradient(45deg, #23232650, #232326);
+                        background: #232326;
                         border: 1px solid #2e2e32;
                         transition: all .2s ease;
 
@@ -132,21 +134,21 @@ const AboutContent = styled.section`
                 align-items: center;
 
                 .box {
+                    position: relative;
                     width: 32rem;
                     height: 20rem;
                     border-radius: 6px;
                     border: 1px solid #2e2e32;
-                    background: linear-gradient(to left, #232326 20%, #f7f8f825 40%, #232326 60%, #232326 80%);
-                    background-size: 300% auto;
-                    animation: shine 12s linear infinite;
+                    background: #232326;
 
-                    @keyframes shine {
-                        from {
-                            background-position: 300% center;
-                        }
-                        to {
-                            background-position: 0% center;
-                        }
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 6px;
                     }
                 }
             }

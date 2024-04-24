@@ -228,7 +228,7 @@ const ProjectContent = styled.div`
             align-items: center;
             text-align: center;
             width: 50%;
-            background: linear-gradient(45deg, #23232650, #232326);
+            background: #232326;
             border: 1px solid #2e2e32;
             color: #f7f8f8;
             font-size: 1rem;

@@ -44,6 +44,14 @@ const Header = ({ setActiveSection, activeSection, goToSection }) => {
                             Projetos
                         </a>
                     </span>
+                    <span data-aos="fade-right" data-aos-delay="500">
+                        <a
+                        href="#experiencias"
+                        className={activeSection == 'experiencias' ? 'selected' : ''}
+                        onClick={goToSection}>
+                            Experiências
+                        </a>
+                    </span>
                     <span data-aos="fade-right" data-aos-delay="0">
                         <a
                         href="#conhecimentos"

@@ -131,7 +131,7 @@ const ProjectsContent = styled.section`
         .projects {
             display: flex;
             justify-content: space-between;
-            gap: 1rem;
+            align-items: flex-start;
             flex-wrap: wrap;
 
             &::after {
@@ -153,7 +153,6 @@ const ProjectsContent = styled.section`
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 0.5rem;
 
             a {
                 display: flex;
