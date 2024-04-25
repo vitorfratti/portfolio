@@ -48,14 +48,9 @@ const Projects = ({ projects }) => {
                             {projects.map((project, index) => (
                                 <SwiperSlide key={project.id}>
                                     <Project
-                                    name={project.name}
-                                    slug={project.slug}
-                                    description={project.description}
-                                    imageSrc={project.imageSrc}
-                                    videoSrc={project.videoSrc}
-                                    type={project.type}
-                                    link={project.link}
-                                    techs={project.techs}/>
+                                    project={project}
+                                    key={project.id}
+                                    />
                                 </SwiperSlide>
                             ))}
                         </Swiper>
@@ -63,20 +58,23 @@ const Projects = ({ projects }) => {
                         <>
                             {projects.map((project, index) => (
                                     <Project
+                                    project={project}
                                     key={project.id}
-                                    name={project.name}
-                                    slug={project.slug}
-                                    description={project.description}
-                                    imageSrc={project.imageSrc}
-                                    videoSrc={project.videoSrc}
-                                    type={project.type}
-                                    link={project.link}
-                                    techs={project.techs}/>
+                                    />
                             ))}
+                            <div className="project">
+                                <div className="image">
+                                    <svg width="64px" height="64px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#f7f8f8" fill-rule="evenodd" d="M8.603 2.549A4.251 4.251 0 005.47 8.696a1.076 1.076 0 01-.255 1.312l-3 2.374a.75.75 0 01-.93-1.176l2.701-2.139A5.75 5.75 0 019.47 1.004c.53.02.924.363 1.066.797.137.42.035.902-.306 1.243L8.75 4.523v1.596l1.13 1.13h1.597l1.48-1.479a1.22 1.22 0 011.241-.306c.435.142.778.537.798 1.066a5.75 5.75 0 01-7.978 5.52l-2.102 2.664a.75.75 0 01-1.177-.928l2.333-2.959a1.076 1.076 0 011.297-.265 4.251 4.251 0 006.082-3.165L12.41 8.438c-.199.2-.47.312-.75.312h-1.96c-.282 0-.552-.112-.751-.312L7.56 7.052c-.199-.2-.311-.47-.311-.751V4.34c0-.281.112-.551.311-.75l1.042-1.042z" clip-rule="evenodd"></path></g></svg>
+                                </div>
+                                <div className="texts">
+                                    <h5>Em desenvolvimento</h5>
+                                    <p>Aguarde, projeto em desenvolvimento...</p>
+                                </div>
+                            </div>
                         </>
                     }
                 </div>
-                <div className="see-repositories">
+                <div className="see-repositories" data-aos="fade-up">
                     <a href="https://github.com/vitorfratti?tab=repositories" target="_blank">
                         Ver repositórios no GitHub
                         <img src="/images/svg/github.svg" alt="github"/>
@@ -137,6 +135,77 @@ const ProjectsContent = styled.section`
             &::after {
                 content: "";
                 width: calc(33% - 0.5rem);
+            }
+
+            .project {
+                position: relative;
+                z-index: 10;
+                display: flex;
+                flex-direction: column;
+                width: calc(33% - 0.5rem);
+                height: auto;
+
+                @media (width <= 900px) {
+                    width: calc(50% - 0.5rem);
+                }
+
+                @media (width <= 500px) {
+                    display: none;
+                }
+
+                .image {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 12rem;
+                    background: linear-gradient(45deg, #23232650, #232326);
+                    backdrop-filter: blur(4px);
+                    border: 1px solid #2e2e32;
+                    transition: all .2s ease;
+
+                    svg {
+                        width: 4rem;
+                        height: 4rem;
+                        animation: building 1.5s infinite ease;
+                    }
+
+                    @keyframes building {
+                        0% {
+                            transform: rotate(0);
+                        }
+                        50% {
+                            transform: rotate(25deg);
+                        }
+                        100% {
+                            transform: rotate(0);
+                        }
+                    }
+                }
+
+                .texts {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.25rem;
+                    padding: 0.75rem 0;
+
+                    h5 {
+                        font-size: 1.25rem;
+                        font-weight: 500;
+                        color: #f7f8f8;
+                        user-select: none;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        font-weight: 400;
+                        color: #d0d6e0;
+                        user-select: none;
+                        line-height: 1.5;
+                    }
+                }
             }
 
             .swiper-pagination {

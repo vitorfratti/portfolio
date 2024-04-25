@@ -113,7 +113,7 @@ const HeaderContent = styled.header`
         justify-content: space-between;
         align-items: center;
 
-        @media (max-width: 650px) {
+        @media (max-width: 767px) {
             justify-content: flex-end;
         }
 
@@ -124,7 +124,7 @@ const HeaderContent = styled.header`
             align-items: center;
             gap: 1.25rem;
 
-            @media (max-width: 650px) {
+            @media (max-width: 767px) {
                 display: none;
             }
 
@@ -155,6 +155,7 @@ const HeaderContent = styled.header`
 
                 &.selected {
                     color: #f7f8f8;
+                    font-weight: 600;
 
                     &:hover {
                         &::before {
@@ -171,7 +172,7 @@ const HeaderContent = styled.header`
             align-items: center;
             gap: 0.5rem;
 
-            @media (max-width: 650px) {
+            @media (max-width: 767px) {
                 display: none;
             }
 
@@ -206,7 +207,7 @@ const HeaderContent = styled.header`
                 opacity: 0.7;
             }
 
-            @media (min-width: 650px) {
+            @media (min-width: 768px) {
                 display: none;
             }
 

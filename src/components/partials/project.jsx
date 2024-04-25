@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-const Project = ({ name, slug, description, imageSrc, videoSrc, type, link, techs }) => {
+const Project = ({ project }) => {
     const [showGif, setShowGif] = useState(false)
 
     const playGif = () => {
@@ -12,39 +12,51 @@ const Project = ({ name, slug, description, imageSrc, videoSrc, type, link, tech
         <ProjectContent>
             <div className="image">
                 {showGif ?
-                    <video src={videoSrc} autoPlay muted playsInline></video>
+                    <video src={project.videoSrc} autoPlay muted playsInline></video>
                     : 
-                    <img src={imageSrc} alt="bg" className="banner"/>
+                    <img src={project.imageSrc} alt="bg" className="banner"/>
                 }
-                <button className="play-gif" onClick={playGif}>
-                    {showGif ?
-                        <img src="/images/svg/image.svg" alt="icon"/>
-                        : 
-                        <img src="/images/svg/play.svg" alt="play"/>
-                    }
-                </button>
+                {project.videoSrc ?  
+                    <button className="play-gif" onClick={playGif}>
+                        {showGif ?
+                            <img src="/images/svg/image.svg" alt="icon"/>
+                            : 
+                            <img src="/images/svg/play.svg" alt="play"/>
+                        }
+                    </button>
+                    :
+                    <></>
+                }
             </div>
             <div className="texts">
-                <h5>{name}</h5>
-                <p>{description}</p>
+                <h5>{project.name}</h5>
+                <p>{project.description}</p>
             </div>
             <div className="infos">
                 <div className="techs">
-                    {techs.map((tech, index) => (
+                    {project.techs.map((tech, index) => (
                         <img key={tech.name} src={tech.iconSrc} alt={tech.name} title={tech.name}/>
                     ))}
                 </div>
-                <span className={type == 'Corporativo' ? "tag corporativo" : "tag pessoal"}>
+                <span className={project.type == 'Corporativo' ? "tag corporativo" : "tag pessoal"}>
                     <div className="type">
-                        <p>{type}</p>
+                        <p>{project.type}</p>
                     </div>
                 </span>
             </div>
             <div className="buttons">
-                <a href={link} target="_blank">Visitar site</a>
-                <button disabled>Ver repositório</button>
+                {project.link ?
+                    <a href={project.link} target="_blank">Visitar site</a>
+                    :
+                    <button disabled>Visitar site</button>
+                }
+                {project.repositoryLink ?
+                    <a href={project.repositoryLink} target="_blank">Ver repositório</a>
+                    :
+                    <button disabled>Ver repositório</button>
+                }
             </div>
-            <a href={link} target="_blank" className="full-link"></a>
+            <a href={project.link} target="_blank" className="full-link"></a>
         </ProjectContent>
     )
 }
@@ -53,6 +65,7 @@ export default Project
 
 const ProjectContent = styled.div`
     position: relative;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     width: calc(33% - 0.5rem);

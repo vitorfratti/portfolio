@@ -61,7 +61,7 @@ const ExperiencesContent = styled.section`
     z-index: 10;
     width: 100%;
     height: fit-content;
-    padding: 2.5rem 0;
+    padding: 3.5rem 0 2.5rem 0;
 
     @media (max-width: 500px) {
         padding: 2.5rem 0;
@@ -74,7 +74,7 @@ const ExperiencesContent = styled.section`
         transform: translate(-50%, -50%);
         z-index: -1;
         width: 100%;
-        height: 200%;
+        height: 100%;
         opacity: 0.1;
 
         @media (width > 767px) {
@@ -83,7 +83,6 @@ const ExperiencesContent = styled.section`
 
         @media (width <= 767px) {
             width: 175%;
-            height: 100%;
         }
     }
 
@@ -124,7 +123,7 @@ const ExperiencesContent = styled.section`
             align-items: center;
             flex-direction: column;
             gap: 4rem;
-            min-height: 22rem;
+            min-height: 20rem;
             padding: 2rem 0;
 
             @media (max-width: 1000px) {
@@ -144,7 +143,7 @@ const ExperiencesContent = styled.section`
                 transform: translateX(-50%);
                 width: 1px;
                 height: 100%;
-                background: #f7f8f8;
+                background: #d0d6e0;
 
                 @media (max-width: 1000px) {
                     height: 100%;
@@ -161,7 +160,7 @@ const ExperiencesContent = styled.section`
             .items {
                 display: flex;
                 flex-direction: column;
-                gap: 2rem;
+                gap: 3rem;
 
                 .item {
                     display: flex;
@@ -186,11 +185,12 @@ const ExperiencesContent = styled.section`
                         background: #f7f8f8;
                         border: 2px solid #08090a;
                         outline: 2px solid #f7f8f8;
+                        transform: translateY(4px);
 
                         @media (max-width: 767px) {
                             position: absolute;
                             left: -0.45rem;
-                            transform: translateX(0);
+                            transform: translateY(4px) translateX(0);
                         }
                     }
 

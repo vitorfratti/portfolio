@@ -59,6 +59,7 @@ const AppRouter = () => {
                 ],
                 type: 'Corporativo',
                 link: 'https://ecoaenergias.com.br/',
+                repositoryLink: '',
                 techs: [
                     {
                         name: 'jQuery',
@@ -100,6 +101,7 @@ const AppRouter = () => {
                 ],
                 type: 'Corporativo',
                 link: 'https://marmellostudio.com/',
+                repositoryLink: '',
                 techs: [
                     {
                         name: 'jQuery',
@@ -138,6 +140,7 @@ const AppRouter = () => {
                 ],
                 type: 'Corporativo',
                 link: 'https://projetos.hangardigital.com.br/szoma/site/',
+                repositoryLink: '',
                 techs: [
                     {
                         name: 'Django',
@@ -176,6 +179,7 @@ const AppRouter = () => {
                 ],
                 type: 'Pessoal',
                 link: 'https://www.controlpagebr.com/',
+                repositoryLink: '',
                 techs: [
                     {
                         name: 'Django',
@@ -192,12 +196,12 @@ const AppRouter = () => {
                 ]
             },
             {
-                id: 1,
-                name: 'Ecoa Energias Renováveis',
-                slug: 'ecoa-energias-renovaveis',
-                description: 'Site institucional + Blog integrado. 100% desenvolvido por mim.',
-                imageSrc: '/images/ecoa/ecoa-banner.png',
-                videoSrc: '/images/ecoa/ecoa-banner.mp4',
+                id: 5,
+                name: 'Order Control',
+                slug: 'order-control',
+                description: 'Plataforma de controle de pedidos c/ autenticação + dashboard. 100% desenvolvido por mim.',
+                imageSrc: '/images/order-control/order-control-banner.png',
+                videoSrc: '/images/order-control/order-control-banner.mp4',
                 gallery: [
                     {
                         src: '/images/ecoa/ecoa-1.png'
@@ -212,64 +216,20 @@ const AppRouter = () => {
                         src: '/images/ecoa/ecoa-4.png'
                     }
                 ],
-                type: 'Corporativo',
-                link: 'https://ecoaenergias.com.br/',
+                type: 'Pessoal',
+                link: '',
+                repositoryLink: 'https://github.com/vitorfratti/order-control',
                 techs: [
                     {
-                        name: 'jQuery',
-                        iconSrc: '/images/svg/jquery.svg'
+                        name: 'React',
+                        iconSrc: './images/svg/react.svg'
                     },
                     {
-                        name: 'Sass',
-                        iconSrc: '/images/svg/sass.svg'
-                    },
-                    {
-                        name: 'WordPress',
-                        iconSrc: '/images/svg/wordpress.svg'
+                        name: 'Node.js',
+                        iconSrc: './images/svg/node.svg'
                     }
                 ]
-            },
-            {
-                id: 2,
-                name: 'Marmello Studio',
-                slug: 'marmello-studio',
-                description: 'Site institucional + Portfólio de projetos. 100% desenvolvido por mim.',
-                imageSrc: '/images/marmello/marmello-banner.png',
-                videoSrc: '/images/marmello/marmello-banner.mp4',
-                gallery: [
-                    {
-                        src: '/images/marmello/marmello-1.png'
-                    },
-                    {
-                        src: '/images/marmello/marmello-2.png'
-                    },
-                    {
-                        src: '/images/marmello/marmello-3.png'
-                    },
-                    {
-                        src: '/images/marmello/marmello-4.png'
-                    },
-                    {
-                        src: '/images/marmello/marmello-5.png'
-                    }
-                ],
-                type: 'Corporativo',
-                link: 'https://marmellostudio.com/',
-                techs: [
-                    {
-                        name: 'jQuery',
-                        iconSrc: '/images/svg/jquery.svg'
-                    },
-                    {
-                        name: 'Sass',
-                        iconSrc: '/images/svg/sass.svg'
-                    },
-                    {
-                        name: 'WordPress',
-                        iconSrc: '/images/svg/wordpress.svg'
-                    }
-                ]
-            },
+            }
         ])
     }, [])
 

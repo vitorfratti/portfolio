@@ -41,6 +41,14 @@ const MenuLateral = ({ setActiveSection, activeSection, goToSection }) => {
                 </button>
                 <button onClick={closeMenu}>
                     <a
+                    href="#experiencias"
+                    className={activeSection == 'experiencias' ? 'selected' : ''}
+                    onClick={goToSection}>
+                        Experiências
+                    </a>
+                </button>
+                <button onClick={closeMenu}>
+                    <a
                     href="#conhecimentos"
                     className={activeSection == 'conhecimentos' ? 'selected' : ''}
                     onClick={goToSection}>
@@ -73,16 +81,17 @@ const MenuLateralContent = styled.div`
     top: 0;
     right: -100%;
     z-index: 9999;
-    width: 100%;
+    width: 75%;
     height: 100vh;
     padding: 1.25rem 1.5rem;
-    background: #08090a;
+    background: linear-gradient(45deg, #08090a, #151515);
+    border-left: 1px solid #2e2e32;
     display: flex;
     flex-direction: column;
-    gap: 6rem;
+    gap: 5rem;
     transition: all .3s ease;
 
-    @media (min-width: 650px) {
+    @media (min-width: 768px) {
         display: none;
     }
 
@@ -119,7 +128,7 @@ const MenuLateralContent = styled.div`
         position: relative;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-end;
         gap: 2rem;
 
         button {
@@ -155,6 +164,7 @@ const MenuLateralContent = styled.div`
 
                 &.selected {
                     color: #f7f8f8;
+                    font-weight: 600;
 
                     &::before {
                         background-color: #f7f8f8;

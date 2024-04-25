@@ -49,9 +49,9 @@ const Techs = () => {
                 iconSrc: './images/svg/next.svg'
             },
             {
-                name: 'Vue.js',
-                description: 'Framework JavaScript de código-aberto, focado no desenvolvimento de interfaces de usuário e aplicativos de página única.',
-                iconSrc: './images/svg/vue.svg'
+                name: 'Node.js',
+                description: 'Node.js é um ambiente de tempo de execução JavaScript que permite criar aplicativos de rede escaláveis e de alta performance.',
+                iconSrc: './images/svg/node.svg'
             },
             {
                 name: 'jQuery',
