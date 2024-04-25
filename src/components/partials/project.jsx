@@ -56,7 +56,6 @@ const Project = ({ project }) => {
                     <button disabled>Ver repositório</button>
                 }
             </div>
-            <a href={project.link} target="_blank" className="full-link"></a>
         </ProjectContent>
     )
 }
@@ -68,30 +67,21 @@ const ProjectContent = styled.div`
     z-index: 10;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: calc(33% - 0.5rem);
-    height: auto;
+    height: fit-content;
 
     @media (width <= 900px) {
         width: calc(50% - 0.5rem);
+        margin-bottom: 1.5rem;
     }
 
     @media (width <= 500px) {
         width: 100%;
+        margin-bottom: 3rem;
     }
 
-    .full-link {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-
-        @media (width > 800px) {
-            display: none;
-        }
-    }
-
-    @media (width > 800px) {
+    @media (width > 900px) {
         &:hover {
             .image {
                 height: calc(12rem - 1rem - 38px);
@@ -110,6 +100,7 @@ const ProjectContent = styled.div`
         width: 100%;
         height: 12rem;
         border: 1px solid #2e2e32;
+        box-shadow: 0 0 50px #f7f8f835;
         transition: all .2s ease;
 
         img.banner, video {
@@ -254,6 +245,10 @@ const ProjectContent = styled.div`
             &:hover {
                 border: 1px solid #f7f8f875;
             }
+
+            @media (width <= 900px) {
+                transform: scale(1);
+            }
         }
 
         button {
@@ -273,6 +268,10 @@ const ProjectContent = styled.div`
             text-decoration: none;
             transition: all .2s ease;
             cursor: not-allowed;
+
+            @media (width <= 900px) {
+                transform: scale(1);
+            }
         }
     }
 `;

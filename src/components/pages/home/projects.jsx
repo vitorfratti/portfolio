@@ -22,12 +22,12 @@ const Projects = ({ projects }) => {
 
     return(
         <ProjectsContent data-section="projetos">
-            <div className="container">
-                <div className="title" data-aos="fade-up">
+            <div className="container" data-aos="fade-up">
+                <div className="title">
                     <h2>Projetos</h2>
                     <p>Alguns dos projetos que desenvolvi recentemente.</p>
                 </div>
-                <div className="projects" data-aos="fade-up">
+                <div className="projects">
                     {isMobile ?
                         <Swiper
                         pagination={{
@@ -74,7 +74,7 @@ const Projects = ({ projects }) => {
                         </>
                     }
                 </div>
-                <div className="see-repositories" data-aos="fade-up">
+                <div className="see-repositories">
                     <a href="https://github.com/vitorfratti?tab=repositories" target="_blank">
                         Ver repositórios no GitHub
                         <img src="/images/svg/github.svg" alt="github"/>
@@ -131,6 +131,7 @@ const ProjectsContent = styled.section`
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: wrap;
+            height: calc(fit-content + 2rem) !important;
 
             &::after {
                 content: "";
@@ -164,6 +165,7 @@ const ProjectsContent = styled.section`
                     background: linear-gradient(45deg, #23232650, #232326);
                     backdrop-filter: blur(4px);
                     border: 1px solid #2e2e32;
+                    box-shadow: 0 0 50px #f7f8f835;
                     transition: all .2s ease;
 
                     svg {

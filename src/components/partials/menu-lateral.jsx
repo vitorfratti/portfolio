@@ -98,6 +98,7 @@ const MenuLateralContent = styled.div`
 
     &.open {
         right: 0;
+        box-shadow: 0 0 200px #f7f8f825;
     }
 
     .top {

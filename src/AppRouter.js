@@ -143,10 +143,6 @@ const AppRouter = () => {
                 repositoryLink: '',
                 techs: [
                     {
-                        name: 'Django',
-                        iconSrc: '/images/svg/django.svg'
-                    },
-                    {
                         name: 'jQuery',
                         iconSrc: '/images/svg/jquery.svg'
                     },
@@ -154,6 +150,10 @@ const AppRouter = () => {
                         name: 'Sass',
                         iconSrc: '/images/svg/sass.svg'
                     },
+                    {
+                        name: 'WordPress',
+                        iconSrc: '/images/svg/wordpress.svg'
+                    }
                 ]
             },
             {

@@ -217,6 +217,10 @@ const ExperiencesContent = styled.section`
                             font-weight: 600;
                             color: #f7f8f8;
 
+                            @media (max-width: 767px) {
+                                font-size: 1.25rem;
+                            }
+
                             img {
                                 width: 1.5rem;
                             }
@@ -227,6 +231,10 @@ const ExperiencesContent = styled.section`
                             line-height: 1.6;
                             font-weight: 400;
                             color: #d0d6e0;
+
+                            @media (max-width: 767px) {
+                                font-size: 1rem;
+                            }
                         }
                     }
 
