@@ -84,7 +84,8 @@ const MenuLateralContent = styled.div`
     width: 75%;
     height: 100vh;
     padding: 1.25rem 1.5rem;
-    background: linear-gradient(45deg, #08090a, #151515);
+    background: linear-gradient(45deg, #08090a, #08090a80);
+    backdrop-filter: blur(40px);
     border-left: 1px solid #2e2e32;
     display: flex;
     flex-direction: column;
@@ -141,7 +142,7 @@ const MenuLateralContent = styled.div`
             a {
                 position: relative;
                 color: #d0d6e0;
-                font-size: 1.5rem;
+                font-size: 1.25rem;
                 font-weight: 500;
                 text-decoration: none;
 
@@ -188,7 +189,7 @@ const MenuLateralContent = styled.div`
             transition: all .1s ease;
 
             img {
-                width: 1.75rem;
+                width: 1.5rem;
             }
 
             &:hover {
