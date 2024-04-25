@@ -84,12 +84,12 @@ const MenuLateralContent = styled.div`
     width: 75%;
     height: 100vh;
     padding: 1.25rem 1.5rem;
-    background: linear-gradient(45deg, #08090a, #08090a80);
+    background: linear-gradient(45deg, #08090a, #121212);
     backdrop-filter: blur(40px);
     border-left: 1px solid #2e2e32;
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 4rem;
     transition: all .3s ease;
 
     @media (min-width: 768px) {
