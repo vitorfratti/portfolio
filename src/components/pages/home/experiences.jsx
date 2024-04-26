@@ -49,6 +49,7 @@ const Experiences = () => {
                     </div>
                 </div>
             </div>
+            <div className="shadow"></div>
             <img src="/images/svg/blur.svg" alt="blur" className="blur"/>
         </ExperiencesContent>
     )
@@ -84,6 +85,23 @@ const ExperiencesContent = styled.section`
         @media (width <= 767px) {
             width: 175%;
         }
+    }
+
+    .shadow {
+        position: absolute;
+        height: 15.5rem;
+        bottom: 0px;
+        z-index: 50;
+        padding-top: 10rem;
+        width: 100%;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, transparent 0px, #08090a 250px);
+        transition: transform 400ms ease 0s, opacity 400ms ease 0s;
+        transform: translateY(0%);
+        opacity: 1;
+        pointer-events: all;
     }
 
     .container {
