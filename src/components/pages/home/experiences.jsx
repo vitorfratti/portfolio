@@ -49,6 +49,7 @@ const Experiences = () => {
                     </div>
                 </div>
             </div>
+            <img src="/images/svg/blur.svg" alt="blur" className="blur"/>
         </ExperiencesContent>
     )
 }
@@ -64,6 +65,25 @@ const ExperiencesContent = styled.section`
 
     @media (max-width: 500px) {
         padding: 2.5rem 0;
+    }
+
+    img.blur {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+
+        @media (width > 767px) {
+            animation: open 1s ease;
+        }
+
+        @media (width <= 767px) {
+            width: 175%;
+        }
     }
 
     .container {
@@ -102,7 +122,7 @@ const ExperiencesContent = styled.section`
             display: flex;
             align-items: center;
             flex-direction: column;
-            gap: 4rem;
+            gap: 3rem;
             min-height: 20rem;
             padding: 1.5rem 0;
 
@@ -119,7 +139,7 @@ const ExperiencesContent = styled.section`
                 transform: translateX(-50%);
                 width: 1px;
                 height: 100%;
-                background: #d0d6e0;
+                background: linear-gradient(to bottom, #d0d6e0, #d0d6e025);
 
                 @media (max-width: 1000px) {
                     height: 100%;
@@ -136,7 +156,7 @@ const ExperiencesContent = styled.section`
             .items {
                 display: flex;
                 flex-direction: column;
-                gap: 3rem;
+                gap: 2.5rem;
 
                 .item {
                     display: flex;
