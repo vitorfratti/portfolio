@@ -130,6 +130,7 @@ const ExperiencesContent = styled.section`
                 flex-direction: row;
                 gap: 0;
                 min-height: fit-content;
+                padding: 1.25rem 0;
             }
 
             .line {
@@ -175,7 +176,7 @@ const ExperiencesContent = styled.section`
 
                     @media (max-width: 767px) {
                         flex-wrap: wrap;
-                        gap: 1.5rem;
+                        gap: 1.25rem;
                     }
 
                     .dot {
