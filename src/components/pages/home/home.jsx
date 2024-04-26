@@ -91,7 +91,7 @@ const HomeContent = styled.section`
         z-index: -1;
         width: 100%;
         height: 100%;
-        opacity: 0.3;
+        opacity: 0.4;
     }
 
     .container {
@@ -178,7 +178,7 @@ const HomeContent = styled.section`
                     font-size: 1.125rem;
                     font-weight: 600;
                     padding: 0.75rem 1.25rem;
-                    border-radius: 6px;
+                    border-radius: 25px;
                     text-decoration: none;
                     transition: all .1s ease;
                     cursor: pointer;
