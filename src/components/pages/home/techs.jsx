@@ -187,7 +187,7 @@ const TechsContent = styled.section`
                 width: calc(33% - 0.5rem);
                 padding: 1.5rem;
                 border-radius: 6px;
-                background: linear-gradient(45deg, #23232675, #232326);
+                background: linear-gradient(90deg, #23232699, #232326);
                 backdrop-filter: blur(4px);
                 border: 1px solid #2e2e32;
                 box-shadow: 0 0 2px #08090a;
