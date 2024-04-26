@@ -104,7 +104,7 @@ const HeaderContent = styled.header`
     backdrop-filter: blur(5px);
 
     @media (max-width: 650px) {
-        background: #08090a;
+        background: #08090a25;
         padding: 1.5rem 0;
     }
 

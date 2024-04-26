@@ -24,20 +24,6 @@ const Experiences = () => {
                                     <img src="/images/svg/logo-hangar.svg" alt="hangar"/>
                                     Hangar Digital
                                 </h5>
-                                <p>abr/2023 - jul/2023 (4 meses)</p>
-                            </div>
-                            <div className="dot"></div>
-                            <div className="right">
-                                <h5>Estagiário de desenvolvimento web</h5>
-                                <p>Comecei com ajustes mais simples de front-end, explorando a estrutura dos projetos. Gradualmente, fui ganhando mais conhecimento técnico e responsabilidade.</p>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <div className="left">
-                                <h5>
-                                    <img src="/images/svg/logo-hangar.svg" alt="hangar"/>
-                                    Hangar Digital
-                                </h5>
                                 <p>ago/2023 - o momento ({diferencaMeses} meses)</p>
                             </div>
                             <div className="dot"></div>
@@ -46,10 +32,23 @@ const Experiences = () => {
                                 <p>Promovido a Desenvolvedor Web Júnior, devido à boa performance. Comecei a desenvolver projetos do início ao fim sozinho.</p>
                             </div>
                         </div>
+                        <div className="item">
+                            <div className="left">
+                                <h5>
+                                    <img src="/images/svg/logo-hangar.svg" alt="hangar"/>
+                                    Hangar Digital
+                                </h5>
+                                <p>abr/2023 - jul/2023 (4 meses)</p>
+                            </div>
+                            <div className="dot"></div>
+                            <div className="right">
+                                <h5>Estagiário de desenvolvimento web</h5>
+                                <p>Comecei com ajustes mais simples de front-end, explorando a estrutura dos projetos. Gradualmente, fui ganhando mais conhecimento técnico e responsabilidade.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <img src="/images/svg/blur.svg" alt="blur" className="blur"/>
         </ExperiencesContent>
     )
 }
@@ -65,25 +64,6 @@ const ExperiencesContent = styled.section`
 
     @media (max-width: 500px) {
         padding: 2.5rem 0;
-    }
-
-    img.blur {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        opacity: 0.1;
-
-        @media (width > 767px) {
-            animation: open 1s ease;
-        }
-
-        @media (width <= 767px) {
-            width: 175%;
-        }
     }
 
     .container {
@@ -124,11 +104,7 @@ const ExperiencesContent = styled.section`
             flex-direction: column;
             gap: 4rem;
             min-height: 20rem;
-            padding: 2rem 0;
-
-            @media (max-width: 1000px) {
-                min-height: 32rem;
-            }
+            padding: 1.5rem 0;
 
             @media (max-width: 767px) {
                 flex-direction: row;
@@ -169,8 +145,12 @@ const ExperiencesContent = styled.section`
                     width: 100%;
                     filter: brightness(60%);
 
-                    &:last-child {
+                    &:first-child {
                         filter: brightness(100%);
+
+                        .dot {
+                            box-shadow: 0 0 20px #f7f8f8;
+                        }
                     }
 
                     @media (max-width: 767px) {

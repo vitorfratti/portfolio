@@ -84,8 +84,7 @@ const MenuLateralContent = styled.div`
     width: 75%;
     height: 100vh;
     padding: 1.25rem 1.5rem;
-    background: linear-gradient(45deg, #08090a, #121212);
-    backdrop-filter: blur(40px);
+    background: #08090a;
     border-left: 1px solid #2e2e32;
     display: flex;
     flex-direction: column;
@@ -98,7 +97,7 @@ const MenuLateralContent = styled.div`
 
     &.open {
         right: 0;
-        box-shadow: 0 0 200px #f7f8f825;
+        box-shadow: 0 0 200px #08090a;
     }
 
     .top {

@@ -65,7 +65,7 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
                     <img src="./images/svg/arrows.svg" alt="arrows"/>
                 </a>
             </div>
-            <img src="/images/svg/blur.svg" alt="blur" className="blur"/>
+            <img src="/images/bg-dark.jpeg" alt="bg" className="bg"/>
         </HomeContent>
     )
 }
@@ -83,33 +83,15 @@ const HomeContent = styled.section`
         height: 90vh;
     }
 
-    img.blur {
+    img.bg {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: -1;
         width: 100%;
-        height: 200%;
-        opacity: 0.15;
-
-        @media (width > 767px) {
-            animation: open 1s ease;
-        }
-
-        @media (width <= 767px) {
-            width: 175%;
-            height: 100%;
-        }
-    }
-
-    @keyframes open {
-        to {
-            width: 100%;
-        }
-        from {
-            width: 50%;
-        }
+        height: 100%;
+        opacity: 0.3;
     }
 
     .container {
@@ -135,16 +117,16 @@ const HomeContent = styled.section`
 
             h1 {
                 color: #f7f8f8;
-                font-size: 56px;
+                font-size: 3.75rem;
                 font-weight: 600;
-                line-height: 1.25;
+                line-height: 1.1;
 
                 @media (max-width: 700px) {
                     font-size: 2.75rem;
                 }
 
                 span {
-                    background: linear-gradient(to left, #f7f8f8 20%, #f7f8f895 40%, #f7f8f8 60%, #f7f8f8 80%);
+                    background: linear-gradient(to left, #f7f8f8 20%, #f7f8f890 40%, #f7f8f8 60%, #f7f8f8 80%);
                     background-size: 200% auto;
                     background-clip: text;
                     -webkit-background-clip: text;
@@ -208,6 +190,14 @@ const HomeContent = styled.section`
                     svg {
                         width: 1rem;
                         height: 1rem;
+                    }
+
+                    &:first-child {
+                        background: linear-gradient(270deg, #232326, #2e2e32);
+                    }
+
+                    &:last-child {
+                        background: linear-gradient(45deg, #232326, #2e2e32);
                     }
                 }
             }

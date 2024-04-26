@@ -100,7 +100,7 @@ const ProjectContent = styled.div`
         width: 100%;
         height: 12rem;
         border: 1px solid #2e2e32;
-        box-shadow: 0 0 50px #f7f8f835;
+        box-shadow: 0 0 50px #f7f8f815;
         transition: all .2s ease;
 
         img.banner, video {
@@ -112,16 +112,16 @@ const ProjectContent = styled.div`
             object-fit: cover;
         }
 
-        button.play-gif {
+        .play-gif {
             position: absolute;
             z-index: 999999;
             top: 0.5rem;
             left: 0.5rem;
             backdrop-filter: blur(50px);
             border-radius: 50%;
-            background: #232326;
+            background: linear-gradient(270deg, #232326, #2e2e32);
             border: 1px solid #2e2e32;
-            box-shadow: 0 0 50px #f7f8f890;
+            box-shadow: 0 0 50px #f7f8f850;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -232,7 +232,7 @@ const ProjectContent = styled.div`
             align-items: center;
             text-align: center;
             width: 50%;
-            background: #232326;
+            background: linear-gradient(270deg, #232326, #2e2e32);
             border: 1px solid #2e2e32;
             color: #f7f8f8;
             font-size: 1rem;

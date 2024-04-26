@@ -165,7 +165,7 @@ const ProjectsContent = styled.section`
                     background: linear-gradient(45deg, #23232650, #232326);
                     backdrop-filter: blur(4px);
                     border: 1px solid #2e2e32;
-                    box-shadow: 0 0 50px #f7f8f835;
+                    box-shadow: 0 0 50px #f7f8f815;
                     transition: all .2s ease;
 
                     svg {
