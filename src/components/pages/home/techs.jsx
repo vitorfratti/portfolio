@@ -130,7 +130,7 @@ const TechsContent = styled.section`
     padding: 2.5rem 0;
 
     @media (max-width: 500px) {
-        padding: 2.5rem 0;
+        padding: 2.5rem 0 1rem 0;
     }
 
     img.blur {

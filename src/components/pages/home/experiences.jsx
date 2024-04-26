@@ -89,10 +89,10 @@ const ExperiencesContent = styled.section`
 
     .shadow {
         position: absolute;
-        height: 15.5rem;
+        height: 14.5rem;
         bottom: 0px;
         z-index: 50;
-        padding-top: 10rem;
+        padding-top: 5rem;
         width: 100%;
         display: flex;
         -webkit-box-pack: center;
@@ -102,6 +102,11 @@ const ExperiencesContent = styled.section`
         transform: translateY(0%);
         opacity: 1;
         pointer-events: all;
+
+        @media (width <= 500px) {
+            background: linear-gradient(to bottom, transparent 0px, #08090a 250px);
+            height: 18rem;
+        }
     }
 
     .container {
