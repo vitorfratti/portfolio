@@ -92,7 +92,7 @@ const HomeContent = styled.section`
         z-index: -1;
         width: 100%;
         height: 100%;
-        opacity: 0.4;
+        filter: brightness(35%);
     }
 
     .container {
