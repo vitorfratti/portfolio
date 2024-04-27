@@ -93,7 +93,8 @@ const HomeContent = styled.section`
 
         @media (width <= 1000px) {
             transform: rotate(180deg);
-            opacity: 0.5;
+            height: 70%;
+            object-position: bottom;
         }
     }
 
