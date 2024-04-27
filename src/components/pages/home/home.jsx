@@ -92,16 +92,8 @@ const HomeContent = styled.section`
         animation: show 3s ease;
 
         @media (width <= 1000px) {
-            filter: brightness(75%) grayscale(100%);
-
-            @keyframes show {
-                0% {
-                    filter: brightness(0%) grayscale(100%);
-                }
-                100% {
-                    filter: brightness(75%) grayscale(100%);
-                }
-            }
+            transform: rotate(180deg);
+            opacity: 0.5;
         }
     }
 
