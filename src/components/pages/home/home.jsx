@@ -11,11 +11,6 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
     const caret = '|'
 
     useEffect(() => {
-        AOS.init({
-            easing: 'ease-out-back',
-            duration: 2000,
-        })
-
         const typeText = () => {
             for (let i = 0; i <= textToType.length; i++) {
                 setTimeout(() => {
@@ -30,9 +25,9 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
     return(
         <HomeContent data-section="home">
             <div className="container">
-                <div className="content" data-aos="fade-in">
-                    <h1>Bem-vindo, meu nome é <span>Vitor Fratti</span></h1>
-                    <h4>
+                <div className="content">
+                    <h1 className="animate__animated animate__animated animate__fadeIn">Bem-vindo, meu nome é <span>Vitor Fratti</span></h1>
+                    <h4 className="animate__animated animate__animated animate__fadeIn">
                         Desenvolvedor
                         <Typewriter
                             options={{
@@ -42,7 +37,7 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
                             }}
                         />
                     </h4>
-                    <div className="buttons">
+                    <div className="buttons animate__animated animate__animated animate__fadeIn">
                         <a
                         href="#sobre"
                         className={activeSection == 'sobre' ? 'selected' : ''}
@@ -66,7 +61,7 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
                     <img src="./images/svg/arrows.svg" alt="arrows"/>
                 </a>
             </div>
-            <img src="/images/bg-dark.jpg" alt="bg" className="bg"/>
+            <img src="/images/bg-10.jpg" alt="bg" className="bg"/>
         </HomeContent>
     )
 }
@@ -78,7 +73,7 @@ const HomeContent = styled.section`
     z-index: 10;
     width: 100%;
     height: 100vh;
-    background: #08090a;
+    background: #08090a00;
 
     @media (max-width: 500px) {
         height: 90vh;
@@ -86,13 +81,24 @@ const HomeContent = styled.section`
 
     img.bg {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 0;
+        left: 0;
         z-index: -1;
         width: 100%;
         height: 100%;
-        filter: brightness(35%);
+        object-fit: cover;
+        object-position: top;
+        filter: brightness(95%) grayscale(100%);
+        animation: show 3s ease;
+    }
+
+    @keyframes show {
+        0% {
+            filter: brightness(0%) grayscale(100%);
+        }
+        100% {
+            filter: brightness(95%) grayscale(100%);
+        }
     }
 
     .container {
@@ -121,6 +127,7 @@ const HomeContent = styled.section`
                 font-size: 3.75rem;
                 font-weight: 600;
                 line-height: 1.1;
+                animation-duration: 1.5s;
 
                 @media (max-width: 700px) {
                     font-size: 2.75rem;
@@ -154,6 +161,7 @@ const HomeContent = styled.section`
                 color: #d0d6e0;
                 font-size: 1.75rem;
                 font-weight: 400;
+                animation-duration: 2.5s;
 
                 @media (max-width: 700px) {
                     font-size: 1.5rem;
@@ -166,6 +174,7 @@ const HomeContent = styled.section`
                 flex-wrap: wrap;
                 gap: 1rem;
                 margin-top: 1rem;
+                animation-duration: 3.5s;
 
                 a {
                     display: flex;
@@ -174,10 +183,11 @@ const HomeContent = styled.section`
                     gap: 0.25rem;
                     text-align: center;
                     border: 1px solid #2e2e32;
+                    backdrop-filter: blur(2px);
                     color: #f7f8f8;
                     font-size: 1.125rem;
                     font-weight: 600;
-                    padding: 0.75rem 1.25rem;
+                    padding: 0.65rem 1.25rem;
                     border-radius: 25px;
                     text-decoration: none;
                     transition: all .1s ease;
@@ -201,7 +211,7 @@ const HomeContent = styled.section`
                     }
 
                     &:last-child {
-                        background: linear-gradient(45deg, #232326, #2e2e32);
+                        background: linear-gradient(45deg, #23232699, #2e2e32);
                     }
                 }
             }

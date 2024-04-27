@@ -137,7 +137,7 @@ const MenuLateralContent = styled.div`
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            padding: 0.75rem 0;
+            padding: 0.5rem 0;
 
             a {
                 position: relative;

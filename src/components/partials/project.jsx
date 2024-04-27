@@ -121,7 +121,7 @@ const ProjectContent = styled.div`
             border-radius: 50%;
             background: linear-gradient(270deg, #232326, #2e2e32);
             border: 1px solid #2e2e32;
-            box-shadow: 0 0 50px #f7f8f850;
+            box-shadow: 0 0 50px #f7f8f825;
             display: flex;
             justify-content: center;
             align-items: center;
