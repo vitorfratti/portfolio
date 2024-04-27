@@ -87,8 +87,8 @@ const HomeContent = styled.section`
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: top;
-        filter: brightness(25%) grayscale(100%);
+        object-position: bottom;
+        filter: brightness(90%) grayscale(100%);
         transform: rotate(180deg);
         animation: show 3s ease;
     }
@@ -98,7 +98,7 @@ const HomeContent = styled.section`
             filter: brightness(0) grayscale(100%);
         }
         100% {
-            filter: brightness(25%) grayscale(100%);
+            filter: brightness(90%) grayscale(100%);
         }
     }
 
