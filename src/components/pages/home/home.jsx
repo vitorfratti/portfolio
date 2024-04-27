@@ -61,7 +61,7 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
                     <img src="./images/svg/arrows.svg" alt="arrows"/>
                 </a>
             </div>
-            <img src="/images/bg-10.jpg" alt="bg" className="bg"/>
+            <img src="/images/bg.jpg" alt="bg" className="bg"/>
         </HomeContent>
     )
 }
