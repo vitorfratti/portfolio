@@ -88,7 +88,7 @@ const MenuLateralContent = styled.div`
     border-left: 1px solid #2e2e32;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3.5rem;
     transition: all .3s ease;
 
     @media (min-width: 768px) {
@@ -97,7 +97,7 @@ const MenuLateralContent = styled.div`
 
     &.open {
         right: 0;
-        box-shadow: 0 0 200px #08090a;
+        box-shadow: 0 0 100px #08090a;
     }
 
     .top {
@@ -129,8 +129,7 @@ const MenuLateralContent = styled.div`
         position: relative;
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
-        gap: 2rem;
+        gap: 1rem;
 
         button {
             background: none;
@@ -138,6 +137,7 @@ const MenuLateralContent = styled.div`
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 0.75rem 0;
 
             a {
                 position: relative;
@@ -189,7 +189,7 @@ const MenuLateralContent = styled.div`
             transition: all .1s ease;
 
             img {
-                width: 1.5rem;
+                width: 1.75rem;
             }
 
             &:hover {

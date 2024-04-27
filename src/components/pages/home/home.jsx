@@ -173,7 +173,6 @@ const HomeContent = styled.section`
                     align-items: center;
                     gap: 0.25rem;
                     text-align: center;
-                    background: #232326;
                     border: 1px solid #2e2e32;
                     color: #f7f8f8;
                     font-size: 1.125rem;
@@ -183,6 +182,10 @@ const HomeContent = styled.section`
                     text-decoration: none;
                     transition: all .1s ease;
                     cursor: pointer;
+
+                    @media (width <= 500px) {
+                        padding: 0.7rem 1rem;
+                    }
 
                     &:hover {
                         border: 1px solid #f7f8f875;
