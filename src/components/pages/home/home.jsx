@@ -90,6 +90,19 @@ const HomeContent = styled.section`
         object-position: top;
         filter: brightness(95%) grayscale(100%);
         animation: show 3s ease;
+
+        @media (width <= 1000px) {
+            filter: brightness(75%) grayscale(100%);
+
+            @keyframes show {
+                0% {
+                    filter: brightness(0%) grayscale(100%);
+                }
+                100% {
+                    filter: brightness(75%) grayscale(100%);
+                }
+            }
+        }
     }
 
     @keyframes show {
