@@ -61,7 +61,7 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
                     <img src="./images/svg/arrows.svg" alt="arrows"/>
                 </a>
             </div>
-            <img src="/images/bg.jpg" alt="bg" className="bg"/>
+            <img src="/images/bg-3.jpg" alt="bg" className="bg"/>
         </HomeContent>
     )
 }
@@ -88,22 +88,17 @@ const HomeContent = styled.section`
         height: 100%;
         object-fit: cover;
         object-position: top;
-        filter: brightness(95%) grayscale(100%);
+        filter: brightness(25%) grayscale(100%);
+        transform: rotate(180deg);
         animation: show 3s ease;
-
-        @media (width <= 1000px) {
-            transform: rotate(180deg);
-            height: 70%;
-            object-position: bottom;
-        }
     }
 
     @keyframes show {
         0% {
-            filter: brightness(0%) grayscale(100%);
+            filter: brightness(0) grayscale(100%);
         }
         100% {
-            filter: brightness(95%) grayscale(100%);
+            filter: brightness(25%) grayscale(100%);
         }
     }
 
