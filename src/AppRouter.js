@@ -43,20 +43,6 @@ const AppRouter = () => {
                 description: 'Site institucional + Blog integrado. 100% desenvolvido por mim.',
                 imageSrc: '/images/ecoa/ecoa-banner.png',
                 videoSrc: '/images/ecoa/ecoa-banner.mp4',
-                gallery: [
-                    {
-                        src: '/images/ecoa/ecoa-1.png'
-                    },
-                    {
-                        src: '/images/ecoa/ecoa-2.png'
-                    },
-                    {
-                        src: '/images/ecoa/ecoa-3.png'
-                    },
-                    {
-                        src: '/images/ecoa/ecoa-4.png'
-                    }
-                ],
                 type: 'Corporativo',
                 link: 'https://ecoaenergias.com.br/',
                 repositoryLink: '',
@@ -79,26 +65,9 @@ const AppRouter = () => {
                 id: 2,
                 name: 'Marmello Studio',
                 slug: 'marmello-studio',
-                description: 'Site institucional + Portfólio de projetos. 100% desenvolvido por mim.',
+                description: '🇺🇸 Site institucional + Portfólio de projetos. 100% desenvolvido por mim.',
                 imageSrc: '/images/marmello/marmello-banner.png',
                 videoSrc: '/images/marmello/marmello-banner.mp4',
-                gallery: [
-                    {
-                        src: '/images/marmello/marmello-1.png'
-                    },
-                    {
-                        src: '/images/marmello/marmello-2.png'
-                    },
-                    {
-                        src: '/images/marmello/marmello-3.png'
-                    },
-                    {
-                        src: '/images/marmello/marmello-4.png'
-                    },
-                    {
-                        src: '/images/marmello/marmello-5.png'
-                    }
-                ],
                 type: 'Corporativo',
                 link: 'https://marmellostudio.com/',
                 repositoryLink: '',
@@ -124,20 +93,6 @@ const AppRouter = () => {
                 description: 'Site institucional + Portfólio de projetos. 100% desenvolvido por mim.',
                 imageSrc: '/images/szoma/szoma-banner.png',
                 videoSrc: '/images/szoma/szoma-banner.mp4',
-                gallery: [
-                    {
-                        src: '/images/ecoa/ecoa-1.png'
-                    },
-                    {
-                        src: '/images/ecoa/ecoa-2.png'
-                    },
-                    {
-                        src: '/images/ecoa/ecoa-3.png'
-                    },
-                    {
-                        src: '/images/ecoa/ecoa-4.png'
-                    }
-                ],
                 type: 'Corporativo',
                 link: 'https://projetos.hangardigital.com.br/szoma/site/',
                 repositoryLink: '',
@@ -158,25 +113,36 @@ const AppRouter = () => {
             },
             {
                 id: 4,
+                name: 'Matrix',
+                slug: 'matrix',
+                description: '🇧🇷 🇪🇸 Site institucional + Catálogo de produtos. 100% desenvolvido por mim.',
+                imageSrc: '/images/matrix/matrix-banner.png',
+                videoSrc: '/images/matrix/matrix-banner.mp4',
+                type: 'Corporativo',
+                link: 'https://projetos.hangardigital.com.br/matrix/site/',
+                repositoryLink: '',
+                techs: [
+                    {
+                        name: 'jQuery',
+                        iconSrc: '/images/svg/jquery.svg'
+                    },
+                    {
+                        name: 'Sass',
+                        iconSrc: '/images/svg/sass.svg'
+                    },
+                    {
+                        name: 'WordPress',
+                        iconSrc: '/images/svg/wordpress.svg'
+                    }
+                ]
+            },
+            {
+                id: 5,
                 name: 'ControlPAGE',
                 slug: 'controlpage',
                 description: 'Plataforma interna para franquias da "Cartão de TODOS". Front-end desenvolvido por mim.',
                 imageSrc: '/images/controlpage/controlpage-banner.png',
                 videoSrc: '/images/controlpage/controlpage-banner.mp4',
-                gallery: [
-                    {
-                        src: '/images/ecoa/ecoa-1.png'
-                    },
-                    {
-                        src: '/images/ecoa/ecoa-2.png'
-                    },
-                    {
-                        src: '/images/ecoa/ecoa-3.png'
-                    },
-                    {
-                        src: '/images/ecoa/ecoa-4.png'
-                    }
-                ],
                 type: 'Pessoal',
                 link: 'https://www.controlpagebr.com/',
                 repositoryLink: '',
@@ -196,26 +162,12 @@ const AppRouter = () => {
                 ]
             },
             {
-                id: 5,
+                id: 6,
                 name: 'Order Control',
                 slug: 'order-control',
                 description: 'Plataforma de controle de pedidos c/ autenticação + dashboard. 100% desenvolvido por mim.',
                 imageSrc: '/images/order-control/order-control-banner.png',
                 videoSrc: '/images/order-control/order-control-banner.mp4',
-                gallery: [
-                    {
-                        src: '/images/ecoa/ecoa-1.png'
-                    },
-                    {
-                        src: '/images/ecoa/ecoa-2.png'
-                    },
-                    {
-                        src: '/images/ecoa/ecoa-3.png'
-                    },
-                    {
-                        src: '/images/ecoa/ecoa-4.png'
-                    }
-                ],
                 type: 'Pessoal',
                 link: '',
                 repositoryLink: 'https://github.com/vitorfratti/order-control',

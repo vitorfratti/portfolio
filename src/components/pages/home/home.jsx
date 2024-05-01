@@ -87,7 +87,7 @@ const HomeContent = styled.section`
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: bottom;
+        object-position: center;
         filter: brightness(90%) grayscale(100%);
         transform: rotate(180deg);
         animation: show 3s ease;
