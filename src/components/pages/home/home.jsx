@@ -88,8 +88,7 @@ const HomeContent = styled.section`
         height: 100%;
         object-fit: cover;
         object-position: center;
-        filter: brightness(90%) grayscale(100%);
-        transform: rotate(180deg);
+        filter: brightness(30%) grayscale(100%);
         animation: show 3s ease;
     }
 
@@ -98,7 +97,7 @@ const HomeContent = styled.section`
             filter: brightness(0) grayscale(100%);
         }
         100% {
-            filter: brightness(90%) grayscale(100%);
+            filter: brightness(30%) grayscale(100%);
         }
     }
 
@@ -188,8 +187,8 @@ const HomeContent = styled.section`
                     color: #f7f8f8;
                     font-size: 1.125rem;
                     font-weight: 600;
-                    padding: 0.65rem 1.25rem;
-                    border-radius: 25px;
+                    padding: 0.75rem 1.25rem;
+                    border-radius: 6px;
                     text-decoration: none;
                     transition: all .1s ease;
                     cursor: pointer;
