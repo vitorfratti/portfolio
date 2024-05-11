@@ -63,11 +63,11 @@ const MenuLateral = ({ setActiveSection, activeSection, goToSection }) => {
                 <a href="https://github.com/vitorfratti" target="_blank">
                     <img src="/images/svg/github.svg" alt="github"/>
                 </a>
+                <a href="https://www.instagram.com/fratti.dev/">
+                    <img src="/images/svg/instagram.svg" alt="instagram"/>
+                </a>
                 <a href="mailto:vifratti@gmail.com">
                     <img src="/images/svg/gmail.svg" alt="gmail"/>
-                </a>
-                <a href="https://api.whatsapp.com/send?phone=5511998874399">
-                    <img src="/images/svg/whatsapp.svg" alt="whatsapp"/>
                 </a>
             </div>
         </MenuLateralContent>
