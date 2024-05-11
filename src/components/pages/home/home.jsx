@@ -75,10 +75,6 @@ const HomeContent = styled.section`
     height: 100vh;
     background: #08090a00;
 
-    @media (max-width: 500px) {
-        height: 90vh;
-    }
-
     img.bg {
         position: absolute;
         top: 0;
@@ -188,13 +184,13 @@ const HomeContent = styled.section`
                     font-size: 1.125rem;
                     font-weight: 600;
                     padding: 0.75rem 1.25rem;
-                    border-radius: 6px;
+                    border-radius: 25px;
                     text-decoration: none;
                     transition: all .1s ease;
                     cursor: pointer;
 
                     @media (width <= 500px) {
-                        padding: 0.7rem 1rem;
+                        padding: 0.7rem 1.1rem;
                     }
 
                     &:hover {
@@ -211,7 +207,12 @@ const HomeContent = styled.section`
                     }
 
                     &:last-child {
-                        background: linear-gradient(45deg, #23232699, #2e2e32);
+                        background: none;
+                        border: none;
+
+                        &:hover {
+                            opacity: 0.7;
+                        }
                     }
                 }
             }
@@ -225,6 +226,10 @@ const HomeContent = styled.section`
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media (width < 500px) {
+            bottom: 2rem;
+        }
 
         a {
             background: none;

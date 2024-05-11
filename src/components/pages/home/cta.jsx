@@ -17,7 +17,7 @@ const Cta = ({ setActiveSection, activeSection, goToSection }) => {
             <div className="container">
                 <div className="card">
                     <h2>Tranforme o lugar onde seu negócio é lembrado.</h2>
-                    <p>Inicie seu projeto e transforme sua presença online em uma experiência inesquecível.</p>
+                    <p>Inicie seu projeto e transforme seu site em uma experiência inesquecível.</p>
                     <div className="infos">
                         <a href="https://www.linkedin.com/in/vitorfratti/" target="_blank">
                             <img src="/images/svg/linkedin.svg" alt="linkedin"/>
@@ -75,7 +75,7 @@ const CtaContent = styled.section`
             gap: 1rem;
             text-align: center;
             width: 100%;
-            background: linear-gradient(45deg, #23232650, #232326);
+            background: linear-gradient(45deg, #23232675, #232326);
             backdrop-filter: blur(4px);
             border: 1px solid #2e2e32;
             padding: 4rem 20rem;
