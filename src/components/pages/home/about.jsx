@@ -38,7 +38,7 @@ const About = () => {
                     </div>
                     <div className="image" data-aos="fade-up">
                         <div className="box">
-                            <img src="/images/about-image.JPG" alt="about"/>
+                            <img src="/images/about-image.jpeg" alt="about"/>
                         </div>
                     </div>
                 </div>
@@ -135,8 +135,8 @@ const AboutContent = styled.section`
 
                 .box {
                     position: relative;
-                    width: 32rem;
-                    height: 20rem;
+                    width: 35rem;
+                    height: 21rem;
                     border-radius: 6px;
                     border: 1px solid #2e2e32;
                     background: #232326;
@@ -148,6 +148,7 @@ const AboutContent = styled.section`
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
+                        object-position: bottom;
                         border-radius: 6px;
                     }
                 }
