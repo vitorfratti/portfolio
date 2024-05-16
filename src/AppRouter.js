@@ -94,7 +94,7 @@ const AppRouter = () => {
                 imageSrc: '/images/szoma/szoma-banner.png',
                 videoSrc: '/images/szoma/szoma-banner.mp4',
                 type: 'Corporativo',
-                link: 'https://projetos.hangardigital.com.br/szoma/site/',
+                link: 'https://szoma.com.br/',
                 repositoryLink: '',
                 techs: [
                     {
