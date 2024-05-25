@@ -119,7 +119,7 @@ const AppRouter = () => {
                 imageSrc: '/images/matrix/matrix-banner.png',
                 videoSrc: '/images/matrix/matrix-banner.mp4',
                 type: 'Corporativo',
-                link: 'https://projetos.hangardigital.com.br/matrix/site/',
+                link: 'https://matrixpolimeros.com/',
                 repositoryLink: '',
                 techs: [
                     {
