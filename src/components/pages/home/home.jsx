@@ -86,6 +86,10 @@ const HomeContent = styled.section`
         object-position: center;
         filter: brightness(30%) grayscale(100%);
         animation: show 3s ease;
+
+        @media (width <= 500px) {
+            opacity: 0.5;
+        } 
     }
 
     @keyframes show {
