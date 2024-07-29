@@ -8,12 +8,18 @@ const Experiences = () => {
 
     const diferencaMeses = differenceInMonths(new Date(), parse('2023-08-01', 'yyyy-MM-dd', new Date()))
 
+    useEffect(() => {
+        AOS.init({
+            duration: 650
+        })
+    }, [])
+
     return (
         <ExperiencesContent data-section="experiencias">
             <div className="container">
-                <div className="title" data-aos="fade-up">
-                    <h2>Experiências</h2>
-                    <p>Minha trajetória profissional até o momento.</p>
+                <div className="title">
+                    <h2 data-aos="fade-up">Experiências</h2>
+                    <p data-aos="fade-up">Minha trajetória profissional até o momento.</p>
                 </div>
                 <div className="content" data-aos="fade-up">
                     <div className="line"></div>

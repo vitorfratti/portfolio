@@ -5,7 +5,6 @@ import 'aos/dist/aos.css'
 import Typewriter from 'typewriter-effect'
 
 const Home = ({ setActiveSection, activeSection, goToSection }) => {
-
     const [typedText, setTypedText] = useState('Des')
     const textToType = 'Desenvolvedor Web | Front-end'
     const caret = '|'
@@ -26,8 +25,8 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
         <HomeContent data-section="home">
             <div className="container">
                 <div className="content">
-                    <h1 className="animate__animated animate__animated animate__fadeIn">Bem-vindo, meu nome é <span>Vitor Fratti</span></h1>
-                    <h4 className="animate__animated animate__animated animate__fadeIn">
+                    <h1 className="animate__animated animate__fadeIn">Bem-vindo, meu nome é <span>Vitor Fratti</span></h1>
+                    <h4 className="animate__animated animate__fadeIn">
                         Desenvolvedor
                         <Typewriter
                             options={{
@@ -37,7 +36,7 @@ const Home = ({ setActiveSection, activeSection, goToSection }) => {
                             }}
                         />
                     </h4>
-                    <div className="buttons animate__animated animate__animated animate__fadeIn">
+                    <div className="buttons animate__animated animate__fadeIn">
                         <a
                         href="#sobre"
                         className={activeSection == 'sobre' ? 'selected' : ''}

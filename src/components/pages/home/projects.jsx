@@ -15,19 +15,18 @@ const Projects = ({ projects }) => {
 
     useEffect(() => {
         AOS.init({
-            easing: 'ease-out-back',
-            duration: 2000
+            duration: 650
         })
     }, [])
 
     return(
         <ProjectsContent data-section="projetos">
-            <div className="container" data-aos="fade-up">
+            <div className="container">
                 <div className="title">
-                    <h2>Projetos</h2>
-                    <p>Alguns dos projetos que desenvolvi recentemente.</p>
+                    <h2 data-aos="fade-up">Projetos</h2>
+                    <p data-aos="fade-up">Alguns dos projetos que desenvolvi recentemente.</p>
                 </div>
-                <div className="projects">
+                <div className="projects" data-aos="fade-up">
                     {isMobile ?
                         <Swiper
                         pagination={{

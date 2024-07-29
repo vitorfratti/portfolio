@@ -7,8 +7,7 @@ const Cta = ({ setActiveSection, activeSection, goToSection }) => {
 
     useEffect(() => {
         AOS.init({
-            easing: 'ease-out-back',
-            duration: 2000
+            duration: 650
         })
     }, [])
 
